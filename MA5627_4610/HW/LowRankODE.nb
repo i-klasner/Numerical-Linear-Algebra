@@ -1,0 +1,300 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12302,        292]
+NotebookOptionsPosition[     10779,        258]
+NotebookOutlinePosition[     11388,        278]
+CellTagsIndexPosition[     11345,        275]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["HW ??", "Title",
+ CellChangeTimes->{{3.8465884180627756`*^9, 3.846588429089326*^9}, {
+   3.84666883912605*^9, 3.846668864267633*^9}, 3.847871563670532*^9, {
+   3.8478718747240424`*^9, 3.8478718850356812`*^9}, {3.8478726605911455`*^9, 
+   3.847872661097188*^9}, {3.847872742644823*^9, 3.847872747040857*^9}, {
+   3.8478728246555014`*^9, 3.847872825165556*^9}, {3.847898821234312*^9, 
+   3.847898821407227*^9}},ExpressionUUID->"bb443c9e-1a1c-437e-b10c-\
+400e63a30bb8"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "I want to solve the system of n linear ODEs ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"y", "'"}], "=", 
+    RowBox[{"A", ".", "y"}]}], TraditionalForm]],ExpressionUUID->
+  "186f7091-4050-4582-9017-6b6c17a93e2a"],
+ "  with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"y", "(", "0", ")"}], "=", 
+    SubscriptBox["y", "0"]}], TraditionalForm]],ExpressionUUID->
+  "f547ce70-a2bc-415b-bd33-d15f76b90784"],
+ ".  Assume ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CapitalPhi]", "(", "t", ")"}], "=", 
+    RowBox[{
+     SubsuperscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "0"}], "\[Infinity]"], 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        SuperscriptBox["t", "i"], 
+        RowBox[{"i", "!"}]], 
+       SuperscriptBox["A", "i"]}], ")"}]}]}], TraditionalForm]],
+  ExpressionUUID->"dedfff02-2dbd-4eee-be0d-d2bd7a212adb"],
+ " converges.  \[CapitalPhi](t) is the matrix exponential of A. "
+}], "ItemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478988342947545`*^9, 3.847898872711816*^9}, {3.8478990040894976`*^9, 
+  3.847899047042272*^9}, {3.847901235419831*^9, 3.847901262643662*^9}, {
+  3.847901355370154*^9, 3.847901359765069*^9}, {3.847901682088584*^9, 
+  3.847901751358995*^9}, {3.8479018090731096`*^9, 3.8479018094222918`*^9}, {
+  3.847901861894138*^9, 3.8479018999788694`*^9}, {3.8479020710049934`*^9, 
+  3.8479020838162193`*^9}, {3.847902145410449*^9, 3.847902147057745*^9}, {
+  3.8479021872670794`*^9, 3.847902207179784*^9}, {3.8479022596371875`*^9, 
+  3.84790228015688*^9}},ExpressionUUID->"83601876-ffc0-4031-82e2-\
+f9613fbe9b4b"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Explain why ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[CapitalPhi]", "'"}], 
+     RowBox[{"(", "t", ")"}]}], "=", 
+    RowBox[{"A", ".", 
+     RowBox[{"\[CapitalPhi]", "(", "t", ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "febee462-9fbe-48c3-aed7-afc5aa2bf2d7"],
+ "."
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478988342947545`*^9, 3.847898872711816*^9}, {3.8478990040894976`*^9, 
+  3.847899047042272*^9}, {3.847901235419831*^9, 3.847901262643662*^9}, {
+  3.847901355370154*^9, 3.847901359765069*^9}, {3.847901682088584*^9, 
+  3.847901751358995*^9}, {3.8479018090731096`*^9, 3.8479018094222918`*^9}, {
+  3.847901861894138*^9, 3.8479018999788694`*^9}, {3.8479020710049934`*^9, 
+  3.8479021149556146`*^9}},ExpressionUUID->"b1c9c85f-9be7-4352-9bbc-\
+825bdd4442b7"],
+
+Cell[TextData[{
+ "Explain why ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CapitalPhi]", "(", "0", ")"}], "=", "I"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d7302249-56cf-41e1-9f8f-310a9be3652a"],
+ " "
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478988342947545`*^9, 3.847898872711816*^9}, {3.8478990040894976`*^9, 
+  3.847899047042272*^9}, {3.847901235419831*^9, 3.847901262643662*^9}, {
+  3.847901355370154*^9, 3.847901359765069*^9}, {3.847901682088584*^9, 
+  3.847901751358995*^9}, {3.8479018090731096`*^9, 3.8479018094222918`*^9}, {
+  3.847901861894138*^9, 3.8479018999788694`*^9}, {3.8479020710049934`*^9, 
+  3.847902155010228*^9}},ExpressionUUID->"ffb06cec-a398-4154-8968-\
+b13b1341a0e3"],
+
+Cell[TextData[{
+ "Explain why the solution of the ODE is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"y", "(", "t", ")"}], "=", 
+    RowBox[{
+     RowBox[{"\[CapitalPhi]", "(", "t", ")"}], ".", 
+     SubscriptBox["y", "0"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fdc0f4b0-553b-43ca-a6f1-c9068312b58a"]
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478988342947545`*^9, 3.847898872711816*^9}, {3.8478990040894976`*^9, 
+  3.847899047042272*^9}, {3.847901235419831*^9, 3.847901262643662*^9}, {
+  3.847901355370154*^9, 3.847901359765069*^9}, {3.847901682088584*^9, 
+  3.847901751358995*^9}, {3.8479018090731096`*^9, 3.8479018094222918`*^9}, {
+  3.847901861894138*^9, 3.8479018999788694`*^9}, {3.8479020710049934`*^9, 
+  3.8479021938686914`*^9}},ExpressionUUID->"a4d7108c-57c5-4523-9823-\
+a055e2e9271c"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Suppose I have ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{"Q", ".", "T", ".", 
+     RowBox[{"Q", "\[Transpose]"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a671d8c6-77b4-48f8-a330-fae16d6dc6ba"],
+ "  with Q "
+}], "ItemNumbered",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQvfGwPcfJFW8c63zcBUF0n8wCzw9AOrZrcwiIPunN
+3mW9+o1j5cSs9SBamHfDZhC9wun3dhBteEf5MYg+xc7zDES7vhZSsAHSzV2T
+wfRSbVctED0vT9AGRC/M87zlAaSNjovdB9Fad5veg2jvqIdfQLRjfi6bF5B+
+OOMKJ4j2vZEtCqKLqn+A6XVXnexA9OOa124g+lWYkh+IzmrWBdPH5+wJAdHP
+guojQfQLjQd5ILpCrqoARKcp6VaAaJ6biWD6VXdGLYg+deBpPYh2yF/aAqLz
+fj8C08ea13eB6AyeS1NBNADzVJ2z
+  "],ExpressionUUID->"06e9067e-ef07-4c6d-8a5a-0cb0b9338a4f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Explain why ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[CapitalPhi]", "'"}], 
+     RowBox[{"(", "t", ")"}]}], "=", 
+    RowBox[{"A", ".", 
+     RowBox[{"\[CapitalPhi]", "(", "t", ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "86b1f3b4-e4a8-4048-bd72-4c05ff4dc4ee"],
+ "."
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478988342947545`*^9, 3.847898872711816*^9}, {3.8478990040894976`*^9, 
+  3.847899047042272*^9}, {3.847901235419831*^9, 3.847901262643662*^9}, {
+  3.847901355370154*^9, 3.847901359765069*^9}, {3.847901682088584*^9, 
+  3.847901751358995*^9}, {3.8479018090731096`*^9, 3.8479018094222918`*^9}, {
+  3.847901861894138*^9, 3.8479018999788694`*^9}, {3.8479020710049934`*^9, 
+  3.8479021149556146`*^9}},ExpressionUUID->"f300b339-825b-4ccc-b4a8-\
+7dc0290b6505"],
+
+Cell[TextData[{
+ "Explain why ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[CapitalPhi]", "(", "0", ")"}], "=", "I"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "89cc39bb-f035-4fba-8028-3b5e4e67186e"],
+ " "
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478988342947545`*^9, 3.847898872711816*^9}, {3.8478990040894976`*^9, 
+  3.847899047042272*^9}, {3.847901235419831*^9, 3.847901262643662*^9}, {
+  3.847901355370154*^9, 3.847901359765069*^9}, {3.847901682088584*^9, 
+  3.847901751358995*^9}, {3.8479018090731096`*^9, 3.8479018094222918`*^9}, {
+  3.847901861894138*^9, 3.8479018999788694`*^9}, {3.8479020710049934`*^9, 
+  3.847902155010228*^9}},ExpressionUUID->"6f3771cd-b55d-4701-9c51-\
+137a3ce5c312"],
+
+Cell[TextData[{
+ "Explain why the solution of the ODE is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"y", "(", "t", ")"}], "=", 
+    RowBox[{
+     RowBox[{"\[CapitalPhi]", "(", "t", ")"}], ".", 
+     SubscriptBox["y", "0"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "477a7ef2-679d-4b8e-8534-898f08abd7f5"]
+}], "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478988342947545`*^9, 3.847898872711816*^9}, {3.8478990040894976`*^9, 
+  3.847899047042272*^9}, {3.847901235419831*^9, 3.847901262643662*^9}, {
+  3.847901355370154*^9, 3.847901359765069*^9}, {3.847901682088584*^9, 
+  3.847901751358995*^9}, {3.8479018090731096`*^9, 3.8479018094222918`*^9}, {
+  3.847901861894138*^9, 3.8479018999788694`*^9}, {3.8479020710049934`*^9, 
+  3.8479021938686914`*^9}},ExpressionUUID->"beeb5175-a075-4b07-863c-\
+a7fd8fadae31"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1268, 525},
+WindowMargins->{{Automatic, -1458}, {Automatic, -116}},
+TaggingRules->Association["PresenterSettings" -> Association["Dialogs" -> {}]],
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"7787906e-419e-41ee-acb9-83d65253155a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 472, 7, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[CellGroupData[{
+Cell[1077, 33, 1935, 45, 92, "ItemNumbered",ExpressionUUID->"83601876-ffc0-4031-82e2-f9613fbe9b4b"],
+Cell[CellGroupData[{
+Cell[3037, 82, 1190, 25, 40, "SubitemNumbered",ExpressionUUID->"b1c9c85f-9be7-4352-9bbc-825bdd4442b7"],
+Cell[4230, 109, 1083, 21, 40, "SubitemNumbered",ExpressionUUID->"ffb06cec-a398-4154-8968-b13b1341a0e3"],
+Cell[5316, 132, 1187, 23, 40, "SubitemNumbered",ExpressionUUID->"a4d7108c-57c5-4523-9823-a055e2e9271c"]
+}, Open  ]],
+Cell[6518, 158, 730, 18, 50, "ItemNumbered",ExpressionUUID->"06e9067e-ef07-4c6d-8a5a-0cb0b9338a4f"],
+Cell[CellGroupData[{
+Cell[7273, 180, 1190, 25, 40, "SubitemNumbered",ExpressionUUID->"f300b339-825b-4ccc-b4a8-7dc0290b6505"],
+Cell[8466, 207, 1083, 21, 40, "SubitemNumbered",ExpressionUUID->"6f3771cd-b55d-4701-9c51-137a3ce5c312"],
+Cell[9552, 230, 1187, 23, 40, "SubitemNumbered",ExpressionUUID->"beeb5175-a075-4b07-863c-a7fd8fadae31"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
