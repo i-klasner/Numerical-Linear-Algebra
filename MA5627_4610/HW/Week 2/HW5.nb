@@ -1,0 +1,136 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5552,        128]
+NotebookOptionsPosition[      4484,        100]
+NotebookOutlinePosition[      5093,        120]
+CellTagsIndexPosition[      5050,        117]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["HW 5", "Title",
+ CellChangeTimes->{{3.8465884180627756`*^9, 3.846588429089326*^9}, {
+   3.84666883912605*^9, 3.846668864267633*^9}, 3.847871563670532*^9, {
+   3.8478718747240424`*^9, 3.8478718850356812`*^9}, {3.8478726605911455`*^9, 
+   3.847872661097188*^9}, {3.847872742644823*^9, 3.847872747040857*^9}, {
+   3.8478728246555014`*^9, 3.847872825165556*^9}, {3.847873537903076*^9, 
+   3.847873538190965*^9}, {3.8478744196438074`*^9, 
+   3.847874420362221*^9}},ExpressionUUID->"bb443c9e-1a1c-437e-b10c-\
+400e63a30bb8"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Import the matrix \
+https://math.nist.gov/MatrixMarket/data/SPARSKIT/drivcav_old/cavity10.html \
+into a Julia or Mathematica notebook. In the notebook:\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478731433902135`*^9, 3.847873223660819*^9}, {3.847873308300146*^9, 
+  3.8478733864065113`*^9}, {3.847873579767501*^9, 3.8478735941796336`*^9}, {
+  3.847874179691635*^9, 3.847874248704743*^9}, {3.847874355434306*^9, 
+  3.8478743584998884`*^9}},ExpressionUUID->"81b47a30-cbf5-44a1-b035-\
+840c4d1878c2"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Compute and plot all the singular values of the matrix using a log-scale. \
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478731433902135`*^9, 3.847873223660819*^9}, {3.847873308300146*^9, 
+  3.8478734152687144`*^9}, {3.847874230079645*^9, 3.8478742516925073`*^9}, {
+  3.8478742902962575`*^9, 3.8478742902962575`*^9}, {3.8478744355645514`*^9, 
+  3.8478744520809517`*^9}, {3.8478745632397237`*^9, 
+  3.847874576522624*^9}},ExpressionUUID->"0f965df3-0f06-4a3f-865f-\
+f77b2bd44681"],
+
+Cell["\<\
+Compute and display the 2 norm of the vector of singular values.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478731433902135`*^9, 3.847873223660819*^9}, {3.847873308300146*^9, 
+  3.8478734152687144`*^9}, {3.847874230079645*^9, 3.8478742516925073`*^9}, {
+  3.847874291499193*^9, 3.847874325187724*^9}, {3.8478744568490267`*^9, 
+  3.847874490885048*^9}},ExpressionUUID->"4f973111-589f-402c-a50c-\
+54b6b6d6dc86"],
+
+Cell["\<\
+Explain the connections between the singular values and the various Matrix \
+norms. \
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+   3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+   3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+   3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+   3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+   3.8478731433902135`*^9, 3.847873223660819*^9}, {3.847873308300146*^9, 
+   3.8478734152687144`*^9}, {3.847874230079645*^9, 3.8478742738253736`*^9}, 
+   3.8478743995122895`*^9, {3.847874504257722*^9, 3.847874548040045*^9}, {
+   3.8478746056771555`*^9, 
+   3.8478746056771555`*^9}},ExpressionUUID->"95b4642a-6d23-4e5e-9649-\
+f13027f5532c"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1268, 525},
+WindowMargins->{{Automatic, -1458}, {Automatic, -116}},
+TaggingRules->Association["PresenterSettings" -> Association["Dialogs" -> {}]],
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"955662dc-414d-4cbe-b6e4-f9f4c23cfc47"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 523, 8, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[CellGroupData[{
+Cell[1128, 34, 853, 14, 83, "ItemNumbered",ExpressionUUID->"81b47a30-cbf5-44a1-b035-840c4d1878c2"],
+Cell[CellGroupData[{
+Cell[2006, 52, 836, 13, 40, "SubitemNumbered",ExpressionUUID->"0f965df3-0f06-4a3f-865f-f77b2bd44681"],
+Cell[2845, 67, 769, 12, 40, "SubitemNumbered",ExpressionUUID->"4f973111-589f-402c-a50c-54b6b6d6dc86"],
+Cell[3617, 81, 827, 14, 40, "SubitemNumbered",ExpressionUUID->"95b4642a-6d23-4e5e-9649-f13027f5532c"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

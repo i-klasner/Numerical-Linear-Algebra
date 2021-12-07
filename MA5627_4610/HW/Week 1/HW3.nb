@@ -1,0 +1,187 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8174,        179]
+NotebookOptionsPosition[      6512,        142]
+NotebookOutlinePosition[      7121,        162]
+CellTagsIndexPosition[      7078,        159]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["HW 2", "Title",
+ CellChangeTimes->{{3.8465884180627756`*^9, 3.846588429089326*^9}, {
+   3.84666883912605*^9, 3.846668864267633*^9}, 3.847871563670532*^9, {
+   3.8478718747240424`*^9, 3.8478718850356812`*^9}, {3.8478726605911455`*^9, 
+   3.847872661097188*^9}, {3.847872742644823*^9, 3.847872747040857*^9}, {
+   3.8478728246555014`*^9, 
+   3.847872825165556*^9}},ExpressionUUID->"bb443c9e-1a1c-437e-b10c-\
+400e63a30bb8"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Find in the help how to compute the various different matrix and vector norms \
+in Julia.  Answer the following questions in appropriate cells of a Julia \
+notebook.  \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478731433902135`*^9, 3.847873223660819*^9}, {3.847873308300146*^9, 
+  3.8478733864065113`*^9}},ExpressionUUID->"81b47a30-cbf5-44a1-b035-\
+840c4d1878c2"],
+
+Cell[CellGroupData[{
+
+Cell[" Vector Norms", "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478731433902135`*^9, 3.847873223660819*^9}, {3.847873308300146*^9, 
+  3.8478734152687144`*^9}},ExpressionUUID->"0f965df3-0f06-4a3f-865f-\
+f77b2bd44681"],
+
+Cell[CellGroupData[{
+
+Cell["What is the default vector norm?", "SubsubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.8478729875484767`*^9}, {
+  3.8478732272700663`*^9, 3.8478732347799053`*^9}, {3.847873418464384*^9, 
+  3.8478734193838997`*^9}},ExpressionUUID->"2b848e31-9964-4f15-aadb-\
+7f39c956d511"],
+
+Cell["What command will compute the 1 norm of a vector v?", \
+"SubsubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872414190485*^9}, {3.8478724500627937`*^9, 
+  3.8478726544220123`*^9}, {3.847873003919715*^9, 3.8478730511564264`*^9}, {
+  3.8478732412717495`*^9, 3.847873279556753*^9}, {3.8478734239871798`*^9, 
+  3.8478734385238676`*^9}},ExpressionUUID->"4c9b67c5-50cd-4418-bfe7-\
+ccde53074b80"],
+
+Cell["What command will compute the \[Infinity] norm of a vector v?", \
+"SubsubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872414190485*^9}, {3.8478724500627937`*^9, 
+  3.8478726544220123`*^9}, {3.847873003919715*^9, 3.8478730511564264`*^9}, {
+  3.8478732412717495`*^9, 3.847873279556753*^9}, {3.8478734239871798`*^9, 
+  3.847873452703486*^9}},ExpressionUUID->"0e3373d3-c867-4f66-85ae-\
+8fddc4f8df92"]
+}, Open  ]],
+
+Cell[" Matrix Norms", "SubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.847872992544753*^9}, {
+  3.8478731433902135`*^9, 3.847873223660819*^9}, {3.847873308300146*^9, 
+  3.8478733935025115`*^9}},ExpressionUUID->"9921d7e6-d10c-4d1d-8aeb-\
+3cadc617d4b3"],
+
+Cell[CellGroupData[{
+
+Cell["What is the default matrix norm?", "SubsubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872304375951*^9}, {3.8478727685912194`*^9, 
+  3.847872772610658*^9}, {3.8478728501615777`*^9, 3.8478729875484767`*^9}, {
+  3.8478732272700663`*^9, 
+  3.8478732347799053`*^9}},ExpressionUUID->"8f5a67d3-8a2c-4028-9cec-\
+f4daae5366d1"],
+
+Cell["What command will compute the Frobenius from of a matrix A?", \
+"SubsubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872414190485*^9}, {3.8478724500627937`*^9, 
+  3.8478726544220123`*^9}, {3.847873003919715*^9, 3.8478730511564264`*^9}, {
+  3.8478732412717495`*^9, 
+  3.847873279556753*^9}},ExpressionUUID->"0b0c550a-3916-4cd9-a29c-\
+83e68ed1a1f9"],
+
+Cell["What command will compute the induced 2 norm of a matrix A?", \
+"SubsubitemNumbered",
+ CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
+  3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
+  3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
+  3.847872281120629*^9, 3.847872414190485*^9}, {3.8478724500627937`*^9, 
+  3.8478726544220123`*^9}, {3.847873003919715*^9, 3.847873087944643*^9}, {
+  3.847873289740117*^9, 
+  3.84787330224394*^9}},ExpressionUUID->"405d20d0-cc13-4db1-8de3-\
+ccdf52309209"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1268, 525},
+WindowMargins->{{Automatic, -1458}, {Automatic, -116}},
+TaggingRules->Association["PresenterSettings" -> Association["Dialogs" -> {}]],
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"c283a4f3-6321-403d-9c04-91a623bb7c2d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 425, 7, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[CellGroupData[{
+Cell[1030, 33, 721, 12, 83, "ItemNumbered",ExpressionUUID->"81b47a30-cbf5-44a1-b035-840c4d1878c2"],
+Cell[CellGroupData[{
+Cell[1776, 49, 562, 8, 40, "SubitemNumbered",ExpressionUUID->"0f965df3-0f06-4a3f-865f-f77b2bd44681"],
+Cell[CellGroupData[{
+Cell[2363, 61, 588, 8, 40, "SubsubitemNumbered",ExpressionUUID->"2b848e31-9964-4f15-aadb-7f39c956d511"],
+Cell[2954, 71, 609, 9, 40, "SubsubitemNumbered",ExpressionUUID->"4c9b67c5-50cd-4418-bfe7-ccde53074b80"],
+Cell[3566, 82, 617, 9, 40, "SubsubitemNumbered",ExpressionUUID->"0e3373d3-c867-4f66-85ae-8fddc4f8df92"]
+}, Open  ]],
+Cell[4198, 94, 562, 8, 40, "SubitemNumbered",ExpressionUUID->"9921d7e6-d10c-4d1d-8aeb-3cadc617d4b3"],
+Cell[CellGroupData[{
+Cell[4785, 106, 540, 8, 40, "SubsubitemNumbered",ExpressionUUID->"8f5a67d3-8a2c-4028-9cec-f4daae5366d1"],
+Cell[5328, 116, 567, 9, 40, "SubsubitemNumbered",ExpressionUUID->"0b0c550a-3916-4cd9-a29c-83e68ed1a1f9"],
+Cell[5898, 127, 562, 9, 40, "SubsubitemNumbered",ExpressionUUID->"405d20d0-cc13-4db1-8de3-ccdf52309209"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
