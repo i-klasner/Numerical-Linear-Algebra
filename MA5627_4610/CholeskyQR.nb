@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     24228,        752]
-NotebookOptionsPosition[     22237,        711]
-NotebookOutlinePosition[     22687,        729]
-CellTagsIndexPosition[     22644,        726]
+NotebookDataLength[     34454,       1062]
+NotebookOptionsPosition[     31763,       1008]
+NotebookOutlinePosition[     32213,       1026]
+CellTagsIndexPosition[     32170,       1023]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,25 +37,21 @@ Cell[TextData[{
      RowBox[{"V", ".", 
       SuperscriptBox["T", 
        RowBox[{"-", "1"}]], ".", 
-      RowBox[{"V", "\[Transpose]"}]}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+      RowBox[{"V", "\[Transpose]"}]}]}]}], TraditionalForm]],ExpressionUUID->
   "b0a69e81-a15e-46b9-8d33-8c7032d0b90d"],
  "\nwhere the ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"m", "\[Times]", "r"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"m", "\[Times]", "r"}], TraditionalForm]],ExpressionUUID->
   "8ad6aea7-ab27-474a-b1c6-4584081e04ad"],
  " matrix ",
  Cell[BoxData[
-  FormBox["V", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["V", TraditionalForm]],ExpressionUUID->
   "94baea12-5316-48c6-80a5-84583eb84809"],
  "is tall and skinny i.e ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"m", ">>", "r"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"m", ">>", "r"}], TraditionalForm]],ExpressionUUID->
   "22e6a1e4-0d44-4aab-aa61-3bcc195747cf"],
  ".  Q is orthogonal if \n\t",
  Cell[BoxData[
@@ -63,9 +59,52 @@ Cell[TextData[{
    RowBox[{
     RowBox[{
      RowBox[{"Q", "\[Transpose]"}], ".", "Q"}], "=", "I"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "cb0f3d44-075d-4d96-8059-00504fa420eb"],
+  ExpressionUUID->"cb0f3d44-075d-4d96-8059-00504fa420eb"],
  " \nor equivalently \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"I", "-", 
+        RowBox[{"V", ".", 
+         SuperscriptBox["T", 
+          RowBox[{"-", "T"}]], ".", 
+         RowBox[{"V", "\[Transpose]"}]}]}], ")"}], ".", 
+      RowBox[{"(", 
+       RowBox[{"I", "-", 
+        RowBox[{"V", ".", 
+         SuperscriptBox["T", 
+          RowBox[{"-", "1"}]], ".", 
+         RowBox[{"V", "\[Transpose]"}]}]}], ")"}]}], "-", "I"}], "=", "0"}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "346bec2c-1dd1-45f5-a1b5-cf5cb65f4d5e"],
+ "\nor \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"V", ".", 
+       SuperscriptBox["T", 
+        RowBox[{"-", "T"}]], ".", 
+       RowBox[{"V", "\[Transpose]"}]}]}], "-", 
+     RowBox[{"V", ".", 
+      SuperscriptBox["T", 
+       RowBox[{"-", "1"}]], ".", 
+      RowBox[{"V", "\[Transpose]"}]}], "+", 
+     RowBox[{"V", ".", 
+      SuperscriptBox["T", 
+       RowBox[{"-", "T"}]], ".", 
+      RowBox[{"V", "\[Transpose]"}], ".", "V", ".", 
+      SuperscriptBox["T", 
+       RowBox[{"-", "1"}]], ".", 
+      RowBox[{"V", "\[Transpose]"}]}]}], "=", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0f1756a5-c120-4367-9228-ba4be4e63890"],
+ "\nso\n\t\n\t",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -74,29 +113,22 @@ Cell[TextData[{
       RowBox[{
        SuperscriptBox["T", 
         RowBox[{"-", "1"}]], "+", 
-       SuperscriptBox[
-        RowBox[{"(", 
-         SuperscriptBox["T", 
-          RowBox[{"-", "1"}]], ")"}], "\[Transpose]"]}], ")"}], ".", 
+       SuperscriptBox["T", 
+        RowBox[{"-", "T"}]]}], ")"}], ".", 
      RowBox[{"V", "\[Transpose]"}]}], "=", 
     RowBox[{"V", ".", 
      RowBox[{"(", 
       RowBox[{
-       SuperscriptBox[
-        RowBox[{"(", 
-         SuperscriptBox["T", 
-          RowBox[{"-", "1"}]], ")"}], "\[Transpose]"], ".", "V", ".", 
+       SuperscriptBox["T", 
+        RowBox[{"-", "T"}]], ".", "V", ".", 
        RowBox[{"V", "\[Transpose]"}], ".", 
-       RowBox[{"(", 
-        SuperscriptBox["T", 
-         RowBox[{"-", "1"}]], ")"}]}], ")"}], ".", 
-     RowBox[{"V", "\[Transpose]"}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+       SuperscriptBox["T", 
+        RowBox[{"-", "1"}]]}], ")"}], ".", 
+     RowBox[{"V", "\[Transpose]"}]}]}], TraditionalForm]],ExpressionUUID->
   "ddf4e289-2f12-439a-8a03-e0831f1b4855"],
  "\nsince ",
  Cell[BoxData[
-  FormBox["V", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["V", TraditionalForm]],ExpressionUUID->
   "3ec1d7e0-d4cf-496b-b2d9-d02c6aade6cd"],
  " is full rank  \n\t",
  Cell[BoxData[
@@ -105,20 +137,14 @@ Cell[TextData[{
     RowBox[{
      SuperscriptBox["T", 
       RowBox[{"-", "1"}]], "+", 
-     SuperscriptBox[
-      RowBox[{"(", 
-       SuperscriptBox["T", 
-        RowBox[{"-", "1"}]], ")"}], "\[Transpose]"]}], "=", 
+     SuperscriptBox["T", 
+      RowBox[{"-", "T"}]]}], "=", 
     RowBox[{
-     SuperscriptBox[
-      RowBox[{"(", 
-       SuperscriptBox["T", 
-        RowBox[{"-", "1"}]], ")"}], "\[Transpose]"], ".", 
+     SuperscriptBox["T", 
+      RowBox[{"-", "T"}]], ".", 
      RowBox[{"V", "\[Transpose]"}], ".", "V", ".", 
-     RowBox[{"(", 
-      SuperscriptBox["T", 
-       RowBox[{"-", "1"}]], ")"}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+     SuperscriptBox["T", 
+      RowBox[{"-", "1"}]]}]}], TraditionalForm]],ExpressionUUID->
   "0c9ddabc-c6a5-4285-bcaa-53c34c343b7f"],
  "\nMultiplying by T gives and T\[Transpose] gives\n(A)\t ",
  Cell[BoxData[
@@ -128,19 +154,218 @@ Cell[TextData[{
      RowBox[{"T", "\[Transpose]"}], "+", "T"}], "=", 
     RowBox[{
      RowBox[{"V", "\[Transpose]"}], ".", "V"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "0b8a4e29-6433-4cbe-a8ec-a3bd21dc8160"],
+  ExpressionUUID->"0b8a4e29-6433-4cbe-a8ec-a3bd21dc8160"],
  "\nNote V does not need to be orthogonal and ",
  Cell[BoxData[
-  FormBox["T", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["T", TraditionalForm]],ExpressionUUID->
   "60bc5871-2d61-46c3-a846-e4fa9280f149"],
  " does not need to be symmetric. "
 }], "Text",
+ InitializationCell->True,
  CellChangeTimes->{{3.8485036987017407`*^9, 3.8485036993030586`*^9}, {
   3.848503746291691*^9, 3.8485043352996583`*^9}, {3.848505379758207*^9, 
-  3.8485053828528767`*^9}},ExpressionUUID->"7f0cd6f8-f267-470e-aa0d-\
+  3.8485053828528767`*^9}, {3.849005793492209*^9, 3.849005817694635*^9}, {
+  3.849005924364778*^9, 3.849006082331739*^9}, {3.849007713754987*^9, 
+  3.84900778306461*^9}},ExpressionUUID->"7f0cd6f8-f267-470e-aa0d-\
 0b4c58e09700"],
+
+Cell["\<\
+I do not quite know how to test this.  I do have several different formulas \
+for different solutions.  I have:\
+\>", "Text",
+ CellChangeTimes->{{3.849007921492312*^9, 
+  3.849007987726076*^9}},ExpressionUUID->"e87b0501-5704-4209-9dba-\
+6cd7cc4c3bcb"],
+
+Cell[TextData[{
+ "The symmetric solution ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["T", "sym"], "=", 
+    RowBox[{"0.5", " ", 
+     RowBox[{
+      RowBox[{"V", "\[Transpose]"}], ".", "V"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9380ff7e-59f8-4a38-826b-1a73a624966a"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.8490079987891607`*^9, 3.8490080453155737`*^9}, {
+  3.8490082116919947`*^9, 3.8490082161451693`*^9}, {3.849008276308546*^9, 
+  3.8490082778977737`*^9}},ExpressionUUID->"84b722ad-ab0f-4102-9b15-\
+b823556d2f8f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "I can decompose ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"T", "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["T", "sym"], "+", "W"}], "=", 
+     RowBox[{
+      RowBox[{"0.5", " ", 
+       RowBox[{
+        RowBox[{"V", "\[Transpose]"}], ".", "V"}]}], "+", "W"}]}]}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "dad65e5f-c9a5-4135-9b31-4bc172482ac5"],
+ " for any skew W and still get a solution "
+}], "Item",
+ CellChangeTimes->{{3.8490079987891607`*^9, 3.84900804963583*^9}, {
+  3.8490082309646587`*^9, 3.849008263993875*^9}, {3.84900840326128*^9, 
+  3.849008441252975*^9}, {3.849008475320836*^9, 3.849008486936531*^9}, {
+  3.84900851956975*^9, 
+  3.849008519570056*^9}},ExpressionUUID->"bfa14f51-bdc6-4a1e-88e5-\
+316f0fd8612f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"V", "\[Transpose]"}], ".", "V"}], "=", 
+    RowBox[{"U", "+", "D", "+", 
+     RowBox[{"U", "\[Transpose]"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "77f36f1f-ae7d-4626-836e-fc9045995594"],
+ " where D is diagonal and U is strictly upper triangular then choosing ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"W", "=", 
+    RowBox[{"U", "-", 
+     RowBox[{"U", "\[Transpose]"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fb83fa38-cbae-4896-9f5e-a0aa63c2b301"],
+ " gives a tridiagonal solve for T rather than a unstructured solve.  than \
+the diagonal of T equals 2D and the "
+}], "Subitem",
+ CellChangeTimes->{{3.8490079987891607`*^9, 3.84900804963583*^9}, {
+  3.8490082309646587`*^9, 3.849008263993875*^9}, {3.84900840326128*^9, 
+  3.849008441252975*^9}, {3.849008475320836*^9, 3.849008486936531*^9}, {
+  3.8490085220393467`*^9, 3.849008711399694*^9}, {3.849009292637864*^9, 
+  3.849009324285701*^9}},ExpressionUUID->"ffb445fc-6d24-4064-8a49-\
+ac9a45426f10"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"m", ",", "r"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", "r"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Q", "=", 
+   RowBox[{
+    RowBox[{"IdentityMatrix", "[", "m", "]"}], "-", 
+    RowBox[{"2", " ", 
+     RowBox[{"V", ".", 
+      RowBox[{"Inverse", "[", 
+       RowBox[{
+        RowBox[{"V", "\[Transpose]"}], ".", "V"}], "]"}], ".", 
+      RowBox[{"V", "\[Transpose]"}]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Norm", "[", 
+   RowBox[{
+    RowBox[{"Q", ".", 
+     RowBox[{"Q", "\[Transpose]"}]}], "-", 
+    RowBox[{"IdentityMatrix", "[", "m", "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"W", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "r"}], "}"}]}], "]"}]}], ";", " ", 
+  RowBox[{"W", "=", 
+   RowBox[{"W", "-", 
+    RowBox[{"W", "\[Transpose]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "=", 
+   RowBox[{
+    RowBox[{"0.5", " ", 
+     RowBox[{
+      RowBox[{"V", "\[Transpose]"}], ".", "V"}]}], "+", "W"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Q", "=", 
+   RowBox[{
+    RowBox[{"IdentityMatrix", "[", "m", "]"}], "-", 
+    RowBox[{"V", ".", 
+     RowBox[{"Inverse", "[", "T", "]"}], ".", 
+     RowBox[{"V", "\[Transpose]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Norm", "[", 
+   RowBox[{
+    RowBox[{"Q", ".", 
+     RowBox[{"Q", "\[Transpose]"}]}], "-", 
+    RowBox[{"IdentityMatrix", "[", "m", "]"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DMat", "=", 
+   RowBox[{"DiagonalMatrix", "[", 
+    RowBox[{"Diagonal", "[", 
+     RowBox[{
+      RowBox[{"V", "\[Transpose]"}], ".", "V"}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"U", "=", 
+    RowBox[{"UpperTriangularize", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"V", "\[Transpose]"}], ".", "V"}], ",", "1"}], "]"}]}], " ", 
+   ";", " ", 
+   RowBox[{"WMat", "=", 
+    RowBox[{"U", "-", 
+     RowBox[{"U", "\[Transpose]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Q", "=", 
+   RowBox[{
+    RowBox[{"IdentityMatrix", "[", "m", "]"}], "-", 
+    RowBox[{"V", ".", 
+     RowBox[{"Inverse", "[", "T", "]"}], ".", 
+     RowBox[{"V", "\[Transpose]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Norm", "[", 
+  RowBox[{
+   RowBox[{"Q", ".", 
+    RowBox[{"Q", "\[Transpose]"}]}], "-", 
+   RowBox[{"IdentityMatrix", "[", "m", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.84900582943439*^9, 3.8490058920793056`*^9}, {
+  3.849007802920878*^9, 3.849007890507621*^9}, {3.8490081259717083`*^9, 
+  3.849008203541728*^9}, {3.849008286459285*^9, 3.8490083845347557`*^9}, {
+  3.849008445530561*^9, 3.849008465783805*^9}, {3.8490084986169147`*^9, 
+  3.8490085132307987`*^9}, {3.8490089244690313`*^9, 
+  3.8490092542196302`*^9}},ExpressionUUID->"b2a8b490-53ae-4c5d-aec9-\
+344ee3a0cf81"],
+
+Cell[BoxData["1.1977683557258475`*^-15"], "Output",
+ CellChangeTimes->{3.849009011797928*^9, 3.8490091094339848`*^9},
+ CellLabel->
+  "Out[162]=",ExpressionUUID->"21aeb53b-9db3-4449-b5a0-73e4517b53ae"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -157,8 +382,7 @@ Cell[TextData[{
     RowBox[{"0.5", 
      RowBox[{
       RowBox[{"V", "\[Transpose]"}], ".", "V"}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "9ffcb683-f189-4a91-b3e6-5809f708f438"],
+  ExpressionUUID->"9ffcb683-f189-4a91-b3e6-5809f708f438"],
  " and \n\t",
  Cell[BoxData[
   FormBox[
@@ -172,8 +396,7 @@ Cell[TextData[{
           RowBox[{"V", "\[Transpose]"}], ".", "V"}], ")"}], 
         RowBox[{"-", "1"}]], ".", 
        RowBox[{"V", "\[Transpose]"}]}]}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "ef6f5708-a345-4ab3-97a2-4652dae98fd5"],
+  ExpressionUUID->"ef6f5708-a345-4ab3-97a2-4652dae98fd5"],
  "\nwhich is simply the block H rotation associated with the block \
 projection.  "
 }], "Text",
@@ -211,17 +434,14 @@ Cell[TextData[{
         SuperscriptBox["T", 
          RowBox[{"-", "1"}]], ".", 
         RowBox[{"V", "\[Transpose]"}], ".", "Y"}]}]}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "3614105a-a3de-4b96-a47f-9dc0b0b4eb1f"],
+  ExpressionUUID->"3614105a-a3de-4b96-a47f-9dc0b0b4eb1f"],
  "\nI am given ",
  Cell[BoxData[
-  FormBox["Y", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["Y", TraditionalForm]],ExpressionUUID->
   "8803cb11-dc89-4f66-aadf-0e6b3a3af59c"],
  " and I get to pick ",
  Cell[BoxData[
-  FormBox["V", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["V", TraditionalForm]],ExpressionUUID->
   "10a64971-88b6-4584-a67c-196e60f8b9d0"],
  " and T consistent with ",
  Cell[BoxData[
@@ -231,8 +451,7 @@ Cell[TextData[{
      RowBox[{"T", "\[Transpose]"}], "+", "T"}], "=", 
     RowBox[{
      RowBox[{"V", "\[Transpose]"}], ".", "V"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "1cde5072-a426-4ac0-b382-6b0092b6ca95"],
+  ExpressionUUID->"1cde5072-a426-4ac0-b382-6b0092b6ca95"],
  ".  "
 }], "Text",
  CellChangeTimes->{{3.848504533958376*^9, 3.848504540437106*^9}, {
@@ -308,29 +527,24 @@ Cell["Block Householder", "Subsubsection",
 Cell[TextData[{
  "A block householder computation has ",
  Cell[BoxData[
-  FormBox["Y", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["Y", TraditionalForm]],ExpressionUUID->
   "c3a74e29-8c2c-455c-bb26-5036d423c4e3"],
  " and ",
  Cell[BoxData[
-  FormBox["V", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["V", TraditionalForm]],ExpressionUUID->
   "3c635677-8b6c-4016-817e-541e0132a00f"],
  " the same shape ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"i", ".", "e", ".", " "}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"i", ".", "e", ".", " "}], TraditionalForm]],ExpressionUUID->
   "5e865b0a-945a-4065-b4bc-45292ae07d26"],
  Cell[BoxData[
   FormBox[
-   RowBox[{"r", "=", "s"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"r", "=", "s"}], TraditionalForm]],ExpressionUUID->
   "30737022-caf6-48b2-9d8d-a04a499dd3f7"],
  " and chooses V to zero the bottom portion of ",
  Cell[BoxData[
-  FormBox["Y", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["Y", TraditionalForm]],ExpressionUUID->
   "6e5d4004-3698-41a9-86f7-548c1d1faef6"],
  " i.e \n\t",
  Cell[BoxData[
@@ -368,20 +582,17 @@ Cell[TextData[{
        {
         SubscriptBox["X", "1"]},
        {"0"}
-      }], ")"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+      }], ")"}]}], TraditionalForm]],ExpressionUUID->
   "849a0101-a812-4440-9fee-581c0e44ae26"],
  " \nfor some ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"r", "\[Times]", "r"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"r", "\[Times]", "r"}], TraditionalForm]],ExpressionUUID->
   "0f43c1d8-9508-4373-b11e-4428919190a0"],
  " matrix ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["X", "1"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["X", "1"], TraditionalForm]],ExpressionUUID->
   "a5c64abf-2748-4295-a4c1-bf1de01a9f4a"],
  ". The condition simplifies to\n\t",
  Cell[BoxData[
@@ -416,8 +627,7 @@ Cell[TextData[{
        {
         SubscriptBox["X", "1"]},
        {"0"}
-      }], ")"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+      }], ")"}]}], TraditionalForm]],ExpressionUUID->
   "d8cfd8ad-abaf-4bcc-b0a7-a7a2bd2f8bb4"],
  "\nThe bottom section gives\n\t",
  Cell[BoxData[
@@ -438,9 +648,7 @@ Cell[TextData[{
          RowBox[{
           SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
           SubscriptBox["Y", "2"]}]}], ")"}]}]}]}], "=", "0"}], 
-   TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "ed90f52e-da9c-456c-a466-429174496094"],
+   TraditionalForm]],ExpressionUUID->"ed90f52e-da9c-456c-a466-429174496094"],
  "\nSo ",
  Cell[BoxData[
   FormBox[
@@ -449,14 +657,12 @@ Cell[TextData[{
     RowBox[{
      SubscriptBox["Y", "2"], ".", 
      SuperscriptBox["G", 
-      RowBox[{"-", "1"}]]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+      RowBox[{"-", "1"}]]}]}], TraditionalForm]],ExpressionUUID->
   "b4118bf6-11a4-4bdc-8c9f-511d0e9992f2"],
  " for some ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"r", "\[Times]", "r"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"r", "\[Times]", "r"}], TraditionalForm]],ExpressionUUID->
   "65980ab4-0a7d-44bf-b37b-f52c71fec1a5"],
  " matrix G. Alternatively ",
  Cell[BoxData[
@@ -464,8 +670,7 @@ Cell[TextData[{
    RowBox[{
     SubscriptBox["Y", "2"], "=", 
     RowBox[{
-     SubscriptBox["V", "2"], ".", "G"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+     SubscriptBox["V", "2"], ".", "G"}]}], TraditionalForm]],ExpressionUUID->
   "24c6b689-c635-4d04-a941-4b2beb9139e1"],
  " and substituting gives\n\t",
  Cell[BoxData[
@@ -487,8 +692,7 @@ Cell[TextData[{
         RowBox[{
          SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
          SubscriptBox["V", "2"], ".", "G"}]}], ")"}]}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "d91e3bb3-35e6-4c44-a9b5-78570ef8216d"],
+  ExpressionUUID->"d91e3bb3-35e6-4c44-a9b5-78570ef8216d"],
  "\nor equivalently\n",
  Cell[BoxData[
   FormBox[
@@ -509,22 +713,42 @@ Cell[TextData[{
           RowBox[{
            SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
            SubscriptBox["V", "2"], ".", "G"}]}], ")"}]}]}]}],
-     TraditionalForm]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+     TraditionalForm]}], TraditionalForm]],ExpressionUUID->
   "593d3261-35d6-4a91-9868-c312b045b7eb"],
  "\t\nAssume ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["V", "2"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubscriptBox["V", "2"], TraditionalForm]],ExpressionUUID->
   "b97425d4-9eb0-4c78-98fd-a4a8340ad4f4"],
  " is full rank then (multiplying by ",
  Cell[BoxData[
   FormBox[
-   SubsuperscriptBox["V", "2", "\[Dagger]"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   SubsuperscriptBox["V", "2", "\[Dagger]"], TraditionalForm]],ExpressionUUID->
   "0bcd951d-ade0-423d-b5ff-1ab375f2df1b"],
  ") gives\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["I", "r"], "=", 
+    RowBox[{"2", 
+     RowBox[{
+      SuperscriptBox["T", 
+       RowBox[{"-", "1"}]], "(", 
+      RowBox[{
+       RowBox[{
+        SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
+        SubscriptBox["Y", "1"]}], "+", 
+       RowBox[{
+        SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
+        SubscriptBox["V", "2"], ".", "G"}]}], ")"}]}]}], TraditionalForm]],
+  ExpressionUUID->"5e8575df-8895-47d0-9409-39d5c175dc0c"],
+ "\nThere is no reason not to take ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"G", "=", "I"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f59e2945-2abf-404c-81e0-8e2ee53639dc"],
+ " in which case  \t \n\t",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -539,25 +763,9 @@ Cell[TextData[{
         SubscriptBox["Y", "1"]}], "+", 
        RowBox[{
         SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
-        SubscriptBox["V", "2"], ".", "G"}]}], ")"}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "5e8575df-8895-47d0-9409-39d5c175dc0c"],
- "\nSince (A) gives \n\t",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     RowBox[{
-      SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
-      SubscriptBox["V", "1"]}], "+", 
-     RowBox[{
-      SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
-      SubscriptBox["V", "2"]}]}], "=", 
-    RowBox[{"T", "+", 
-     RowBox[{"T", "\[Transpose]"}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "5499a42b-55f6-4d61-acd7-19c5d6105665"],
- "\nI have \n\t",
+        SubscriptBox["V", "2"]}]}], ")"}]}]}], TraditionalForm]],
+  ExpressionUUID->"1c470ffa-2abf-4cc0-ba2d-7e45e8ea9a0f"],
+ "\nor\n\t",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -569,19 +777,49 @@ Cell[TextData[{
       RowBox[{
        RowBox[{
         SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
-        SubscriptBox["Y", "1"]}], "+", 
+        SubscriptBox["V", "1"]}], "+", 
        RowBox[{
+        SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
         RowBox[{"(", 
          RowBox[{
-          RowBox[{"(", 
-           RowBox[{"T", "+", 
-            RowBox[{"T", "\[Transpose]"}]}], ")"}], "-", 
-          RowBox[{
-           SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
-           SubscriptBox["V", "1"]}]}], ")"}], ".", "G"}]}], ")"}]}]}], 
-   TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "3853d80e-bd18-4fd4-a475-de0e7a7dabd2"],
+          SubscriptBox["Y", "1"], "-", 
+          SubscriptBox["V", "1"]}], ")"}]}], " ", "+", 
+       RowBox[{
+        SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
+        SubscriptBox["V", "2"]}]}], ")"}]}]}], TraditionalForm]],
+  ExpressionUUID->"1ebf0a42-bc95-4e99-a84a-36f68e4ef826"],
+ "\nSince (A) is  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
+      SubscriptBox["V", "1"]}], "+", 
+     RowBox[{
+      SubsuperscriptBox["V", "2", "\[Transpose]"], ".", 
+      SubscriptBox["V", "2"]}]}], "=", 
+    RowBox[{"T", "+", 
+     RowBox[{"T", "\[Transpose]"}]}]}], TraditionalForm]],ExpressionUUID->
+  "5499a42b-55f6-4d61-acd7-19c5d6105665"],
+ "\nI have \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["I", "r"], "=", 
+    RowBox[{"2.", 
+     RowBox[{
+      SuperscriptBox["T", 
+       RowBox[{"-", "1"}]], "(", 
+      RowBox[{"T", "+", 
+       RowBox[{"T", "\[Transpose]"}], "+", 
+       RowBox[{
+        SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["Y", "1"], "-", 
+          SubscriptBox["V", "1"]}], ")"}]}]}], " ", ")"}]}]}], 
+   TraditionalForm]],ExpressionUUID->"3853d80e-bd18-4fd4-a475-de0e7a7dabd2"],
  "\nor \n\t",
  Cell[BoxData[
   FormBox[
@@ -600,17 +838,76 @@ Cell[TextData[{
         RowBox[{"T", ".", "G"}], "+", 
         RowBox[{
          RowBox[{"T", "\[Transpose]"}], ".", "G"}]}], ")"}]}]}],
+    TraditionalForm], TraditionalForm]],ExpressionUUID->
+  "d9f944e6-73a8-47aa-b7cf-69f90f3b5b4d"],
+ ".\nThere is no reason not to take ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"G", "=", "I"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "54176368-4e3d-4846-b4d1-101449a4f900"],
+ " in which case  \t \n\t",
+ Cell[BoxData[
+  FormBox[
+   FormBox[
+    RowBox[{"T", "=", 
+     RowBox[{"2", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           SubscriptBox["Y", "1"], "-", 
+           SubscriptBox["V", "1"]}], ")"}]}], "+", "T", "+", 
+        RowBox[{"T", "\[Transpose]"}]}], ")"}]}]}],
     TraditionalForm], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "d9f944e6-73a8-47aa-b7cf-69f90f3b5b4d"],
- "\n\t "
+  "68f1c994-3b6b-4cb6-9f86-39c301cb08f7"],
+ "\nand \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"T", "-", " ", 
+     RowBox[{"2", " ", "T"}], "-", 
+     RowBox[{"2", 
+      RowBox[{"T", "\[Transpose]"}]}]}], "=", 
+    RowBox[{"2", 
+     RowBox[{
+      SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["Y", "1"], "-", 
+        SubscriptBox["V", "1"]}], ")"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4af2d5a2-985b-4a20-9493-b43b6625d985"],
+ "\nand \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", " ", "T"}], "-", 
+     RowBox[{"2", 
+      RowBox[{"T", "\[Transpose]"}]}]}], "=", 
+    RowBox[{"2", 
+     RowBox[{
+      SubsuperscriptBox["V", "1", "\[Transpose]"], ".", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["V", "1"], "-", 
+        SubscriptBox["Y", "1"]}], ")"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b21b1a1a-a0e7-4f20-aea2-54e91531f5fd"],
+ "\nand "
 }], "Text",
  CellChangeTimes->{{3.8485055924398165`*^9, 3.8485061011641865`*^9}, {
   3.8485061412528744`*^9, 3.8485064389276056`*^9}, {3.84850647468453*^9, 
   3.8485065362408805`*^9}, {3.8485065695067143`*^9, 3.848506727252928*^9}, {
   3.8485068503669243`*^9, 3.8485068627713733`*^9}, {3.848507034747346*^9, 
-  3.848507157906678*^9}, {3.848507187924774*^9, 
-  3.8485073982497897`*^9}},ExpressionUUID->"82ab5730-d4d2-4697-853e-\
+  3.848507157906678*^9}, {3.848507187924774*^9, 3.8485073982497897`*^9}, {
+  3.84900519263494*^9, 3.849005341359981*^9}, {3.849005381495253*^9, 
+  3.849005475619117*^9}, {3.8490056519580708`*^9, 
+  3.84900574453795*^9}},ExpressionUUID->"82ab5730-d4d2-4697-853e-\
 eddc958ca218"]
 }, Open  ]]
 }, Open  ]]
@@ -730,29 +1027,42 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 369, 6, 123, "Title",ExpressionUUID->"cad48880-1789-461d-9275-91959638c580"],
-Cell[952, 30, 3628, 112, 338, "Text",ExpressionUUID->"7f0cd6f8-f267-470e-aa0d-0b4c58e09700"],
+Cell[952, 30, 4466, 139, 478, "Text",ExpressionUUID->"7f0cd6f8-f267-470e-aa0d-0b4c58e09700",
+ InitializationCell->True],
+Cell[5421, 171, 261, 6, 44, "Text",ExpressionUUID->"e87b0501-5704-4209-9dba-6cd7cc4c3bcb"],
+Cell[5685, 179, 566, 16, 43, "Item",ExpressionUUID->"84b722ad-ab0f-4102-9b15-b823556d2f8f"],
 Cell[CellGroupData[{
-Cell[4605, 146, 160, 3, 84, "Section",ExpressionUUID->"fc7a65a1-a675-439c-9e78-8c9584f6932a"],
-Cell[4768, 151, 1057, 31, 102, "Text",ExpressionUUID->"cf750059-7d7d-4020-b59d-8a0f7c6fded0"],
+Cell[6276, 199, 777, 22, 43, "Item",ExpressionUUID->"bfa14f51-bdc6-4a1e-88e5-316f0fd8612f"],
 Cell[CellGroupData[{
-Cell[5850, 186, 209, 4, 67, "Subsection",ExpressionUUID->"1c928a56-b370-4efd-8039-9d370bea185e"],
-Cell[6062, 192, 1754, 50, 103, "Text",ExpressionUUID->"1389c89b-93d8-47b1-8161-ccd86f1969bf"],
-Cell[7819, 244, 1596, 53, 44, "Text",ExpressionUUID->"16abae2b-db01-4f06-93ad-0faac860b310"],
+Cell[7078, 225, 1104, 27, 59, "Subitem",ExpressionUUID->"ffb445fc-6d24-4064-8a49-ac9a45426f10"],
 Cell[CellGroupData[{
-Cell[9440, 301, 272, 4, 56, "Subsubsection",ExpressionUUID->"4ec9c948-fbb4-4f55-a970-5ec8bf645b1c"],
-Cell[9715, 307, 9302, 306, 610, "Text",ExpressionUUID->"82ab5730-d4d2-4697-853e-eddc958ca218"]
+Cell[8207, 256, 3343, 103, 350, "Input",ExpressionUUID->"b2a8b490-53ae-4c5d-aec9-344ee3a0cf81"],
+Cell[11553, 361, 200, 3, 43, "Output",ExpressionUUID->"21aeb53b-9db3-4449-b5a0-73e4517b53ae"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11814, 371, 160, 3, 84, "Section",ExpressionUUID->"fc7a65a1-a675-439c-9e78-8c9584f6932a"],
+Cell[11977, 376, 995, 29, 102, "Text",ExpressionUUID->"cf750059-7d7d-4020-b59d-8a0f7c6fded0"],
+Cell[CellGroupData[{
+Cell[12997, 409, 209, 4, 67, "Subsection",ExpressionUUID->"1c928a56-b370-4efd-8039-9d370bea185e"],
+Cell[13209, 415, 1630, 46, 103, "Text",ExpressionUUID->"1389c89b-93d8-47b1-8161-ccd86f1969bf"],
+Cell[14842, 463, 1596, 53, 44, "Text",ExpressionUUID->"16abae2b-db01-4f06-93ad-0faac860b310"],
+Cell[CellGroupData[{
+Cell[16463, 520, 272, 4, 56, "Subsubsection",ExpressionUUID->"4ec9c948-fbb4-4f55-a970-5ec8bf645b1c"],
+Cell[16738, 526, 11805, 384, 872, "Text",ExpressionUUID->"82ab5730-d4d2-4697-853e-eddc958ca218"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[19090, 621, 231, 4, 123, "Title",ExpressionUUID->"50ef352e-52ec-4251-96fb-829e5299e211"],
-Cell[19324, 627, 1191, 33, 102, "Text",ExpressionUUID->"059c14ea-e57a-4aff-8649-864dff71d86e"],
-Cell[20518, 662, 275, 6, 40, "Item",ExpressionUUID->"08b0fcff-c9d0-409e-8469-f9707843a5a5"],
-Cell[20796, 670, 428, 12, 40, "Item",ExpressionUUID->"7e68ab1e-2f46-4e3e-9f76-63b382f3ac80"],
-Cell[21227, 684, 316, 6, 40, "Item",ExpressionUUID->"3e999253-7501-4190-8fc3-702888455e4f"],
-Cell[21546, 692, 358, 7, 44, "Text",ExpressionUUID->"b8dc225e-6787-4be9-bab7-61da6904a6ac"],
-Cell[21907, 701, 314, 7, 44, "Text",ExpressionUUID->"fff6f613-f069-4aa3-b499-5499c8829390"]
+Cell[28616, 918, 231, 4, 123, "Title",ExpressionUUID->"50ef352e-52ec-4251-96fb-829e5299e211"],
+Cell[28850, 924, 1191, 33, 102, "Text",ExpressionUUID->"059c14ea-e57a-4aff-8649-864dff71d86e"],
+Cell[30044, 959, 275, 6, 40, "Item",ExpressionUUID->"08b0fcff-c9d0-409e-8469-f9707843a5a5"],
+Cell[30322, 967, 428, 12, 40, "Item",ExpressionUUID->"7e68ab1e-2f46-4e3e-9f76-63b382f3ac80"],
+Cell[30753, 981, 316, 6, 40, "Item",ExpressionUUID->"3e999253-7501-4190-8fc3-702888455e4f"],
+Cell[31072, 989, 358, 7, 44, "Text",ExpressionUUID->"b8dc225e-6787-4be9-bab7-61da6904a6ac"],
+Cell[31433, 998, 314, 7, 44, "Text",ExpressionUUID->"fff6f613-f069-4aa3-b499-5499c8829390"]
 }, Open  ]]
 }
 ]
