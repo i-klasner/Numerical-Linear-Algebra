@@ -10,24 +10,24 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     14526,        318]
-NotebookOptionsPosition[     12897,        283]
-NotebookOutlinePosition[     13505,        303]
-CellTagsIndexPosition[     13462,        300]
+NotebookDataLength[     14421,        312]
+NotebookOptionsPosition[     12718,        275]
+NotebookOutlinePosition[     13400,        297]
+CellTagsIndexPosition[     13357,        294]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["HW 5", "Title",
+Cell["LHW 5", "Title",
  CellChangeTimes->{{3.8465884180627756`*^9, 3.846588429089326*^9}, {
    3.84666883912605*^9, 3.846668864267633*^9}, 3.847871563670532*^9, {
    3.8478718747240424`*^9, 3.8478718850356812`*^9}, {3.8478726605911455`*^9, 
    3.847872661097188*^9}, {3.847872742644823*^9, 3.847872747040857*^9}, {
    3.8478728246555014`*^9, 3.847872825165556*^9}, {3.847873537903076*^9, 
-   3.847873538190965*^9}, {3.8478744196438074`*^9, 
-   3.847874420362221*^9}},ExpressionUUID->"bb443c9e-1a1c-437e-b10c-\
+   3.847873538190965*^9}, {3.8478744196438074`*^9, 3.847874420362221*^9}, 
+   3.852385068195657*^9},ExpressionUUID->"bb443c9e-1a1c-437e-b10c-\
 400e63a30bb8"],
 
 Cell[CellGroupData[{
@@ -36,8 +36,7 @@ Cell[TextData[{
  "Generate a random ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"6", "\[Times]", "6"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"6", "\[Times]", "6"}], TraditionalForm]],ExpressionUUID->
   "032f55a4-76f0-4c29-9a9f-c0b42c61b948"],
  " matrix called A and compute the SVD of A. Use standard names for the \
 factors."
@@ -126,8 +125,7 @@ Cell[TextData[{
  Cell[BoxData[
   FormBox[
    SuperscriptBox["A", 
-    RowBox[{"-", "1"}]], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    RowBox[{"-", "1"}]], TraditionalForm]],ExpressionUUID->
   "60bfdcd2-e14a-4c4f-a84f-2c670c668a66"],
  " from those of A."
 }], "SubitemNumbered",
@@ -152,8 +150,7 @@ about the order of the singular values) of ",
  Cell[BoxData[
   FormBox[
    SuperscriptBox["A", 
-    RowBox[{"-", "1"}]], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    RowBox[{"-", "1"}]], TraditionalForm]],ExpressionUUID->
   "1a7316e2-708d-42f0-95c6-6b2b0ac0d09d"],
  ". "
 }], "SubitemNumbered",
@@ -177,26 +174,22 @@ Cell[TextData[{
  "Generate two random Tall Skinny ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"12", "\[Times]", "2"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"12", "\[Times]", "2"}], TraditionalForm]],ExpressionUUID->
   "73e513ea-6746-427a-a160-0dbdd341d9d6"],
  " random matrices ",
  Cell[BoxData[
-  FormBox["U", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["X", TraditionalForm]],ExpressionUUID->
   "fc97317e-e48d-47f1-b28c-db6967e3375f"],
  " and ",
  Cell[BoxData[
-  FormBox["V", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["Y", TraditionalForm]],ExpressionUUID->
   "2b40ba24-61d5-4199-9f79-d296dafeb986"],
  ". Compute the SVD of ",
  Cell[BoxData[
   FormBox[
    RowBox[{"A", "=", 
-    RowBox[{"U", ".", 
-     RowBox[{"V", "\[Transpose]"}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    RowBox[{"X", ".", 
+     RowBox[{"Y", "\[Transpose]"}]}]}], TraditionalForm]],ExpressionUUID->
   "64360e40-06ee-4546-b29d-46891d3efe85"],
  ". "
 }], "ItemNumbered",
@@ -211,8 +204,8 @@ Cell[TextData[{
   3.8478743584998884`*^9}, {3.8515235048305445`*^9, 3.851523578025663*^9}, {
   3.851523639764427*^9, 3.851523643981719*^9}, {3.851523933504651*^9, 
   3.8515239861807575`*^9}, {3.8515241832223043`*^9, 3.8515241950195613`*^9}, {
-  3.851524319017534*^9, 
-  3.851524449174306*^9}},ExpressionUUID->"043a9053-c6d8-4303-81ac-\
+  3.851524319017534*^9, 3.851524449174306*^9}, {3.852393728471017*^9, 
+  3.852393745282551*^9}},ExpressionUUID->"043a9053-c6d8-4303-81ac-\
 5fbeeb0c6132"],
 
 Cell[CellGroupData[{
@@ -220,8 +213,7 @@ Cell[CellGroupData[{
 Cell[TextData[{
  "Explain the result. Is ",
  Cell[BoxData[
-  FormBox["A", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["A", TraditionalForm]],ExpressionUUID->
   "aa6103df-dac2-4c55-8b14-d243618018ee"],
  " invertible?"
 }], "SubitemNumbered",
@@ -282,9 +274,11 @@ inverse\[CloseCurlyDoubleQuote] operator. \
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
-WindowSize->{1268, 525},
-WindowMargins->{{1646, Automatic}, {Automatic, 17.5}},
-TaggingRules->Association["PresenterSettings" -> Association["Dialogs" -> {}]],
+WindowSize->{957.5999999999999, 525.},
+WindowMargins->{{
+  58.199999999999996`, Automatic}, {-11.399999999999977`, Automatic}},
+TaggingRules->Association[
+ "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> False],
 Magnification:>1.5 Inherited,
 FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
@@ -303,20 +297,20 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 523, 8, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[580, 22, 546, 8, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 Cell[CellGroupData[{
-Cell[1128, 34, 1183, 22, 50, "ItemNumbered",ExpressionUUID->"d48dd0bc-e92a-43c3-bc26-aac9b88073a7"],
+Cell[1151, 34, 1152, 21, 83, "ItemNumbered",ExpressionUUID->"d48dd0bc-e92a-43c3-bc26-aac9b88073a7"],
 Cell[CellGroupData[{
-Cell[2336, 60, 1346, 29, 40, "SubitemNumbered",ExpressionUUID->"97b75c0b-617e-4dd8-a266-7f249b601d0b"],
-Cell[3685, 91, 1397, 30, 40, "SubitemNumbered",ExpressionUUID->"b62b70de-9fdc-430f-9824-691fd745cafa"],
-Cell[5085, 123, 1216, 23, 40, "SubitemNumbered",ExpressionUUID->"c4b8828e-6ced-4d43-a002-e61f7c781733"],
-Cell[6304, 148, 1274, 24, 40, "SubitemNumbered",ExpressionUUID->"90cb4dfb-cb7a-4148-aa3c-336bde749f77"]
+Cell[2328, 59, 1346, 29, 40, "SubitemNumbered",ExpressionUUID->"97b75c0b-617e-4dd8-a266-7f249b601d0b"],
+Cell[3677, 90, 1397, 30, 40, "SubitemNumbered",ExpressionUUID->"b62b70de-9fdc-430f-9824-691fd745cafa"],
+Cell[5077, 122, 1185, 22, 40, "SubitemNumbered",ExpressionUUID->"c4b8828e-6ced-4d43-a002-e61f7c781733"],
+Cell[6265, 146, 1243, 23, 69, "SubitemNumbered",ExpressionUUID->"90cb4dfb-cb7a-4148-aa3c-336bde749f77"]
 }, Open  ]],
-Cell[7593, 175, 1725, 40, 50, "ItemNumbered",ExpressionUUID->"043a9053-c6d8-4303-81ac-5fbeeb0c6132"],
+Cell[7523, 172, 1647, 36, 83, "ItemNumbered",ExpressionUUID->"043a9053-c6d8-4303-81ac-5fbeeb0c6132"],
 Cell[CellGroupData[{
-Cell[9343, 219, 1187, 21, 40, "SubitemNumbered",ExpressionUUID->"669810a3-0499-4fef-85e7-29cc61792dfc"],
-Cell[10533, 242, 1051, 15, 40, "SubitemNumbered",ExpressionUUID->"6a4a4c53-06b7-4ada-bd3e-a68386724f94"],
-Cell[11587, 259, 1270, 19, 69, "SubitemNumbered",ExpressionUUID->"63126262-a275-4215-9318-1127925e365d"]
+Cell[9195, 212, 1156, 20, 40, "SubitemNumbered",ExpressionUUID->"669810a3-0499-4fef-85e7-29cc61792dfc"],
+Cell[10354, 234, 1051, 15, 40, "SubitemNumbered",ExpressionUUID->"6a4a4c53-06b7-4ada-bd3e-a68386724f94"],
+Cell[11408, 251, 1270, 19, 99, "SubitemNumbered",ExpressionUUID->"63126262-a275-4215-9318-1127925e365d"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
