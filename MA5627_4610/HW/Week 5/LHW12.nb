@@ -10,17 +10,17 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5656,        129]
-NotebookOptionsPosition[      4823,        105]
-NotebookOutlinePosition[      5435,        125]
-CellTagsIndexPosition[      5392,        122]
+NotebookDataLength[      4596,        100]
+NotebookOptionsPosition[      3770,         76]
+NotebookOutlinePosition[      4376,         96]
+CellTagsIndexPosition[      4333,         93]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["HW 13", "Title",
+Cell["LHW 12", "Title",
  CellChangeTimes->{{3.8465884180627756`*^9, 3.846588429089326*^9}, {
    3.84666883912605*^9, 3.846668864267633*^9}, 3.847871563670532*^9, {
    3.8478718747240424`*^9, 3.8478718850356812`*^9}, {3.8478726605911455`*^9, 
@@ -30,36 +30,13 @@ Cell["HW 13", "Title",
    3.8478776019106894`*^9, 3.8478776020577583`*^9}, {3.8478789354487305`*^9, 
    3.8478789356595936`*^9}, 3.847879040187109*^9, 3.8478790901844482`*^9, {
    3.847879257428877*^9, 3.8478792578373337`*^9}, {3.84787940316372*^9, 
-   3.847879405389861*^9}, {3.847879461058155*^9, 3.8478794615401196`*^9}, {
-   3.8478809489926615`*^9, 
-   3.847880949228505*^9}},ExpressionUUID->"bb443c9e-1a1c-437e-b10c-\
+   3.847879405389861*^9}, {3.847879461058155*^9, 3.8478794615401196`*^9}, 
+   3.8527283763740697`*^9},ExpressionUUID->"bb443c9e-1a1c-437e-b10c-\
 400e63a30bb8"],
 
 Cell[CellGroupData[{
 
-Cell[TextData[{
- "In a Julia or Mathematica notebook write a simple script that approximates \
-machine epsilon by running a loop that decreases x by repeatedly multiplying \
-by ",
- Cell[BoxData[
-  FormBox["0.98", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "9af3b691-8f8b-4041-b5fe-90e0af85d996"],
- " until ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{"1.0", "+", "x"}], ">", "1.0"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "8008e61f-e39c-43c4-966e-849fdc64e80b"],
- ". Start the script with ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"x", "=", "1.1"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "1c36f8be-66e9-4cc7-bf73-ab65cf11aab2"],
- " and report the value of x when it fails. "
-}], "ItemNumbered",
+Cell["Condition number", "ItemNumbered",
  CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
    3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
    3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
@@ -73,16 +50,11 @@ by ",
    3.847878947292974*^9, 3.847879031520532*^9}, {3.8478791348818083`*^9, 
    3.8478792211616306`*^9}, {3.84787927113403*^9, 3.8478793120767565`*^9}, {
    3.8478793638615017`*^9, 3.847879374863923*^9}, {3.8478794331359015`*^9, 
-   3.847879437701398*^9}, {3.847880962383993*^9, 3.8478809920129795`*^9}, {
-   3.8478812753968334`*^9, 
-   3.8478815376353674`*^9}},ExpressionUUID->"81b47a30-cbf5-44a1-b035-\
+   3.847879437701398*^9}, {3.852728379859488*^9, 
+   3.8527283822303753`*^9}},ExpressionUUID->"81b47a30-cbf5-44a1-b035-\
 840c4d1878c2"],
 
-Cell["\<\
-Explain how to compute (and give the value for) machine epsilon in the bfloat \
-floating point format \
-https://en.wikipedia.org/wiki/Bfloat16_floating-point_format.\
-\>", "ItemNumbered",
+Cell["least squares conditioning. ", "ItemNumbered",
  CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
    3.8466688770034857`*^9, 3.84666896561064*^9}, {3.847871568228001*^9, 
    3.847871867330258*^9}, {3.847871901501596*^9, 3.8478719358518867`*^9}, {
@@ -96,16 +68,15 @@ https://en.wikipedia.org/wiki/Bfloat16_floating-point_format.\
    3.847878947292974*^9, 3.847879031520532*^9}, {3.8478791348818083`*^9, 
    3.8478792211616306`*^9}, {3.84787927113403*^9, 3.8478793120767565`*^9}, {
    3.8478793638615017`*^9, 3.847879374863923*^9}, {3.8478794331359015`*^9, 
-   3.847879437701398*^9}, {3.847880962383993*^9, 3.8478809920129795`*^9}, {
-   3.8478812753968334`*^9, 
-   3.8478816348381987`*^9}},ExpressionUUID->"2256366b-5029-47f8-8933-\
-2325891c35fb"]
+   3.8478794448876*^9}, 
+   3.852728385430143*^9},ExpressionUUID->"580b740b-b14a-4a87-b8bb-\
+4148073ab24c"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
-WindowSize->{1268, 587},
-WindowMargins->{{1672.5, Automatic}, {Automatic, -195.5}},
+WindowSize->{1268, 525},
+WindowMargins->{{1358, Automatic}, {22, Automatic}},
 TaggingRules->Association["PresenterSettings" -> Association["Dialogs" -> {}]],
 Magnification:>1.5 Inherited,
 FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
@@ -125,10 +96,10 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 879, 13, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[580, 22, 852, 12, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 Cell[CellGroupData[{
-Cell[1484, 39, 1948, 39, 117, "ItemNumbered",ExpressionUUID->"81b47a30-cbf5-44a1-b035-840c4d1878c2"],
-Cell[3435, 80, 1360, 21, 83, "ItemNumbered",ExpressionUUID->"2256366b-5029-47f8-8933-2325891c35fb"]
+Cell[1457, 38, 1149, 16, 50, "ItemNumbered",ExpressionUUID->"81b47a30-cbf5-44a1-b035-840c4d1878c2"],
+Cell[2609, 56, 1133, 16, 50, "ItemNumbered",ExpressionUUID->"580b740b-b14a-4a87-b8bb-4148073ab24c"]
 }, Open  ]]
 }, Open  ]]
 }
