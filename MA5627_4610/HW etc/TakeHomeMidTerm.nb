@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     30442,        522]
-NotebookOptionsPosition[     27436,        471]
-NotebookOutlinePosition[     28042,        491]
-CellTagsIndexPosition[     27999,        488]
+NotebookDataLength[     30730,        529]
+NotebookOptionsPosition[     27705,        477]
+NotebookOutlinePosition[     28329,        498]
+CellTagsIndexPosition[     28286,        495]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -151,7 +151,7 @@ e4533950622c"],
 
 Cell[TextData[{
  "Write a function in Mathematica implementing the unpivoted LU decomposition \
-in Algorithm 20.1. Test your function appropriately i.e. verify that ",
+in Algorithm 20.1 on p151. Test your function appropriately i.e. verify that ",
  Cell[BoxData[
   FormBox[
    RowBox[{"A", "=", 
@@ -178,7 +178,9 @@ matrices here. Write brief usage info. "
    3.8532534378912106`*^9, 3.853253444562982*^9}, {3.853689517286191*^9, 
    3.853689559291593*^9}, {3.853689600348858*^9, 3.853689634163419*^9}, {
    3.853689675252056*^9, 3.853689735995751*^9}, {3.853689852367758*^9, 
-   3.8536898722587976`*^9}},ExpressionUUID->"51944caf-c554-4d85-850e-\
+   3.8536898722587976`*^9}, {3.853861237289672*^9, 3.8538612435598125`*^9}, {
+   3.853861332593115*^9, 
+   3.8538613330429096`*^9}},ExpressionUUID->"51944caf-c554-4d85-850e-\
 d20c038ff586"],
 
 Cell["Repeat question 1.1 in Julia. ", "SubitemNumbered",
@@ -273,8 +275,9 @@ Cell[TextData[{
          RowBox[{"2", "x"}], "]"}], "2"]}]], "+", " ", 
      RowBox[{"Log", "[", 
       RowBox[{"1", "+", 
-       RowBox[{"Cos", "[", 
-        RowBox[{"3", "x"}], "]"}]}], "]"}]}]}], TraditionalForm]],
+       SuperscriptBox[
+        RowBox[{"Cos", "[", 
+         RowBox[{"3", "x"}], "]"}], "2"]}], "]"}]}]}], TraditionalForm]],
   ExpressionUUID->"d4011f7d-28d7-436d-ae4e-2bfc9762849f"],
  "  "
 }], "ItemNumbered",
@@ -298,8 +301,9 @@ Cell[TextData[{
    3.853689709179701*^9, 3.853689714538437*^9}, {3.853689775866707*^9, 
    3.85368984457838*^9}, {3.853689897697061*^9, 3.853689927768742*^9}, {
    3.853690006303392*^9, 3.853690144248452*^9}, {3.85373225800079*^9, 
-   3.853732280936964*^9}, {3.8537483364016438`*^9, 
-   3.853748370081328*^9}},ExpressionUUID->"5f0d6d56-53ab-463c-a11e-\
+   3.853732280936964*^9}, {3.8537483364016438`*^9, 3.853748370081328*^9}, {
+   3.8539613347278*^9, 
+   3.853961335163726*^9}},ExpressionUUID->"5f0d6d56-53ab-463c-a11e-\
 3b2ebebe8012"],
 
 Cell[TextData[{
@@ -315,9 +319,9 @@ Cell[TextData[{
      RowBox[{"Sin", "[", 
       RowBox[{"2", "x"}], "]"}], ",", "\[Ellipsis]", ",", 
      RowBox[{"Cos", "[", 
-      RowBox[{"m", " ", "x"}], "]"}], ",", " ", 
+      RowBox[{"k", " ", "x"}], "]"}], ",", " ", 
      RowBox[{"Sin", "[", 
-      RowBox[{"m", " ", "x"}], "]"}]}], "}"}], TraditionalForm]],
+      RowBox[{"k", " ", "x"}], "]"}]}], "}"}], TraditionalForm]],
   ExpressionUUID->"6e468404-95b6-4b71-9815-ec481e29d499"],
  ".  These are sometimes called trig polynomials. "
 }], "SubitemNumbered",
@@ -341,8 +345,9 @@ Cell[TextData[{
    3.853689709179701*^9, 3.853689714538437*^9}, {3.853689775866707*^9, 
    3.85368984457838*^9}, {3.853689897697061*^9, 3.853689927768742*^9}, {
    3.853690006303392*^9, 3.85369004807152*^9}, {3.8536901524856157`*^9, 
-   3.853690259594658*^9}, {3.8536906655435743`*^9, 
-   3.853690684336013*^9}},ExpressionUUID->"e65b3657-7b6d-420f-bc9e-\
+   3.853690259594658*^9}, {3.8536906655435743`*^9, 3.853690684336013*^9}, {
+   3.853854618944536*^9, 
+   3.8538546216736107`*^9}},ExpressionUUID->"e65b3657-7b6d-420f-bc9e-\
 df001e73e002"],
 
 Cell[TextData[{
@@ -382,8 +387,9 @@ Cell[TextData[{
 
 Cell["\<\
 Compute and plot f and the least squares fit to the values of f at the \
-sampled points for a variety of small values of m on the same plot. Make sure \
+sampled points for a variety of small values of k on the same plot. Make sure \
 you label the various curves. What might/would/should my niece notice?       \
+\
 \>", "SubitemNumbered",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.},
  CellChangeTimes->{{3.846588481992638*^9, 3.8465885542280874`*^9}, {
@@ -407,8 +413,8 @@ you label the various curves. What might/would/should my niece notice?       \
    3.853690006303392*^9, 3.85369004807152*^9}, {3.8536901524856157`*^9, 
    3.853690340819605*^9}, {3.853690390715012*^9, 3.853690644456015*^9}, {
    3.8536909072084303`*^9, 3.8536909244879227`*^9}, {3.853732183977355*^9, 
-   3.8537322167875023`*^9}, {3.853732493769011*^9, 
-   3.853732497112465*^9}},ExpressionUUID->"6249ac3d-150c-4164-a5d9-\
+   3.8537322167875023`*^9}, {3.853732493769011*^9, 3.853732497112465*^9}, 
+   3.8538546423149023`*^9},ExpressionUUID->"6249ac3d-150c-4164-a5d9-\
 40857e2dbe2b"],
 
 Cell["(10 points) Built in LUDecomposition.", "ItemNumbered",
@@ -470,11 +476,12 @@ a4b3a718b30c"]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
-WindowSize->{1141.2, 573.6},
+WindowSize->{987.5999999999999, 573.6},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-TaggingRules->Association["PresenterSettings" -> Association["Dialogs" -> {}]],
+TaggingRules-><|
+ "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
 Magnification:>1.5 Inherited,
-FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"60ebf3c5-5fcf-4e52-a28d-f645ad59b7c6"
@@ -502,25 +509,25 @@ Cell[5560, 104, 1410, 21, 47, "Item",ExpressionUUID->"964ab5c9-cf3b-43c9-bcec-1f
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
 Cell[6973, 127, 1570, 22, 50, "ItemNumbered",ExpressionUUID->"09ed6067-7edc-4663-bbe1-e4533950622c",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[8546, 151, 1881, 30, 99, "SubitemNumbered",ExpressionUUID->"51944caf-c554-4d85-850e-d20c038ff586",
+Cell[8546, 151, 1993, 32, 129, "SubitemNumbered",ExpressionUUID->"51944caf-c554-4d85-850e-d20c038ff586",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[10430, 183, 1471, 20, 40, "SubitemNumbered",ExpressionUUID->"82466a9a-fc8b-4226-8af0-4dcc2d903a0d",
+Cell[10542, 185, 1471, 20, 40, "SubitemNumbered",ExpressionUUID->"82466a9a-fc8b-4226-8af0-4dcc2d903a0d",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[11904, 205, 1610, 24, 69, "SubitemNumbered",ExpressionUUID->"80d9e8aa-b1d7-47e6-8c3e-c7ce5d966d7e",
+Cell[12016, 207, 1610, 24, 70, "SubitemNumbered",ExpressionUUID->"80d9e8aa-b1d7-47e6-8c3e-c7ce5d966d7e",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[13517, 231, 1863, 27, 69, "SubitemNumbered",ExpressionUUID->"fa48abd5-b1c4-4dba-b42d-68f11d0781b3",
+Cell[13629, 233, 1863, 27, 99, "SubitemNumbered",ExpressionUUID->"fa48abd5-b1c4-4dba-b42d-68f11d0781b3",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[15383, 260, 2198, 42, 51, "ItemNumbered",ExpressionUUID->"5f0d6d56-53ab-463c-a11e-3b2ebebe8012",
+Cell[15495, 262, 2277, 44, 89, "ItemNumbered",ExpressionUUID->"5f0d6d56-53ab-463c-a11e-3b2ebebe8012",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[17584, 304, 2262, 41, 69, "SubitemNumbered",ExpressionUUID->"e65b3657-7b6d-420f-bc9e-df001e73e002",
+Cell[17775, 308, 2314, 42, 70, "SubitemNumbered",ExpressionUUID->"e65b3657-7b6d-420f-bc9e-df001e73e002",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[19849, 347, 1913, 33, 40, "SubitemNumbered",ExpressionUUID->"5d3161a5-64b1-4c2b-a031-1b11a0242ae3",
+Cell[20092, 352, 1913, 33, 40, "SubitemNumbered",ExpressionUUID->"5d3161a5-64b1-4c2b-a031-1b11a0242ae3",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[21765, 382, 2026, 29, 99, "SubitemNumbered",ExpressionUUID->"6249ac3d-150c-4164-a5d9-40857e2dbe2b",
+Cell[22008, 387, 2052, 30, 99, "SubitemNumbered",ExpressionUUID->"6249ac3d-150c-4164-a5d9-40857e2dbe2b",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[23794, 413, 1722, 24, 50, "ItemNumbered",ExpressionUUID->"90cb06e9-bed8-48f5-9dfa-775070151e6a",
+Cell[24063, 419, 1722, 24, 50, "ItemNumbered",ExpressionUUID->"90cb06e9-bed8-48f5-9dfa-775070151e6a",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[25519, 439, 1889, 28, 99, "SubitemNumbered",ExpressionUUID->"e8590faf-d144-4091-9210-a4b3a718b30c",
+Cell[25788, 445, 1889, 28, 99, "SubitemNumbered",ExpressionUUID->"e8590faf-d144-4091-9210-a4b3a718b30c",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}]
 }, Open  ]]
 }, Open  ]]
