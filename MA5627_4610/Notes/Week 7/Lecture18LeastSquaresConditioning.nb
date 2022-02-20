@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    448998,       8109]
-NotebookOptionsPosition[    445634,       8043]
-NotebookOutlinePosition[    446248,       8064]
-CellTagsIndexPosition[    446205,       8061]
+NotebookDataLength[    472320,       8809]
+NotebookOptionsPosition[    467360,       8717]
+NotebookOutlinePosition[    467974,       8738]
+CellTagsIndexPosition[    467931,       8735]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -4154,35 +4154,12 @@ Cell[TextData[{
 
 Cell[CellGroupData[{
 
-Cell[TextData[{
- "Four Different Conditioning Problems\n",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"A", "\[Rule]", "x"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "4923e3de-3d29-41a7-a56d-2a7f339de3ea"],
- ", ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"A", "\[Rule]", "y"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "61152114-f2d6-47db-acf4-79487a3930ff"],
- "\n",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"b", "\[Rule]", "x"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "25f2507a-a100-48a1-964c-853f57e7f4c0"],
- ", ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"b", "\[Rule]", "y"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "9d83adb3-9a01-45f1-915c-00b1ca403977"]
-}], "Section",
+Cell["Everything is \[OpenCurlyDoubleQuote]diagonal\[CloseCurlyDoubleQuote]", \
+"Section",
  CellChangeTimes->{{3.8543693530189342`*^9, 3.85436936784229*^9}, {
   3.8543704740493813`*^9, 3.8543704831920652`*^9}, {3.854370526153102*^9, 
-  3.854370598507852*^9}},ExpressionUUID->"72702d60-c0c4-4ef8-91b4-\
+  3.854370598507852*^9}, {3.8543754812325373`*^9, 
+  3.854375489451997*^9}},ExpressionUUID->"72702d60-c0c4-4ef8-91b4-\
 c09ac88e2054"],
 
 Cell[TextData[{
@@ -4360,15 +4337,712 @@ Cell[TextData[{
        SubscriptBox["b", "1"]}], 
       SuperscriptBox["||", "2"], "  "}]}]}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "18052951-d0e2-4530-8699-2a3718b509e2"]
+  "18052951-d0e2-4530-8699-2a3718b509e2"],
+ "\nThe answer is simply \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["z", "*"], "=", 
+    RowBox[{
+     RowBox[{
+      SubsuperscriptBox["S", "1", 
+       RowBox[{"-", "1"}]], ".", 
+      SubscriptBox["b", "1"]}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubsuperscriptBox["S", "1", 
+         RowBox[{"-", "1"}]], "|", " ", "0"}], ")"}], ".", 
+      RowBox[{"(", GridBox[{
+         {
+          SubscriptBox["b", "1"]},
+         {
+          SubscriptBox["b", "2"]}
+        }], ")"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d916ec80-2aee-40bb-9636-262603c52ed8"],
+ "\nThe pseudo inverse of the diagonal problem is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SubsuperscriptBox["S", "1", 
+      RowBox[{"-", "1"}]], "|", " ", "0"}], ")"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "520c0d08-fae1-4416-948d-2a2a58d37c19"],
+ " and the projector of the diagonal problem is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{"(", GridBox[{
+       {"I", "0"},
+       {"0", "0"}
+      }], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "53c78d64-ec13-47de-bd4a-978d59c30c4a"],
+ ".   "
 }], "Text",
  CellChangeTimes->{{3.854370736515204*^9, 3.8543708997669783`*^9}, {
   3.85437095424657*^9, 3.854370961885251*^9}, {3.8543710234382133`*^9, 
   3.854371189239861*^9}, {3.854371270489448*^9, 3.854371335261435*^9}, {
   3.854372285215873*^9, 3.854372370223659*^9}, {3.854372425101644*^9, 
-  3.854372504456938*^9}, {3.854372557809761*^9, 
-  3.854372611652412*^9}},ExpressionUUID->"9aa64830-0084-4a8d-852e-\
+  3.854372504456938*^9}, {3.854372557809761*^9, 3.854372611652412*^9}, {
+  3.85437287852594*^9, 3.854372966760666*^9}, {3.854373145452518*^9, 
+  3.854373241315913*^9}, {3.854373274422098*^9, 3.854373367437129*^9}, {
+  3.8543734572525253`*^9, 
+  3.8543734888854218`*^9}},ExpressionUUID->"9aa64830-0084-4a8d-852e-\
 537473292d89"],
+
+Cell["\<\
+The book does the conditioning computation geometrically by making everything \
+diagonal. \
+\>", "Text",
+ CellChangeTimes->{{3.854376878418243*^9, 
+  3.85437696642486*^9}},ExpressionUUID->"7f211f92-6d5e-4e14-ad05-\
+0928b242ee3e"],
+
+Cell["We are going to do the computation more analytically.", "Text",
+ CellChangeTimes->{{3.854376969155579*^9, 
+  3.8543769874419403`*^9}},ExpressionUUID->"c5adca53-ff2f-435e-b48f-\
+0c17760bdf1c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Four Different Conditioning Problems\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "\[Rule]", "x"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1c2cb2e2-ba23-40d2-9da8-1e18644cdc7e"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "\[Rule]", "y"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8d83d8e8-e1ff-4ace-84ab-2accb7ed9968"],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"b", "\[Rule]", "x"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "906d5506-404c-4d8c-9e1f-3223ed042920"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"b", "\[Rule]", "y"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "686066c9-70ac-485a-9749-94a7dfa2efd6"]
+}], "Section",
+ CellChangeTimes->{{3.8543693530189342`*^9, 3.85436936784229*^9}, {
+  3.8543704740493813`*^9, 3.8543704831920652`*^9}, {3.854370526153102*^9, 
+  3.854370598507852*^9}},ExpressionUUID->"53979afa-5466-4761-90dd-\
+12f56e078b09"],
+
+Cell["The easiest ones are the first two", "Text",
+ CellChangeTimes->{{3.8543762530764837`*^9, 3.8543763032999363`*^9}, {
+  3.854377020666017*^9, 3.85437703018711*^9}, {3.8543775841251183`*^9, 
+  3.854377586846506*^9}, {3.8543785459052*^9, 
+  3.854378551222643*^9}},ExpressionUUID->"a3d3d155-d81f-44bb-942a-\
+c4f9dfd0f40d"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"b", "\[Rule]", "y"}], TraditionalForm]],
+ FormatType->
+  TraditionalForm,ExpressionUUID->"87f87a30-765f-43b0-8aef-5424f3d91fb7"]], \
+"Subsubsection",
+ CellChangeTimes->{{3.8543763111752243`*^9, 
+  3.854376321856406*^9}},ExpressionUUID->"e917f57e-a40c-4d02-898b-\
+9e8893fd58dc"],
+
+Cell[TextData[{
+ "Since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "=", 
+    RowBox[{"P", ".", "b"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b25a6129-8803-45bf-896d-9ca8848b8275"],
+ " the derivative of y with respect to b is just P.  So \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Kappa]", 
+     RowBox[{"b", "\[Rule]", "y"}]], "=", 
+    RowBox[{
+     RowBox[{"||", "P", "||", 
+      RowBox[{"/", 
+       FractionBox[
+        RowBox[{"||", "y", "||"}], 
+        RowBox[{"||", "b", "||"}]]}]}], "=", 
+     RowBox[{
+      RowBox[{"||", "b", "||", 
+       RowBox[{"/", 
+        RowBox[{"||", "y", "||"}]}]}], "=", 
+      RowBox[{"1", "/", 
+       RowBox[{"cos", "(", "\[Theta]", ")"}]}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f5c36df6-2a61-444f-ae0e-1f3088559435"],
+ "\nsince the induced 2 norm of the projection P equals 1.  Form our \
+definitions this is ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"1", "/", 
+    RowBox[{"cos", "(", "\[Theta]", ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "33902338-d3c0-49bc-bff4-1b996e71d659"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.85437633531039*^9, 3.854376593692944*^9}, {
+  3.854377166103691*^9, 
+  3.854377171662448*^9}},ExpressionUUID->"70e757c8-3ccd-479a-a715-\
+6c49eb0cf11b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"b", "\[Rule]", "x"}], TraditionalForm]],
+ FormatType->
+  TraditionalForm,ExpressionUUID->"5ea4a13a-960e-4335-adb4-530a0ad753a3"]], \
+"Subsubsection",
+ CellChangeTimes->{{3.8543763111752243`*^9, 3.854376321856406*^9}, {
+  3.8543766608388157`*^9, 3.8543766623881493`*^9}, {3.854377047421286*^9, 
+  3.854377051102354*^9}},ExpressionUUID->"ed7e00b2-660d-4df5-a6c3-\
+626dbfdfd3e8"],
+
+Cell[TextData[{
+ "Since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["A", "+"], ".", "b"}], "="}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5e04fe26-2a00-499f-99b0-a4ab5b6f12af"],
+ " the derivative of x with respect to b is just ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["A", "+"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "6e729c40-8aae-4407-8edd-1aac83c640b1"],
+ ".  So \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Kappa]", 
+     RowBox[{"b", "\[Rule]", "x"}]], "=", 
+    RowBox[{
+     RowBox[{"||", 
+      SuperscriptBox["A", "+"], "||", 
+      RowBox[{"/", 
+       FractionBox[
+        RowBox[{"||", "x", "||"}], 
+        RowBox[{"||", "b", "||"}]]}]}], "=", 
+     RowBox[{
+      RowBox[{"||", 
+       SuperscriptBox["A", "+"], "||", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"||", "b", "||"}], 
+         RowBox[{"||", "y", "||"}]], 
+        FractionBox[
+         RowBox[{"||", "y", "||"}], 
+         RowBox[{"||", "x", "||"}]]}]}], "=", 
+      RowBox[{
+       RowBox[{
+        FractionBox["1", 
+         SubscriptBox["\[Sigma]", "n"]], " ", 
+        FractionBox["1", 
+         RowBox[{"cos", "(", "\[Theta]", ")"}]], 
+        FractionBox[
+         RowBox[{"||", "A", "||"}], "\[Eta]"]}], "=", 
+       FractionBox[
+        RowBox[{"\[Kappa]", "(", "A", ")"}], 
+        RowBox[{"\[Eta]", " ", 
+         RowBox[{"cos", "(", "\[Theta]", ")"}]}]]}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a8fc269e-9a10-4a3a-9463-5bf13500c720"]
+}], "Text",
+ CellChangeTimes->{{3.85437633531039*^9, 3.854376593692944*^9}, {
+  3.854376836926375*^9, 3.854376862508737*^9}, {3.854377070986332*^9, 
+  3.8543771557334948`*^9}, {3.8543772047666597`*^9, 3.854377417359439*^9}, {
+  3.854377464148052*^9, 3.8543775014217157`*^9}, {3.8543775392551394`*^9, 
+  3.854377542096599*^9}},ExpressionUUID->"1712415f-c30b-4a8c-9643-\
+aee9b6cfc442"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Nonlinear Conditioning Problems\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "\[Rule]", "x"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "471e10e4-10d4-43cd-99e1-c0434470fd78"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "\[Rule]", "y"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ce6ffedf-04ce-4e01-8de4-a3d5045293af"]
+}], "Section",
+ CellChangeTimes->{{3.8543693530189342`*^9, 3.85436936784229*^9}, {
+  3.8543704740493813`*^9, 3.8543704831920652`*^9}, {3.854370526153102*^9, 
+  3.854370598507852*^9}, {3.854378567184319*^9, 
+  3.854378576326521*^9}},ExpressionUUID->"21afdcf1-0e31-4b4e-9095-\
+e913553cae89"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Derivative of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["A", "+"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cba266c0-a311-4d3f-870f-3371abec5614"],
+ " with respect to A "
+}], "Subsubsection",
+ CellChangeTimes->{{3.854378718782422*^9, 
+  3.8543787500622663`*^9}},ExpressionUUID->"3ba09488-0dc1-491c-aa0a-\
+b2a826a6376a"],
+
+Cell[TextData[{
+ "The harder ones involve A because the recipes involve the nonlinear \
+function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["A", "+"], "=", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+      RowBox[{"-", "1"}]], ".", "A"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "da67b16e-7f60-4a40-80c2-994eed2b2e7b"],
+ ". The first thing we are going to do is compute the derivative of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["A", "+"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b57ea3d6-85b4-4f0f-ad0c-ceacc25e3b97"],
+ ".  This is actually not as bad as it looks! We just need to use the product \
+rule! I am going to take this slowly by expanding \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"A", "+", 
+         RowBox[{"\[Epsilon]", " ", "\[Delta]A"}]}], ")"}], "\[Transpose]"}], 
+      ".", 
+      RowBox[{"(", 
+       RowBox[{"A", "+", 
+        RowBox[{"\[Epsilon]", " ", "\[Delta]A"}]}], ")"}]}], "-", 
+     RowBox[{
+      RowBox[{"A", "\[Transpose]"}], ".", "A"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Epsilon]", "(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+        RowBox[{
+         RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}], "+", 
+      RowBox[{
+       SuperscriptBox["\[Epsilon]", "2"], 
+       RowBox[{
+        RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "\[Delta]A"}]}]}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+      RowBox[{
+       RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}], "+", 
+      RowBox[{"O", "(", 
+       SuperscriptBox["\[Epsilon]", "2"], ")"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "670f9bb5-eb20-4f14-8450-7821fb0840f4"],
+ ".\nPlugging this into ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", 
+    SuperscriptBox["U", 
+     RowBox[{"-", "2"}]], " "}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "699df173-3f54-4f1e-b938-8e6e367e322f"],
+ "(the derivative of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["U", 
+    RowBox[{"-", "1"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5a6d9f19-748e-4f18-a692-8d46bd80c70a"],
+ ") gives \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"A", "+", 
+           RowBox[{"\[Epsilon]", " ", "\[Delta]A"}]}], ")"}], 
+         "\[Transpose]"}], ".", 
+        RowBox[{"(", 
+         RowBox[{"A", "+", 
+          RowBox[{"\[Epsilon]", " ", "\[Delta]A"}]}], ")"}]}], ")"}], 
+      RowBox[{"-", "1"}]], "-", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+      RowBox[{"-", "1"}]]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[Epsilon]"}], " ", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+        RowBox[{"-", "2"}]], ".", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+         RowBox[{
+          RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}]}]}], "+", 
+     RowBox[{"O", "(", 
+      SuperscriptBox["\[Epsilon]", "2"], ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "98da13a0-6f33-4536-8c1b-88f83b8c9796"],
+ "\nPlugging all of this into the formula for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["A", "+"], "=", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+      RowBox[{"-", "1"}]], ".", "A"}]}], TraditionalForm]],ExpressionUUID->
+  "04ccf708-ce07-4a7d-bd5b-3afca245faa5"],
+ " we finally get\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"A", "+", "\[Delta]A"}], ")"}], "+"], "-", 
+     SuperscriptBox["A", "+"]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"A", "+", 
+             RowBox[{"\[Epsilon]", " ", "\[Delta]A"}]}], ")"}], 
+           "\[Transpose]"}], ".", 
+          RowBox[{"(", 
+           RowBox[{"A", "+", 
+            RowBox[{"\[Epsilon]", " ", "\[Delta]A"}]}], ")"}]}], ")"}], 
+        RowBox[{"-", "1"}]], ".", 
+       RowBox[{"(", 
+        RowBox[{"A", "+", "\[Delta]A"}], ")"}]}], "-", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+        RowBox[{"-", "1"}]], ".", "A"}]}], "=", 
+     RowBox[{
+      RowBox[{"\[Epsilon]", "(", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+          RowBox[{"-", "1"}]], ".", "\[Delta]A"}], "-", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+          RowBox[{"-", "2"}]], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+           RowBox[{
+            RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}], ".", 
+         "A"}]}], ")"}], " ", "+", 
+      RowBox[{"O", "(", 
+       SuperscriptBox["\[Epsilon]", "2"], ")"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8dc9c83e-ceed-46a0-b85f-cfc0604e50bf"],
+ ".\nIn other words the derivative of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["A", "+"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b9b3d4ab-bc59-4d1f-9820-848061747965"],
+ " w.r.t the perturbation ",
+ Cell[BoxData[
+  FormBox["\[Delta]A", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "af014615-f752-471c-8c1c-7db471372f7a"],
+ " is \n  \t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+      RowBox[{"-", "1"}]], ".", "\[Delta]A"}], "-", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+      RowBox[{"-", "2"}]], ".", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}], ".", 
+     "A"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "25b8c985-2559-4d09-8a30-d6fcf9b57b53"],
+ "\n  The norm of this can be bounded using the triangle inequality as\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"||", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+       RowBox[{"-", "1"}]], ".", "\[Delta]A"}], "-", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+       RowBox[{"-", "2"}]], ".", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+        RowBox[{
+         RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}], ".", 
+      "A"}]}], "||", 
+    RowBox[{"\[LessEqual]", 
+     RowBox[{"||", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+        RowBox[{"-", "1"}]], ".", "\[Delta]A"}], "||", 
+      RowBox[{"+", 
+       RowBox[{"||", " ", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+          RowBox[{"-", "2"}]], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+           RowBox[{
+            RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}], ".", 
+         "A"}], "||"}]}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0d71f45c-64ba-451d-b2f6-e33ac3348940"],
+ "\nThe first term on the right hand side satisfies\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"||", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+      RowBox[{"-", "1"}]], ".", "\[Delta]A"}], "||", 
+    RowBox[{"\[LessEqual]", 
+     RowBox[{"||", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+       RowBox[{"-", "1"}]], "||", "||", "\[Delta]A", "||"}]}]}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "65b7de34-e9c1-4d69-a51a-2734589c0466"],
+ "\nThe second term on the right hand side satisfies\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"||", " ", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+      RowBox[{"-", "2"}]], ".", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+       RowBox[{
+        RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}], ".", 
+     "A"}], "||", 
+    RowBox[{"\[LessEqual]", 
+     RowBox[{"||", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+       RowBox[{"-", "2"}]], "||", "||", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"\[Delta]A", "\[Transpose]"}], ".", "A"}], "+", 
+         RowBox[{
+          RowBox[{"A", "\[Transpose]"}], ".", "\[Delta]A"}]}], ")"}], ".", 
+       "A"}], "||", 
+      RowBox[{"\[LessEqual]", "2"}], "||", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"A", "\[Transpose]"}], ".", "A"}], ")"}], 
+       RowBox[{"-", "2"}]], "||", "||", "A", "||", "||", "\[Delta]A", 
+      "||"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "098cdc9d-d003-4ad5-b91d-2f3ddf5adbaa"]
+}], "Text",
+ CellChangeTimes->{{3.854377592055146*^9, 3.854377656991037*^9}, {
+  3.854377703443356*^9, 3.854377798246327*^9}, {3.854377859968708*^9, 
+  3.854378530576872*^9}, {3.8543785993287573`*^9, 3.854378700748818*^9}, {
+  3.854378765855116*^9, 3.8543787833984737`*^9}, {3.854378940334338*^9, 
+  3.8543796247833776`*^9}},ExpressionUUID->"cc0dbc5e-77d4-4dd7-ab85-\
+847f428ab5bc"]
+}, Open  ]],
+
+Cell["The derivatives are funkier than I remember! ", "Subsubsection",
+ CellChangeTimes->{{3.854379628846681*^9, 
+  3.854379643483861*^9}},ExpressionUUID->"d351a8a0-ed9b-4122-b5cf-\
+55784c008012"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", 
+    SuperscriptBox["U", "\[Placeholder]"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b275a539-104b-4bbb-9d98-19210fe15db8"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"b", "\[Rule]", "x"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "85c908a6-0f54-474c-a098-c9fcb8b7ba18"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.8543763111752243`*^9, 3.854376321856406*^9}, {
+  3.8543766608388157`*^9, 3.8543766623881493`*^9}, {3.854377047421286*^9, 
+  3.854377051102354*^9}, {3.854378203971923*^9, 
+  3.854378206146831*^9}},ExpressionUUID->"667996d5-7e92-49bf-9460-\
+03db3127b3ae"],
+
+Cell[TextData[{
+ "Since ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["A", "+"], ".", "b"}], "="}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "aa3eba14-87fc-4752-9bd8-a97ac9435421"],
+ " the derivative of x with respect to b is just ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["A", "+"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "21017ad4-f128-41af-b670-4c8e4c401097"],
+ ".  So \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[Kappa]", 
+     RowBox[{"b", "\[Rule]", "x"}]], "=", 
+    RowBox[{
+     RowBox[{"||", 
+      SuperscriptBox["A", "+"], "||", 
+      RowBox[{"/", 
+       FractionBox[
+        RowBox[{"||", "x", "||"}], 
+        RowBox[{"||", "b", "||"}]]}]}], "=", 
+     RowBox[{
+      RowBox[{"||", 
+       SuperscriptBox["A", "+"], "||", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"||", "b", "||"}], 
+         RowBox[{"||", "y", "||"}]], 
+        FractionBox[
+         RowBox[{"||", "y", "||"}], 
+         RowBox[{"||", "x", "||"}]]}]}], "=", 
+      RowBox[{
+       RowBox[{
+        FractionBox["1", 
+         SubscriptBox["\[Sigma]", "n"]], " ", 
+        FractionBox["1", 
+         RowBox[{"cos", "(", "\[Theta]", ")"}]], 
+        FractionBox[
+         RowBox[{"||", "A", "||"}], "\[Eta]"]}], "=", 
+       FractionBox[
+        RowBox[{"\[Kappa]", "(", "A", ")"}], 
+        RowBox[{"\[Eta]", " ", 
+         RowBox[{"cos", "(", "\[Theta]", ")"}]}]]}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "3f903df2-8f11-4522-a94a-7eb7d4c3d906"]
+}], "Text",
+ CellChangeTimes->{{3.85437633531039*^9, 3.854376593692944*^9}, {
+  3.854376836926375*^9, 3.854376862508737*^9}, {3.854377070986332*^9, 
+  3.8543771557334948`*^9}, {3.8543772047666597`*^9, 3.854377417359439*^9}, {
+  3.854377464148052*^9, 3.8543775014217157`*^9}, {3.8543775392551394`*^9, 
+  3.854377542096599*^9}},ExpressionUUID->"d5846eb4-7d3a-49d4-90b9-\
+ed742397f595"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -8089,24 +8763,50 @@ Cell[232456, 4128, 789, 21, 48, "Item",ExpressionUUID->"fc963c02-9957-466c-b2f5-
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[233306, 4156, 995, 29, 221, "Section",ExpressionUUID->"72702d60-c0c4-4ef8-91b4-c09ac88e2054"],
-Cell[234304, 4187, 559, 15, 119, "Text",ExpressionUUID->"222281d8-de4b-4ebc-9d55-69d933dde4e3"],
-Cell[234866, 4204, 3011, 94, 190, "Text",ExpressionUUID->"cc94bc71-cb25-4980-87d8-eacfc02fc0a5"],
-Cell[237880, 4300, 2267, 70, 155, "Text",ExpressionUUID->"9aa64830-0084-4a8d-852e-537473292d89"],
+Cell[233306, 4156, 367, 6, 97, "Section",ExpressionUUID->"72702d60-c0c4-4ef8-91b4-c09ac88e2054"],
+Cell[233676, 4164, 559, 15, 119, "Text",ExpressionUUID->"222281d8-de4b-4ebc-9d55-69d933dde4e3"],
+Cell[234238, 4181, 3011, 94, 190, "Text",ExpressionUUID->"cc94bc71-cb25-4980-87d8-eacfc02fc0a5"],
+Cell[237252, 4277, 3707, 116, 301, "Text",ExpressionUUID->"9aa64830-0084-4a8d-852e-537473292d89"],
+Cell[240962, 4395, 239, 6, 51, "Text",ExpressionUUID->"7f211f92-6d5e-4e14-ad05-0928b242ee3e"],
+Cell[241204, 4403, 197, 3, 51, "Text",ExpressionUUID->"c5adca53-ff2f-435e-b48f-0c17760bdf1c"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[240172, 4374, 178, 3, 57, "Subsubsection",ExpressionUUID->"b5c41030-605e-4840-8d5d-b8c8ef8f66c3"],
+Cell[241438, 4411, 995, 29, 221, "Section",ExpressionUUID->"53979afa-5466-4761-90dd-12f56e078b09"],
+Cell[242436, 4442, 323, 5, 51, "Text",ExpressionUUID->"a3d3d155-d81f-44bb-942a-c4f9dfd0f40d"],
 Cell[CellGroupData[{
-Cell[240375, 4381, 738, 21, 48, "Item",ExpressionUUID->"86fd5427-0e04-46ba-83f9-934045236624"],
-Cell[241116, 4404, 735, 21, 49, "Item",ExpressionUUID->"53c01ad7-9ba5-4034-af77-1235d40927ba"],
-Cell[241854, 4427, 789, 21, 48, "Item",ExpressionUUID->"76145f1d-fcb0-4a2f-a750-bdacc8ac85b7"]
+Cell[242784, 4451, 326, 8, 58, "Subsubsection",ExpressionUUID->"e917f57e-a40c-4d02-898b-9e8893fd58dc"],
+Cell[243113, 4461, 1341, 41, 131, "Text",ExpressionUUID->"70e757c8-3ccd-479a-a715-6c49eb0cf11b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[244491, 4507, 425, 9, 58, "Subsubsection",ExpressionUUID->"ed7e00b2-660d-4df5-a6c3-626dbfdfd3e8"],
+Cell[244919, 4518, 1996, 59, 98, "Text",ExpressionUUID->"1712415f-c30b-4a8c-9643-aee9b6cfc442"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[242692, 4454, 80, 0, 57, "Subsubsection",ExpressionUUID->"21ce889d-f67b-4abb-8dd8-fed91da61ba1"],
-Cell[242775, 4456, 2235, 57, 190, "Text",ExpressionUUID->"48d58db6-8b3a-4126-bade-8c626b2f0583"],
+Cell[246964, 4583, 687, 18, 159, "Section",ExpressionUUID->"21afdcf1-0e31-4b4e-9095-e913553cae89"],
 Cell[CellGroupData[{
-Cell[245035, 4517, 3009, 88, 357, "Input",ExpressionUUID->"283178a5-325f-4b5d-ab93-37665c5c8722"],
-Cell[248047, 4607, 197535, 3430, 639, "Output",ExpressionUUID->"66388efa-56b8-46f9-9030-b74b4c9246eb"]
+Cell[247676, 4605, 370, 11, 58, "Subsubsection",ExpressionUUID->"3ba09488-0dc1-491c-aa0a-b2a826a6376a"],
+Cell[248049, 4618, 10900, 337, 572, "Text",ExpressionUUID->"cc0dbc5e-77d4-4dd7-ab85-847f428ab5bc"]
+}, Open  ]],
+Cell[258964, 4958, 196, 3, 57, "Subsubsection",ExpressionUUID->"d351a8a0-ed9b-4122-b5cf-55784c008012"],
+Cell[CellGroupData[{
+Cell[259185, 4965, 677, 17, 47, "Subsubsection",ExpressionUUID->"667996d5-7e92-49bf-9460-03db3127b3ae"],
+Cell[259865, 4984, 1996, 59, 98, "Text",ExpressionUUID->"d5846eb4-7d3a-49d4-90b9-ed742397f595"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[261898, 5048, 178, 3, 57, "Subsubsection",ExpressionUUID->"b5c41030-605e-4840-8d5d-b8c8ef8f66c3"],
+Cell[CellGroupData[{
+Cell[262101, 5055, 738, 21, 48, "Item",ExpressionUUID->"86fd5427-0e04-46ba-83f9-934045236624"],
+Cell[262842, 5078, 735, 21, 49, "Item",ExpressionUUID->"53c01ad7-9ba5-4034-af77-1235d40927ba"],
+Cell[263580, 5101, 789, 21, 48, "Item",ExpressionUUID->"76145f1d-fcb0-4a2f-a750-bdacc8ac85b7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[264418, 5128, 80, 0, 57, "Subsubsection",ExpressionUUID->"21ce889d-f67b-4abb-8dd8-fed91da61ba1"],
+Cell[264501, 5130, 2235, 57, 190, "Text",ExpressionUUID->"48d58db6-8b3a-4126-bade-8c626b2f0583"],
+Cell[CellGroupData[{
+Cell[266761, 5191, 3009, 88, 357, "Input",ExpressionUUID->"283178a5-325f-4b5d-ab93-37665c5c8722"],
+Cell[269773, 5281, 197535, 3430, 639, "Output",ExpressionUUID->"66388efa-56b8-46f9-9030-b74b4c9246eb"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
