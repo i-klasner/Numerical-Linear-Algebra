@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     44628,       1210]
-NotebookOptionsPosition[     40361,       1130]
-NotebookOutlinePosition[     40976,       1151]
-CellTagsIndexPosition[     40933,       1148]
+NotebookDataLength[     59828,       1670]
+NotebookOptionsPosition[     54348,       1571]
+NotebookOutlinePosition[     54963,       1592]
+CellTagsIndexPosition[     54920,       1589]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1125,7 +1125,448 @@ Cell[BoxData["7.701859664206228`*^-16"], "Output",
    3.853769917677279*^9, {3.854281247026235*^9, 3.854281274638258*^9}},
  CellLabel->"Out[13]=",ExpressionUUID->"f50b5bf3-776f-4e34-848d-1deb0386d7e3"]
 }, Open  ]]
-}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Backward Stability of Back Substitution: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"L", ".", "x"}], "=", 
+    RowBox[{"b", "\[Rule]", "x"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1e8cd3b0-5ab5-4919-b2dd-d3cd02e296fc"]
+}], "Section",
+ CellChangeTimes->{{3.8542851503949137`*^9, 3.854285191236608*^9}, {
+  3.854285225938026*^9, 3.854285229878242*^9}, {3.854350314034577*^9, 
+  3.8543503493110867`*^9}},ExpressionUUID->"d265b56c-b304-466c-b3a8-\
+63d96c0d4023"],
+
+Cell[TextData[{
+ "The book builds up an incredibly detailed argument.  It starts with a 1\
+\[Times]1 problem: this is essentially just backwards stability of floating \
+point division.  It then does a ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2", "\[Times]", "2"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d7affd73-20e7-4ed8-a832-51d1f5871385"],
+ ". Then a ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3", "\[Times]", "3"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7d53e3e2-b18c-4e13-bbf7-2cee432f422f"],
+ "! The intention is to convince you that it is not hard but that there is a \
+lot of detail in the component-wise computation.  For now we assume that ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "56a292eb-1369-40cb-b25b-03d8c176cc6d"],
+ " is exact."
+}], "Text",
+ CellChangeTimes->{{3.8542852347996197`*^9, 3.854285466228178*^9}, {
+  3.854285499796775*^9, 3.8542855250745373`*^9}, {3.8542855857683573`*^9, 
+  3.854285601446624*^9}, {3.8543501992369957`*^9, 
+  3.854350306707315*^9}},ExpressionUUID->"6a6592d5-fca1-4275-b8ca-\
+30dc6ce3ca7a"],
+
+Cell[TextData[{
+ "I am going to do ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"L", ".", "x"}], "=", "b"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0121dbdc-6b55-41ec-a8d6-170dab317797"],
+ " (with L lower triangular) because it reduces the bookkeeping a little.\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", "\[NoBreak]", GridBox[{
+        {
+         SubscriptBox["L", "11"], "0", "0", "\[CenterEllipsis]"},
+        {
+         SubscriptBox["L", "21"], 
+         SubscriptBox["L", "22"], "0", "\[CenterEllipsis]"},
+        {
+         SubscriptBox["L", "31"], 
+         SubscriptBox["L", "32"], 
+         SubscriptBox["L", "33"], "\[CenterEllipsis]"},
+        {"\[VerticalEllipsis]", "\[VerticalEllipsis]", "\[VerticalEllipsis]", 
+         "\[DescendingEllipsis]"}
+       }], "\[NoBreak]", ")"}], 
+     RowBox[{"(", "\[NoBreak]", GridBox[{
+        {
+         SubscriptBox["x", "1"]},
+        {
+         SubscriptBox["x", "2"]},
+        {
+         SubscriptBox["x", "3"]},
+        {"\[VerticalEllipsis]"}
+       }], "\[NoBreak]", ")"}]}], "=", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {
+        SubscriptBox["b", "1"]},
+       {
+        SubscriptBox["b", "2"]},
+       {
+        SubscriptBox["b", "3"]},
+       {"\[VerticalEllipsis]"}
+      }], "\[NoBreak]", ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f05bb354-dc29-4d5a-8ae5-9eef4d2f2cd2"]
+}], "Text",
+ CellChangeTimes->{{3.854350364201343*^9, 3.854350536208784*^9}, {
+  3.854350576654427*^9, 
+  3.8543507042132998`*^9}},ExpressionUUID->"b3578963-90bd-4590-ba27-\
+24d2c917ef13"],
+
+Cell[CellGroupData[{
+
+Cell["Tricks and Notation", "Subsection",
+ CellChangeTimes->{{3.8543515869356327`*^9, 
+  3.854351592352538*^9}},ExpressionUUID->"d5c6bd35-5765-42ea-8f47-\
+8df1db8f9619"],
+
+Cell[TextData[{
+ "We are going to use a simple division trick repeatedly.  The trick is just \
+a fancy version of the following   \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"1", "+", "\[Epsilon]"}]], "=", 
+    RowBox[{
+     RowBox[{"1", "-", "\[Epsilon]", "+", 
+      SuperscriptBox["\[Epsilon]", "2"], "-", 
+      RowBox[{
+       SuperscriptBox["\[Epsilon]", "3"], "\[Ellipsis]"}]}], "=", 
+     RowBox[{"1", "-", "\[Epsilon]", "+", 
+      RowBox[{"O", "(", 
+       SuperscriptBox["\[Epsilon]", "2"], ")"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0d77c2a5-583c-44dd-935f-089a86ee1d39"],
+ ".\nThis works the same for any constant ",
+ Cell[BoxData[
+  FormBox["C", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "56e3b8ce-8dee-4940-a2b8-0af2de9a8cd5"],
+ "\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"1", " ", "+", " ", 
+      RowBox[{"C", " ", "\[Epsilon]"}]}]], "=", 
+    RowBox[{
+     RowBox[{"1", "-", 
+      RowBox[{"C", " ", "\[Epsilon]"}], "+", " ", 
+      RowBox[{
+       SuperscriptBox["C", "2"], 
+       SuperscriptBox["\[Epsilon]", "2"], "\[Ellipsis]"}]}], "=", 
+     RowBox[{"1", "-", 
+      RowBox[{"C", " ", "\[Epsilon]"}], "+", 
+      RowBox[{
+       RowBox[{"O", "(", 
+        SuperscriptBox["\[Epsilon]", "2"], ")"}], "."}]}]}]}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "73015e18-c519-4288-851b-6baa77971d02"],
+ "\nOur big ",
+ Cell[BoxData[
+  FormBox["O", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5b8b0f14-e78f-46ba-82ba-1a43e9c039a1"],
+ " notation loses the constants and simply reads\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"O", "(", "\[Epsilon]", ")"}]}], ")"}], 
+     RowBox[{"-", "1"}]], "=", 
+    RowBox[{"1", "+", 
+     RowBox[{"O", "(", "\[Epsilon]", ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "27add0bd-fe96-48c6-817c-8a970da53539"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.854350716148364*^9, 3.854350930424654*^9}, {
+  3.8543509773372087`*^9, 3.854351056608039*^9}, {3.8543510879164457`*^9, 
+  3.8543511165649767`*^9}},ExpressionUUID->"2ed80351-9873-4e21-ba09-\
+ead147f3833a"],
+
+Cell[TextData[{
+ "We are going to generate a whole lot of different small ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Epsilon]", 
+    RowBox[{"i", ",", "j"}]], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "591ceb2f-947d-459b-8b22-3ec27cb0e9f4"],
+ ".  There is a boss \[Epsilon]  satisfying ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"|", 
+    SubscriptBox["\[Epsilon]", 
+     RowBox[{"i", ",", "j"}]], "|", 
+    RowBox[{"\[LessEqual]", 
+     RowBox[{"\[Epsilon]", "."}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "48cc06b5-4a63-40f0-90a5-891a8037361a"]
+}], "Text",
+ CellChangeTimes->{{3.854351600136477*^9, 
+  3.854351701767974*^9}},ExpressionUUID->"9a4affd1-c2fb-4e3a-8310-\
+f3e3c804f78e"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Equation 1: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["L", "11"], 
+     SubscriptBox["x", "1"]}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["b", "1"], "\[Rule]", 
+      SubscriptBox["x", "1"]}], "=", 
+     RowBox[{
+      SubscriptBox["b", "1"], "/", 
+      SubscriptBox["L", "11"]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "488e29ef-9524-421f-aa4b-f3ca599da5a6"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.85435117981612*^9, 
+  3.854351244015892*^9}},ExpressionUUID->"def04cfc-c768-4acf-988d-\
+86be5012d65d"],
+
+Cell[TextData[{
+ "We compute \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["x", "~"], "1"], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["b", "1"], "/", 
+        SubscriptBox["L", "11"]}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        SubscriptBox["\[Epsilon]", "11"]}], ")"}]}], "=", 
+     RowBox[{
+      SubscriptBox["b", "1"], " ", 
+      FractionBox[
+       RowBox[{"1", " ", "+", " ", 
+        SubscriptBox["\[Epsilon]", "11"]}], 
+       SubscriptBox["L", "11"]]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ffcb6967-69f4-49dc-aca3-6c698d872620"],
+ ". \nRemember we want to leave ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "22486a04-5510-452c-b1b6-cfea3ab7207d"],
+ " alone and build a nearby lower triangular ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["L", "~"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c82d5547-c851-44b1-8874-92aa24fefd2e"],
+ ".  So we define \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["L", "~"], "11"], "=", 
+    RowBox[{
+     FractionBox[
+      SubscriptBox["L", "11"], 
+      RowBox[{"1", " ", "+", " ", 
+       SubscriptBox["\[Epsilon]", "11"]}]], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["L", "11"], "(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["\[Epsilon]", "11"]}], ")"}], "+", 
+       RowBox[{"O", "(", 
+        SubscriptBox["\[Epsilon]", "11"], ")"}]}], "=", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["L", "11"], "(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["\[Epsilon]", "11"]}], ")"}], "+", 
+       RowBox[{"O", "(", "\[Epsilon]", ")"}]}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d4f3f9c4-db86-4216-9a9e-08ad782ae8b6"]
+}], "Text",
+ CellChangeTimes->{{3.854351257617866*^9, 3.854351564230433*^9}, {
+  3.854351708050581*^9, 3.8543517507442837`*^9}, {3.8543519022536497`*^9, 
+  3.854351911968148*^9}, {3.854352261779399*^9, 3.854352270433572*^9}, {
+  3.8543523014827833`*^9, 
+  3.854352310011099*^9}},ExpressionUUID->"53da3327-19ea-47b1-970f-\
+281c341a0a29"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Equation 2: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["L", "22"], 
+     SubscriptBox["x", "2"]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["b", "2"], "-", 
+       RowBox[{
+        SubscriptBox["L", "21"], 
+        SubscriptBox["x", "1"]}]}], "\[Rule]", 
+      SubscriptBox["x", "2"]}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["b", "2"], "-", 
+        RowBox[{
+         SubscriptBox["L", "21"], " ", 
+         SubscriptBox["x", "1"]}]}], ")"}], "/", 
+      SubscriptBox["L", "22"]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c1a7ef81-6c4f-4034-a9bc-4f554d8d1396"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.85435117981612*^9, 3.854351244015892*^9}, {
+  3.854351778871707*^9, 3.854351794465609*^9}, {3.8543518375227337`*^9, 
+  3.8543518952888823`*^9}},ExpressionUUID->"467fd682-b2f9-4ced-b413-\
+fc7d2ee955b4"],
+
+Cell[TextData[{
+ "We compute \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["x", "~"], "2"], "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["b", "2"], "-", 
+         RowBox[{
+          SubscriptBox["L", "21"], " ", 
+          SubscriptBox[
+           OverscriptBox["x", "~"], "1"]}]}], ")"}], "/", 
+       SubscriptBox["L", "22"]}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       SubscriptBox["\[Epsilon]", "22"]}], ")"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c9fcf428-a2c6-4301-bcea-f87c2256f2a4"],
+ ". \nDefine \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["L", "~"], "22"], "=", 
+    RowBox[{
+     FractionBox[
+      SubscriptBox["L", "22"], 
+      RowBox[{"1", "+", 
+       SubscriptBox["\[Epsilon]", "22"]}]], "=", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["L", "22"], "(", 
+       RowBox[{"1", "-", 
+        SubscriptBox["\[Epsilon]", "22"]}], ")"}], "+", 
+      RowBox[{"O", "(", "\[Epsilon]", ")"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "caf25569-4128-48e8-8714-4dc4edb86d7e"],
+ "\nand plug it in to get\n\t ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["x", "~"], "2"], "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["b", "2"], "-", 
+       RowBox[{
+        SubscriptBox["L", "21"], " ", 
+        SubscriptBox[
+         OverscriptBox["x", "~"], "1"]}]}], ")"}], "/", 
+     RowBox[{
+      SubscriptBox[
+       OverscriptBox["L", "~"], "22"], "."}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "92086184-9441-4330-bf91-8943516424f8"],
+ "\nAll we need to do now is fix up the \n\nThis is where things get \
+annoying. Remember we want to leave ",
+ Cell[BoxData[
+  FormBox["b", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7ab0957c-e416-468b-ae3b-128595dc9bfb"],
+ " alone and build a nearby lower triangular ",
+ Cell[BoxData[
+  FormBox[
+   OverscriptBox["L", "~"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "76270e6e-460f-4c3d-8f45-c93d0bf6a612"],
+ ".  So we take ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["L", "~"], "11"], "=", 
+    RowBox[{
+     FractionBox[
+      SubscriptBox["L", "11"], 
+      RowBox[{"1", " ", "+", " ", 
+       SubscriptBox["\[Epsilon]", "11"]}]], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["L", "11"], "(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["\[Epsilon]", "11"]}], ")"}], "+", 
+       RowBox[{"O", "(", 
+        SubscriptBox["\[Epsilon]", "11"], ")"}]}], "=", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["L", "11"], "(", 
+        RowBox[{"1", "-", 
+         SubscriptBox["\[Epsilon]", "11"]}], ")"}], "+", 
+       RowBox[{"O", "(", "\[Epsilon]", ")"}]}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4277a6b6-7229-411c-9cb7-f9630fdc2ef0"]
+}], "Text",
+ CellChangeTimes->{{3.854351257617866*^9, 3.854351564230433*^9}, {
+  3.854351708050581*^9, 3.8543517507442837`*^9}, {3.854351918623458*^9, 
+  3.8543522898434267`*^9}, {3.8543523201791162`*^9, 
+  3.854352446682588*^9}},ExpressionUUID->"7bff0255-6260-4abc-b536-\
+79432011cfa3"],
+
+Cell["The first b", "Text",
+ CellChangeTimes->{{3.854351753987378*^9, 
+  3.854351764487789*^9}},ExpressionUUID->"17a7f10b-9703-4eb1-9df9-\
+d37bf8af87a7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
@@ -1210,7 +1651,26 @@ Cell[CellGroupData[{
 Cell[38951, 1089, 1100, 31, 171, "Input",ExpressionUUID->"2c3c9988-7f36-4388-aa8d-6669dadc41da"],
 Cell[40054, 1122, 267, 3, 69, "Output",ExpressionUUID->"f50b5bf3-776f-4e34-848d-1deb0386d7e3"]
 }, Open  ]]
-}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40370, 1131, 519, 13, 98, "Section",ExpressionUUID->"d265b56c-b304-466c-b3a8-63d96c0d4023"],
+Cell[40892, 1146, 1155, 27, 120, "Text",ExpressionUUID->"6a6592d5-fca1-4275-b8ca-30dc6ce3ca7a"],
+Cell[42050, 1175, 1636, 50, 166, "Text",ExpressionUUID->"b3578963-90bd-4590-ba27-24d2c917ef13"],
+Cell[CellGroupData[{
+Cell[43711, 1229, 169, 3, 72, "Subsection",ExpressionUUID->"d5c6bd35-5765-42ea-8f47-8df1db8f9619"],
+Cell[43883, 1234, 2309, 67, 239, "Text",ExpressionUUID->"2ed80351-9873-4e21-ba09-ead147f3833a"],
+Cell[46195, 1303, 744, 21, 54, "Text",ExpressionUUID->"9a4affd1-c2fb-4e3a-8310-f3e3c804f78e"],
+Cell[CellGroupData[{
+Cell[46964, 1328, 599, 20, 58, "Subsubsection",ExpressionUUID->"def04cfc-c768-4acf-988d-86be5012d65d"],
+Cell[47566, 1350, 2243, 68, 177, "Text",ExpressionUUID->"53da3327-19ea-47b1-970f-281c341a0a29"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49846, 1423, 951, 30, 58, "Subsubsection",ExpressionUUID->"467fd682-b2f9-4ced-b413-fc7d2ee955b4"],
+Cell[50800, 1455, 3340, 105, 382, "Text",ExpressionUUID->"7bff0255-6260-4abc-b536-79432011cfa3"],
+Cell[54143, 1562, 153, 3, 51, "Text",ExpressionUUID->"17a7f10b-9703-4eb1-9df9-d37bf8af87a7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }
 ]
