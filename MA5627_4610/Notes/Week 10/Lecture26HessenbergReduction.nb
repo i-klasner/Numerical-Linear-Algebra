@@ -10,42 +10,42 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8952,        247]
-NotebookOptionsPosition[      7359,        209]
-NotebookOutlinePosition[      7990,        231]
-CellTagsIndexPosition[      7947,        228]
+NotebookDataLength[      9615,        257]
+NotebookOptionsPosition[      7951,        219]
+NotebookOutlinePosition[      8561,        240]
+CellTagsIndexPosition[      8518,        237]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["\<\
-Hessenberg Reduction:
-???\
-\>", "Title",
+Cell["26: Hessenberg Reduction:", "Title",
  CellChangeTimes->CompressedData["
-1:eJwdzE0og3EAx/HHkh6SgwPKlInLMgeXzUFri7I4iZKDg5Bd0CYvY+LAbZqX
-SSO0WFOM4eZgLI+NFWsibQiLbbZ4xuyg5P/7H759bl9Re29jp4BhmEISVAqU
-jMcWU5wELGnQzIZqPolaI1sHDX+VWTyRG1rJhtEGrzhBtCmeqQ1Wy+oXcfbd
-vgZzBotLhJsxhfSLp04WVO0XEfs4N3XuW/WiIe7WciFYFlyOmIkdmetRqGxx
-OJeI4yO/x9DhGi7fIrIz8groZaY0x8TS5vx+OD1/6ISj927qnklnvyFeXph3
-IOv1HcFGldYJDyLGJ+hKvIVgun8gAlW5hihUn/o2bomV4oAVjnFyFxQu6qhB
-mecMuhd63LD0o8kP87a7r2F9teQOZvAz1LhQ/whfww5qk/48BNtSrWGoV0/E
-oKyLj9N/UpKAV/lq6kPS9ANFEmkK/gMmegV3
+1:eJwdzE0ow2EAx/E/SSMcHMxhyjTSMsnFHKStKctOa0oODkJ28bLJy5g4cJu8
+TZrXFmuKMRyUg7HMxgqRpQ1hYTMv27CDkuf3HL59bl9ufau8MZ5hGA4JiuPF
+jMscEh14jXHQwPJLPonqUVYl1P0VJ4eJju75FBiUufkRoln0QJWZjAtR4vir
+ZRGmdWXncFZCopJomDqUWbqVRWxzOKkTX9JHFXGjwuGHub7ZgIHYkLQUhOIa
+q22GOND7uw+t9p6CVSJrrLwQuplh1T6RV83ugCOTuzbYd+Okbuo1livi6Ylh
+HbLc53tQLlXb4HZg9B7aI89+mHDRGYDSdF0QKg/Plz3EYr7XBPsd5XbImdZQ
+fULXEXROtTgh70NxATPWmi9hVZngGiaGx6hvHO0dfHqxUhXaYz+si9W+QK1y
+MASFTeE3+v8WROAZW0m9/db/QK6gJAbfi1Lz5nZConaPJB/+A8FJDYE=
   
   "],ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 
 Cell[TextData[{
- "We know how to solve triangular systems of equations.  We are going to see \
-how to reduce a general system \n\t",
+ "We know the standard way to do QR.  Work your way through the columns of \
+the matrix choosing v according to the fairly simple recipe in lecture 10 and \
+make zeros using the Householder reflection ",
  Cell[BoxData[
   FormBox[
-   RowBox[{
-    RowBox[{"A", ".", "x"}], "=", "b"}], TraditionalForm]],
+   RowBox[{"H", "=", 
+    RowBox[{"I", "-", 
+     RowBox[{"2", 
+      RowBox[{"v", "\[CircleTimes]", "v"}]}]}]}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "724ba2e4-5d97-44b6-a05e-0ffbf84b8c8a"],
- " \nto two triangular systems. "
+  "53e0dd58-01ec-4cb9-a12a-60bdaf1cea19"],
+ " until you run out of columns!    "
 }], "Text",
  CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
    3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
@@ -54,8 +54,18 @@ how to reduce a general system \n\t",
    3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
    3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
    3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
-   3.847143060799942*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
+   3.847143060799942*^9}, {3.854887242775234*^9, 3.854887259976048*^9}, {
+   3.8548873571606903`*^9, 3.854887370760417*^9}, {3.8548901564662313`*^9, 
+   3.854890272287231*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
 f8ac0b4049d9"],
+
+Cell["\<\
+The plan is to make zeros in a matrix while not changing the eigenvalues!  To \
+preserve the eigenvalues the same we need to \
+\>", "Text",
+ CellChangeTimes->{{3.854890320179306*^9, 
+  3.854890395143915*^9}},ExpressionUUID->"3c039bd9-eeb0-41fc-b31d-\
+86213e8c57ff"],
 
 Cell[CellGroupData[{
 
@@ -208,13 +218,12 @@ Cell["Whatever", "Text",
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
-WindowSize->{1268, 965},
-WindowMargins->{{Automatic, -1770}, {Automatic, -4}},
-TaggingRules->Association[
- "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> 
-  False],
+WindowSize->{1268, 739},
+WindowMargins->{{68, Automatic}, {Automatic, 0}},
+TaggingRules-><|
+ "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
 Magnification:>1.5 Inherited,
-FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (July 9, 2021)",
+FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"9af0bbd4-7594-4386-8e1f-ad5f79b0d784"
@@ -231,21 +240,22 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 615, 14, 281, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
-Cell[1198, 38, 960, 19, 119, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[580, 22, 627, 11, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[1210, 35, 1262, 24, 119, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[2475, 61, 275, 6, 85, "Text",ExpressionUUID->"3c039bd9-eeb0-41fc-b31d-86213e8c57ff"],
 Cell[CellGroupData[{
-Cell[2183, 61, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
-Cell[2656, 73, 2006, 53, 319, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
+Cell[2775, 71, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
+Cell[3248, 83, 2006, 53, 319, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
  InitializationCell->True],
-Cell[4665, 128, 147, 3, 51, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
+Cell[5257, 138, 147, 3, 51, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
 Cell[CellGroupData[{
-Cell[4837, 135, 944, 29, 171, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
-Cell[5784, 166, 449, 10, 52, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
-Cell[6236, 178, 449, 10, 52, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
+Cell[5429, 145, 944, 29, 171, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
+Cell[6376, 176, 449, 10, 69, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
+Cell[6828, 188, 449, 10, 69, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6722, 193, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
-Cell[7070, 200, 249, 4, 51, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
+Cell[7314, 203, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
+Cell[7662, 210, 249, 4, 51, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
