@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8982,        247]
-NotebookOptionsPosition[      7389,        209]
-NotebookOutlinePosition[      8020,        231]
-CellTagsIndexPosition[      7977,        228]
+NotebookDataLength[     11977,        341]
+NotebookOptionsPosition[     10170,        300]
+NotebookOutlinePosition[     10790,        321]
+CellTagsIndexPosition[     10747,        318]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,19 +33,68 @@ mYdJnRlZ7HJAJgnz1KG0gs10YquTo459KJ7aiOvFTg/MuZnxGYl18Yt+KK+0
 KHCd7sAyRbsNbvl0D9ARevHA2LMOH1Qka/1QtXe6dEkUC90m2O+UOiA71UO9
 yT/Yh9xEMwez38rPYMpq4zksLRRdwzheTw2ymnv47LVSyzWHHlj9VeWFGtVg
 AOY38EH6j4hC8CRVRb2LGD5hpkjyBb+bYv5gjXoy5or4D9DDDqg=
-  
   "],ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 
 Cell[TextData[{
- "We know how to solve triangular systems of equations.  We are going to see \
-how to reduce a general system \n\t",
+ "For the next few lectures ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{"m", "\[Times]", "m"}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "55009f3e-6e01-439d-9677-cb210df398be"],
+ " is symmetric ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{"A", "\[Transpose]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "eb974d92-cb5b-4f17-855b-c26abb04d793"],
+ ".  This means that A is orthogonally diagonalizable with real eigenvalues \
+i.e.\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{"Q", ".", "\[CapitalLambda]", ".", 
+     RowBox[{"Q", "\[Transpose]"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "3dc6a8d0-4c51-400a-9650-03c9a6edacab"],
+ "\nwith ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Q", "=", 
+    RowBox[{"(", GridBox[{
+       {
+        SubscriptBox["q", "1"], "|", 
+        SubscriptBox["q", "2"], "|", "\[Ellipsis]", "|", 
+        SubscriptBox["q", "m"]}
+      }], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "eb808fa1-a69c-43f8-b1f7-c743f12f7396"],
+ " satisfying ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    RowBox[{"A", ".", "x"}], "=", "b"}], TraditionalForm]],
+    RowBox[{"A", ".", 
+     SubscriptBox["q", "i"]}], "=", 
+    RowBox[{
+     SubscriptBox["\[Lambda]", "i"], 
+     SubscriptBox["q", "i"]}]}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "724ba2e4-5d97-44b6-a05e-0ffbf84b8c8a"],
- " \nto two triangular systems. "
+  "89087479-f8b8-4688-9d28-927ad7ec0119"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[CapitalLambda]", "=", 
+    RowBox[{"dia", "(", 
+     RowBox[{
+      SubscriptBox["\[Lambda]", "1"], ",", 
+      SubscriptBox["\[Lambda]", "2"], ",", "\[Ellipsis]", ",", 
+      SubscriptBox["\[Lambda]", "m"]}], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fe6c2045-4ecf-467b-8ff3-239d9e58edce"],
+ "."
 }], "Text",
  CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
    3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
@@ -54,8 +103,50 @@ how to reduce a general system \n\t",
    3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
    3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
    3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
-   3.847143060799942*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
+   3.847143060799942*^9}, {3.8559224967713323`*^9, 
+   3.8559226611794515`*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
 f8ac0b4049d9"],
+
+Cell[CellGroupData[{
+
+Cell["Rayleigh Quotient", "Section",
+ CellChangeTimes->{{3.8559226762594438`*^9, 
+  3.855922682179304*^9}},ExpressionUUID->"c8e8be4f-4b34-47e8-a24a-\
+cc95a17ea854"],
+
+Cell[TextData[{
+ "Critical points ",
+ Cell[BoxData[
+  FormBox["v", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4f19eb2b-35ea-4fc1-bb40-048085f9943e"],
+ " of the Rayleigh quotient\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"r", "(", "x", ")"}], "=", 
+    FractionBox[
+     RowBox[{"x", ".", "A", ".", "x"}], 
+     RowBox[{"x", ".", "x"}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e17274f2-9ac8-43dd-b927-5342dd0edc6f"],
+ "\nare eigenvectors of ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d6eb4824-5b24-4667-b5af-36e55c6f7aa0"],
+ " with eigenvalues ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "(", "v", ")"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "63e29749-cced-4483-ae8a-0bec2e728b7c"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.8559226846447196`*^9, 
+  3.855922772459999*^9}},ExpressionUUID->"d945beef-fd9a-4039-9ca0-\
+86bd37c9cba4"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -209,12 +300,11 @@ Cell["Whatever", "Text",
 },
 WindowToolbars->"EditBar",
 WindowSize->{1268, 965},
-WindowMargins->{{Automatic, -1770}, {Automatic, -4}},
-TaggingRules->Association[
- "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> 
-  False],
+WindowMargins->{{1461, Automatic}, {-182, Automatic}},
+TaggingRules-><|
+ "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
 Magnification:>1.5 Inherited,
-FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (July 9, 2021)",
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"d42149b5-6ceb-4f05-8ce1-0f67b91ff7b9"
@@ -231,21 +321,25 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 645, 14, 281, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
-Cell[1228, 38, 960, 19, 119, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[580, 22, 642, 13, 281, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[1225, 37, 2550, 70, 151, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
 Cell[CellGroupData[{
-Cell[2213, 61, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
-Cell[2686, 73, 2006, 53, 319, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
- InitializationCell->True],
-Cell[4695, 128, 147, 3, 51, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
-Cell[CellGroupData[{
-Cell[4867, 135, 944, 29, 171, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
-Cell[5814, 166, 449, 10, 52, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
-Cell[6266, 178, 449, 10, 52, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
+Cell[3800, 111, 164, 3, 97, "Section",ExpressionUUID->"c8e8be4f-4b34-47e8-a24a-cc95a17ea854"],
+Cell[3967, 116, 990, 31, 123, "Text",ExpressionUUID->"d945beef-fd9a-4039-9ca0-86bd37c9cba4"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6752, 193, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
-Cell[7100, 200, 249, 4, 51, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
+Cell[4994, 152, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
+Cell[5467, 164, 2006, 53, 295, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
+ InitializationCell->True],
+Cell[7476, 219, 147, 3, 50, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
+Cell[CellGroupData[{
+Cell[7648, 226, 944, 29, 157, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
+Cell[8595, 257, 449, 10, 66, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
+Cell[9047, 269, 449, 10, 66, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9533, 284, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
+Cell[9881, 291, 249, 4, 50, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
