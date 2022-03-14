@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6965,        147]
-NotebookOptionsPosition[      5748,        117]
-NotebookOutlinePosition[      6363,        138]
-CellTagsIndexPosition[      6320,        135]
+NotebookDataLength[      7081,        148]
+NotebookOptionsPosition[      5858,        118]
+NotebookOutlinePosition[      6479,        139]
+CellTagsIndexPosition[      6436,        136]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -45,7 +45,7 @@ Cell["Cholesky HWb (L23)", "Title",
 Cell[CellGroupData[{
 
 Cell["\<\
-Find and copy/past some documentation for the built in Julia \
+Find and copy/paste some documentation for the built in Julia \
 \[OpenCurlyDoubleQuote]out-of-place\[CloseCurlyDoubleQuote] Cholesky \
 decomposition\
 \>", "ItemNumbered",
@@ -57,12 +57,12 @@ decomposition\
    3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
    3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
    3.847143060799942*^9}, 3.855987175346263*^9, {3.855987208450282*^9, 
-   3.855987338179626*^9}, {3.8559875506150417`*^9, 
-   3.855987645205906*^9}},ExpressionUUID->"1fc5ec6f-6403-4193-a111-\
+   3.855987338179626*^9}, {3.8559875506150417`*^9, 3.855987645205906*^9}, 
+   3.856270570845358*^9},ExpressionUUID->"1fc5ec6f-6403-4193-a111-\
 ca96bf54ba7d"],
 
 Cell["\<\
-Find and copy/past some documentation for the built in Julia \
+Find and copy/paste some documentation for the built in Julia \
 \[OpenCurlyDoubleQuote]in-place\[CloseCurlyDoubleQuote] Cholesky decomposition\
 \>", "ItemNumbered",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.},
@@ -74,13 +74,13 @@ Find and copy/past some documentation for the built in Julia \
    3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
    3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
    3.847143060799942*^9}, 3.855987175346263*^9, {3.855987208450282*^9, 
-   3.855987338179626*^9}, {3.8559875506150417`*^9, 
-   3.855987656333576*^9}},ExpressionUUID->"1efb2f5c-f8b9-4085-9ff6-\
+   3.855987338179626*^9}, {3.8559875506150417`*^9, 3.855987656333576*^9}, 
+   3.85627057488023*^9},ExpressionUUID->"1efb2f5c-f8b9-4085-9ff6-\
 3c032cbaccd6"],
 
 Cell["\<\
-Demonstrate how to use the Julia Cholesky decomposition to solve a linear \
-system.\
+Demonstrate (and test) how to use the Julia Cholesky decomposition to solve a \
+linear system.\
 \>", "ItemNumbered",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.},
  CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
@@ -91,8 +91,9 @@ system.\
    3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
    3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
    3.847143060799942*^9}, 3.855987175346263*^9, {3.855987208450282*^9, 
-   3.855987338179626*^9}, {3.8559875506150417`*^9, 
-   3.855987682327609*^9}},ExpressionUUID->"b728fe21-d720-4b27-9a88-\
+   3.855987338179626*^9}, {3.8559875506150417`*^9, 3.855987682327609*^9}, {
+   3.8562705778257284`*^9, 
+   3.8562705809421997`*^9}},ExpressionUUID->"b728fe21-d720-4b27-9a88-\
 a27e2a422169"],
 
 Cell["\<\
@@ -116,12 +117,12 @@ d6d2340bb633"]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
-WindowSize->{1268, 965},
-WindowMargins->{{Automatic, -1548}, {Automatic, -71}},
+WindowSize->{1141.2, 604.8},
+WindowMargins->{{-0.6, Automatic}, {Automatic, 0}},
 TaggingRules-><|
  "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
 Magnification:>1.5 Inherited,
-FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"02745225-daa4-4825-8a6f-58685a5c126a"
@@ -140,12 +141,12 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 1422, 20, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 Cell[CellGroupData[{
-Cell[2027, 46, 897, 15, 50, "ItemNumbered",ExpressionUUID->"1fc5ec6f-6403-4193-a111-ca96bf54ba7d"],
-Cell[2927, 63, 952, 15, 50, "ItemNumbered",ExpressionUUID->"1efb2f5c-f8b9-4085-9ff6-3c032cbaccd6",
+Cell[2027, 46, 920, 15, 83, "ItemNumbered",ExpressionUUID->"1fc5ec6f-6403-4193-a111-ca96bf54ba7d"],
+Cell[2950, 63, 974, 15, 83, "ItemNumbered",ExpressionUUID->"1efb2f5c-f8b9-4085-9ff6-3c032cbaccd6",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[3882, 80, 894, 15, 50, "ItemNumbered",ExpressionUUID->"b728fe21-d720-4b27-9a88-a27e2a422169",
+Cell[3927, 80, 959, 16, 50, "ItemNumbered",ExpressionUUID->"b728fe21-d720-4b27-9a88-a27e2a422169",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}],
-Cell[4779, 97, 941, 16, 50, "ItemNumbered",ExpressionUUID->"ad87def9-0374-4020-8fc1-d6d2340bb633",
+Cell[4889, 98, 941, 16, 50, "ItemNumbered",ExpressionUUID->"ad87def9-0374-4020-8fc1-d6d2340bb633",
  CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}]
 }, Open  ]]
 }, Open  ]]
