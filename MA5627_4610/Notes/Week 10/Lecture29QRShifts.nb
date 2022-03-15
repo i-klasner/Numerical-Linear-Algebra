@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     83012,       2056]
-NotebookOptionsPosition[     77407,       1957]
-NotebookOutlinePosition[     78027,       1978]
-CellTagsIndexPosition[     77984,       1975]
+NotebookDataLength[     98821,       2505]
+NotebookOptionsPosition[     92504,       2397]
+NotebookOutlinePosition[     93124,       2418]
+CellTagsIndexPosition[     93081,       2415]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -58,6 +58,446 @@ time and these shifts are implemented implicitly. \
  CellChangeTimes->{{3.856110790986891*^9, 
   3.856110899972933*^9}},ExpressionUUID->"e5d073cc-c203-49d2-a223-\
 4a0ef6f9a86d"],
+
+Cell[CellGroupData[{
+
+Cell["Single Shift ", "Section",
+ CellChangeTimes->{{3.856110529559176*^9, 3.8561105463836317`*^9}, {
+  3.8561109022930593`*^9, 3.8561109063564777`*^9}, {3.8563538117943907`*^9, 
+  3.8563538129006577`*^9}},ExpressionUUID->"4890d14d-99aa-4396-8fcb-\
+090e056aa530"],
+
+Cell[TextData[{
+ "We implemented a single shift ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Mu]", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5bde8bda-dfb0-4d55-bc4d-cfd91bc4755e"],
+ "as follows\n\t",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {"H", "-", 
+      RowBox[{
+       SubscriptBox["\[Mu]", "1"], "I"}], "=", 
+      RowBox[{
+       SubscriptBox["Q", "1"], ".", 
+       SubscriptBox["R", "1"]}], " ", " "},
+     {" ", " ", 
+      SubscriptBox["H", "1"], "=", 
+      RowBox[{
+       SubscriptBox["R", "1"], ".", 
+       SubscriptBox["Q", "1"]}], "+", 
+      RowBox[{
+       SubscriptBox["\[Mu]", "1"], "I"}]}
+    }], TraditionalForm]],ExpressionUUID->
+  "650e69fa-6e6b-4ba6-946f-4145f8b08d78"]
+}], "Text",
+ CellChangeTimes->{{3.856120697680686*^9, 3.856120839266245*^9}, {
+  3.85612663759713*^9, 3.856126638032977*^9}, {3.8563538220805097`*^9, 
+  3.8563538512752457`*^9}},ExpressionUUID->"dee7c3f0-b248-4400-b1c8-\
+73eb4cfe7e37"],
+
+Cell[TextData[{
+ "Remember this QR step does not change the eigen values since\n\t",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {" ", 
+      RowBox[{"H", "-", 
+       RowBox[{
+        SubscriptBox["\[Mu]", "1"], "I"}]}], "=", 
+      RowBox[{
+       SubscriptBox["Q", "1"], ".", 
+       SubscriptBox["R", "1"]}]},
+     {"\[DoubleLongRightArrow]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         SubscriptBox["Q", "1"], ")"}], "\[Transpose]"}], ".", 
+       RowBox[{"(", 
+        RowBox[{"H", "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}]}], "=", 
+      SubscriptBox["R", "1"]},
+     {"\[DoubleLongRightArrow]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         SubscriptBox["Q", "1"], ")"}], "\[Transpose]"}], ".", 
+       RowBox[{"(", 
+        RowBox[{"H", "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}], ".", 
+       SubscriptBox["Q", "1"]}], "=", 
+      RowBox[{
+       SubscriptBox["R", "1"], ".", 
+       SubscriptBox["Q", "1"]}]},
+     {"\[DoubleLongRightArrow]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         SubscriptBox["Q", "1"], ")"}], "\[Transpose]"}], ".", 
+       RowBox[{"(", 
+        RowBox[{"H", "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}], ".", 
+       SubscriptBox["Q", "1"]}], "=", 
+      RowBox[{
+       SubscriptBox["H", "1"], "-", 
+       RowBox[{
+        SubscriptBox["\[Mu]", "1"], "I"}]}]}
+    }], TraditionalForm]],ExpressionUUID->
+  "4720a295-2e84-443f-a034-fc02029a1dca"],
+ "\nIn words, the single shift QR algorithm implements an orthogonal \
+similarity transformation of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"H", "-", 
+    RowBox[{
+     SubscriptBox["\[Mu]", "1"], "I"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a525a58c-4812-426e-b1a2-520446b72712"],
+ ". This is the same as implementing the same similarity transformation \
+(defined by ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cf0ba8ee-2eb8-4f00-ab05-996acfa00822"],
+ ") on ",
+ Cell[BoxData[
+  FormBox["H", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "18a0c3e4-78f3-4e62-9aa9-759884332177"],
+ "\n\t",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {" ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         SubscriptBox["Q", "1"], ")"}], "\[Transpose]"}], ".", 
+       RowBox[{"(", 
+        RowBox[{"H", "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}], ".", 
+       SubscriptBox["Q", "1"]}], "=", 
+      RowBox[{
+       SubscriptBox["H", "1"], "-", 
+       RowBox[{
+        SubscriptBox["\[Mu]", "1"], "I"}]}]},
+     {"\[DoubleLongRightArrow]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          SubscriptBox["Q", "1"], ")"}], "\[Transpose]"}], ".", "H", ".", 
+        SubscriptBox["Q", "1"]}], "-", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["\[Mu]", "1"], "(", 
+          SubscriptBox["Q", "1"], ")"}], "\[Transpose]"}], ".", 
+        SubscriptBox["Q", "1"]}]}], "=", 
+      RowBox[{
+       SubscriptBox["H", "1"], "-", 
+       RowBox[{
+        SubscriptBox["\[Mu]", "1"], "I"}]}]},
+     {"\[DoubleLongRightArrow]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         SubscriptBox["Q", "1"], ")"}], "\[Transpose]"}], ".", "H", ".", 
+       SubscriptBox["Q", "1"]}], "=", 
+      SubscriptBox["H", "1"]}
+    }], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0cdaea67-a44a-46d6-98de-bf3060121fd7"],
+ "\nAll we really need is ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "55cd9bdb-4b2f-408c-a9d2-042f05586ebb"],
+ "! There are several ways to compute ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "1"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7eb1068b-3502-454c-ad2b-0a7740b08e4e"],
+ ". In exact arithmetic they must all be \[OpenCurlyDoubleQuote]essentially\
+\[CloseCurlyDoubleQuote] the same since the QR decomposition is \
+\[OpenCurlyDoubleQuote]essentially\[CloseCurlyDoubleQuote] unique.  Of \
+course, we know some are more stable than others. Some are more work than \
+others!"
+}], "Text",
+ CellChangeTimes->{{3.856120697680686*^9, 3.85612093676943*^9}, {
+  3.85612098604767*^9, 3.856121163030569*^9}, {3.856121286876671*^9, 
+  3.8561212877067537`*^9}, {3.856121336956038*^9, 3.856121337307659*^9}, {
+  3.856123940712668*^9, 3.856123944192892*^9}, {3.8561266472529087`*^9, 
+  3.856126653260717*^9}, {3.856353875758554*^9, 3.856354213425935*^9}, {
+  3.8563542632912006`*^9, 3.85635438531756*^9}, {3.8563552793955913`*^9, 
+  3.8563553130548353`*^9}},ExpressionUUID->"3051b712-ce87-4332-823e-\
+9db5365dc408"],
+
+Cell[TextData[{
+ "For instance we can compute all of Q (using say a QR decomposition) before \
+we start doing anything else or we could do the columns (and matching rows) \
+one at a time on the fly.  The second alternative, doing the columns and row \
+as you go, is called an implicit shift and is much less work.   We are going \
+to do the first column and row for a tridiagonal symmetric T. \n\t ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"T", "=", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {
+        SubscriptBox["\[Alpha]", "1"], 
+        SubscriptBox["\[Beta]", "1"], " ", " ", " ", " "},
+       {
+        SubscriptBox["\[Beta]", "1"], 
+        SubscriptBox["\[Alpha]", "2"], 
+        SubscriptBox["\[Beta]", "2"], " ", " ", " "},
+       {" ", 
+        SubscriptBox["\[Beta]", "2"], 
+        SubscriptBox["\[Alpha]", "3"], 
+        SubscriptBox["\[Beta]", "3"], " ", " "},
+       {" ", " ", "\[DescendingEllipsis]", "\[DescendingEllipsis]", 
+        "\[DescendingEllipsis]", " "},
+       {" ", " ", " ", 
+        SubscriptBox["\[Beta]", 
+         RowBox[{"m", "-", "2"}]], 
+        SubscriptBox["\[Alpha]", 
+         RowBox[{"m", "-", "1"}]], 
+        SubscriptBox["\[Beta]", 
+         RowBox[{"m", "-", "1"}]]},
+       {" ", " ", " ", " ", 
+        SubscriptBox["\[Beta]", 
+         RowBox[{"m", "-", "1"}]], 
+        SubscriptBox["\[Alpha]", "m"]}
+      }], "\[NoBreak]", ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "eea6a644-2d9d-47b0-8056-9460d49efab5"],
+ "\nsubtract the shift \[Mu] from the diagonal and apply the appropriate 2\
+\[Times]2 Given\[CloseCurlyQuote]s rotation to introduce a zero into the 2,1 \
+position.  "
+}], "Text",
+ CellChangeTimes->{{3.8563544155037346`*^9, 3.8563552520547857`*^9}, {
+  3.856355324619265*^9, 
+  3.8563553310511475`*^9}},ExpressionUUID->"b58740e6-d141-4144-b0f6-\
+5b04ee3308a5"],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{
+  3.8563538941570764`*^9},ExpressionUUID->"093e083e-a562-4a0b-91e8-\
+30f0c1e4e8b0"],
+
+Cell[TextData[{
+ "The question is what does this look like if we try to combine the two \
+steps. One way to think about this would be to look at the combined \
+orthogonal matrices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Q", "=", 
+    RowBox[{
+     SubscriptBox["Q", "1"], ".", 
+     SubscriptBox["Q", "2"]}]}], TraditionalForm]],ExpressionUUID->
+  "3f628dd7-d3ff-41cf-9821-e48e7e8184e3"],
+ " (still orthogonal) and the combined upper triangular matrices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"R", "=", 
+    RowBox[{
+     SubscriptBox["R", "2"], ".", 
+     SubscriptBox["R", "1"]}]}], TraditionalForm]],ExpressionUUID->
+  "88ce496e-47e7-4ffa-83ff-9fa9050efd2d"],
+ "(still upper triangular)   \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"Q", ".", "R"}], "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["Q", "1"], ".", 
+       SubscriptBox["Q", "2"]}], ")"}], ".", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["R", "2"], ".", 
+       SubscriptBox["R", "1"]}], ")"}]}]}], TraditionalForm]],ExpressionUUID->
+  "936f712a-e8d5-4fab-8fd2-b96a9e9c8171"],
+ "\nA direct computation gives \n\t",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {" ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["Q", "1"], ".", 
+         SubscriptBox["Q", "2"]}], ")"}], ".", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["R", "2"], ".", 
+         SubscriptBox["R", "1"]}], ")"}]}], "=", 
+      RowBox[{
+       SubscriptBox["Q", "1"], ".", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["Q", "2"], ".", 
+         SubscriptBox["R", "2"]}], ")"}], ".", 
+       SubscriptBox["R", "1"]}]},
+     {"\[DoubleLongRightArrow]", " ", "=", 
+      RowBox[{
+       SubscriptBox["Q", "1"], ".", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["H", "1"], "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "2"], "I"}]}], ")"}], ".", 
+       SubscriptBox["R", "1"]}]},
+     {"\[DoubleLongRightArrow]", " ", "=", 
+      RowBox[{
+       SubscriptBox["Q", "1"], ".", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", GridBox[{
+            {
+             RowBox[{
+              SubscriptBox["R", "1"], ".", 
+              SubscriptBox["Q", "1"]}], "+", 
+             RowBox[{
+              SubscriptBox["\[Mu]", "1"], "I"}]}
+           }], ")"}], "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "2"], "I"}]}], ")"}], ".", 
+       SubscriptBox["R", "1"]}]},
+     {"\[DoubleLongRightArrow]", " ", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["Q", "1"], ".", 
+          SubscriptBox["R", "1"], ".", 
+          SubscriptBox["Q", "1"]}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            SubscriptBox["\[Mu]", "1"], "-", 
+            SubscriptBox["\[Mu]", "2"]}], ")"}], 
+          SubscriptBox["Q", "1"]}]}], ")"}], ".", 
+       SubscriptBox["R", "1"]}]},
+     {"\[DoubleLongRightArrow]", " ", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["Q", "1"], ".", 
+          SubscriptBox["R", "1"]}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            SubscriptBox["\[Mu]", "1"], "-", 
+            SubscriptBox["\[Mu]", "2"]}], ")"}], "I"}]}], ")"}], ".", 
+       SubscriptBox["Q", "1"], ".", 
+       SubscriptBox["R", "1"]}]},
+     {"\[DoubleLongRightArrow]", " ", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"H", "-", 
+           RowBox[{
+            SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            SubscriptBox["\[Mu]", "1"], "-", 
+            SubscriptBox["\[Mu]", "2"]}], ")"}], "I"}]}], ")"}], ".", 
+       RowBox[{"(", 
+        RowBox[{"H", "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}]}]},
+     {"\[DoubleLongRightArrow]", " ", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"H", "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "2"], "I"}]}], ")"}], ".", 
+       RowBox[{"(", 
+        RowBox[{"H", "-", 
+         RowBox[{
+          SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}]}]}
+    }], TraditionalForm]],ExpressionUUID->
+  "381cb59e-2e9e-4083-a286-c3d479e508d4"],
+ "\nIn words, the effect of the double step with the two shifts is described \
+by the matrix quadratic\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"H", "-", 
+      RowBox[{
+       SubscriptBox["\[Mu]", "2"], "I"}]}], ")"}], ".", 
+    RowBox[{"(", 
+     RowBox[{"H", "-", 
+      RowBox[{
+       SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}]}], TraditionalForm]],
+  ExpressionUUID->"5d93790d-2cca-42ec-be06-8bc41eae475b"],
+ "\nwhich is real if ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Mu]", "1"], TraditionalForm]],ExpressionUUID->
+  "b913ca24-e707-4a31-b586-19872660adfd"],
+ " are the roots of a real polynomial or eigenvalues of a real matrix!  It \
+should be possible to do the double step in real arithmetic if ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Mu]", "1"], TraditionalForm]],ExpressionUUID->
+  "b12e82f6-e254-4ce8-b42e-843e9f0d0a23"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Mu]", "2"], TraditionalForm]],ExpressionUUID->
+  "e4da96dc-a850-4f6e-adb3-398412854443"],
+ " are real (no surprise there) or a complex conjugate pair!   "
+}], "Text",
+ CellChangeTimes->{{3.8561239560750523`*^9, 3.8561241614999933`*^9}, {
+  3.856124232350006*^9, 3.856124424710178*^9}, {3.856124501002227*^9, 
+  3.856124533974845*^9}, {3.8561245812147503`*^9, 3.856125095436062*^9}, {
+  3.856125138445517*^9, 3.8561252363074617`*^9}, {3.856126155775022*^9, 
+  3.856126176558135*^9}, {3.856126668284287*^9, 
+  3.856126706382245*^9}},ExpressionUUID->"f70cac1f-0d67-46ed-a44f-\
+dc45aabc4346"],
+
+Cell[TextData[{
+ "We could build the matrix ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"H", "-", 
+      RowBox[{
+       SubscriptBox["\[Mu]", "2"], "I"}]}], ")"}], ".", 
+    RowBox[{"(", 
+     RowBox[{"H", "-", 
+      RowBox[{
+       SubscriptBox["\[Mu]", "1"], "I"}]}], ")"}]}], TraditionalForm]],
+  ExpressionUUID->"046cbd7b-4ab6-4070-9bb3-213da87d5a6d"],
+ ", compute a ",
+ Cell[BoxData[
+  FormBox["QR", TraditionalForm]],ExpressionUUID->
+  "84240755-2352-478b-8dc7-da890eeee0b9"],
+ " decomposition of it and reverse the order but we do not need to.  It turns \
+out that although there are many different Hessenberg reductions of a matrix \
+A ones with the same first column are essentially the same.  This is going to \
+let us compute the two step reduction without forming the quadratic matrix.  \
+This clever trick is called an implicit shift."
+}], "Text",
+ CellChangeTimes->{{3.8561261334026747`*^9, 3.856126251976789*^9}, {
+  3.856126305714698*^9, 3.856126403161983*^9}, {3.856126449841186*^9, 
+  3.856126573137311*^9}, {3.856126711612483*^9, 
+  3.856126714794366*^9}},ExpressionUUID->"1138fce6-7cc2-445e-baf5-\
+560951afc884"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1957,7 +2397,7 @@ Cell[BoxData[
 },
 WindowToolbars->"EditBar",
 WindowSize->{1268, 965},
-WindowMargins->{{1437.5, Automatic}, {83, Automatic}},
+WindowMargins->{{1437.5, Automatic}, {63, Automatic}},
 TaggingRules-><|
  "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
 Magnification:>1.5 Inherited,
@@ -1982,78 +2422,87 @@ Cell[580, 22, 671, 12, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400
 Cell[1254, 36, 930, 15, 117, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
 Cell[2187, 53, 278, 6, 83, "Text",ExpressionUUID->"e5d073cc-c203-49d2-a223-4a0ef6f9a86d"],
 Cell[CellGroupData[{
-Cell[2490, 63, 213, 4, 97, "Section",ExpressionUUID->"eb071cf8-a99e-49e1-a188-114a69fd84e7"],
-Cell[2706, 69, 1446, 42, 228, "Text",ExpressionUUID->"77683d59-441a-4191-bcc8-726d69681fec"],
-Cell[4155, 113, 2569, 79, 228, "Text",ExpressionUUID->"b7e077d8-049d-464c-9307-c73bc039f223"],
-Cell[6727, 194, 5830, 175, 515, "Text",ExpressionUUID->"1f1fbf69-cecb-44d0-841f-a8938693c357"],
-Cell[12560, 371, 1224, 30, 150, "Text",ExpressionUUID->"ce7c405b-a6be-4445-bdb9-e335ffab95eb"]
+Cell[2490, 63, 263, 4, 97, "Section",ExpressionUUID->"4890d14d-99aa-4396-8fcb-090e056aa530"],
+Cell[2756, 69, 968, 29, 104, "Text",ExpressionUUID->"dee7c3f0-b248-4400-b1c8-73eb4cfe7e37"],
+Cell[3727, 100, 4809, 140, 412, "Text",ExpressionUUID->"3051b712-ce87-4332-823e-9db5365dc408"],
+Cell[8539, 242, 1861, 44, 387, "Text",ExpressionUUID->"b58740e6-d141-4144-b0f6-5b04ee3308a5"],
+Cell[10403, 288, 149, 3, 71, "Input",ExpressionUUID->"093e083e-a562-4a0b-91e8-30f0c1e4e8b0"],
+Cell[10555, 293, 5830, 175, 515, "Text",ExpressionUUID->"f70cac1f-0d67-46ed-a44f-dc45aabc4346"],
+Cell[16388, 470, 1162, 28, 150, "Text",ExpressionUUID->"1138fce6-7cc2-445e-baf5-560951afc884"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13821, 406, 160, 3, 97, "Section",ExpressionUUID->"e6509389-10bd-4603-851c-51b8332c938a"],
-Cell[CellGroupData[{
-Cell[14006, 413, 154, 3, 72, "Subsection",ExpressionUUID->"cc385a15-324d-465e-8fa0-cc44b0477e11"],
-Cell[14163, 418, 3386, 109, 206, "Text",ExpressionUUID->"fa24239b-f428-49be-9a75-82a41cc7b7b0"]
+Cell[17587, 503, 213, 4, 97, "Section",ExpressionUUID->"eb071cf8-a99e-49e1-a188-114a69fd84e7"],
+Cell[17803, 509, 1446, 42, 228, "Text",ExpressionUUID->"77683d59-441a-4191-bcc8-726d69681fec"],
+Cell[19252, 553, 2569, 79, 228, "Text",ExpressionUUID->"b7e077d8-049d-464c-9307-c73bc039f223"],
+Cell[21824, 634, 5830, 175, 515, "Text",ExpressionUUID->"1f1fbf69-cecb-44d0-841f-a8938693c357"],
+Cell[27657, 811, 1224, 30, 150, "Text",ExpressionUUID->"ce7c405b-a6be-4445-bdb9-e335ffab95eb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17586, 532, 160, 3, 72, "Subsection",ExpressionUUID->"579dadd3-fed7-4eba-8a1f-9f81ee8a5ee1"],
-Cell[17749, 537, 2450, 78, 244, "Text",ExpressionUUID->"dccabaef-6194-4639-a9de-27eb21acbcc7"]
+Cell[28918, 846, 160, 3, 97, "Section",ExpressionUUID->"e6509389-10bd-4603-851c-51b8332c938a"],
+Cell[CellGroupData[{
+Cell[29103, 853, 154, 3, 72, "Subsection",ExpressionUUID->"cc385a15-324d-465e-8fa0-cc44b0477e11"],
+Cell[29260, 858, 3386, 109, 206, "Text",ExpressionUUID->"fa24239b-f428-49be-9a75-82a41cc7b7b0"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[20236, 620, 161, 3, 72, "Subsection",ExpressionUUID->"e5b75195-bb18-44e1-be71-90134d5abfd4"],
-Cell[20400, 625, 1218, 33, 83, "Text",ExpressionUUID->"922f240e-aff2-4553-980f-b4c311574382"],
-Cell[21621, 660, 440, 11, 83, "Text",ExpressionUUID->"e6580b99-148a-417e-9e8d-a94ec11be54f"],
-Cell[CellGroupData[{
-Cell[22086, 675, 2576, 75, 432, "Input",ExpressionUUID->"21982e07-f8ab-4bd5-b2c8-648b1a1e6b76"],
-Cell[24665, 752, 10911, 215, 660, "Output",ExpressionUUID->"9876aa14-ecb6-477f-aade-eee6531e5c93"]
+Cell[32683, 972, 160, 3, 72, "Subsection",ExpressionUUID->"579dadd3-fed7-4eba-8a1f-9f81ee8a5ee1"],
+Cell[32846, 977, 2450, 78, 244, "Text",ExpressionUUID->"dccabaef-6194-4639-a9de-27eb21acbcc7"]
 }, Open  ]],
-Cell[35591, 970, 246, 4, 50, "Text",ExpressionUUID->"c11979ce-1cdd-48a4-a060-018a092a6c90"],
 Cell[CellGroupData[{
-Cell[35862, 978, 311, 9, 50, "ItemNumbered",ExpressionUUID->"32f66f4c-ecb2-4bb4-ab1c-e1350f75e1b4"],
-Cell[36176, 989, 338, 9, 50, "ItemNumbered",ExpressionUUID->"18c3ab73-fe2b-49a9-b097-532d51b52027"],
-Cell[36517, 1000, 667, 21, 50, "ItemNumbered",ExpressionUUID->"f8bab608-d34c-463b-bd65-572bb84894a5"]
+Cell[35333, 1060, 161, 3, 72, "Subsection",ExpressionUUID->"e5b75195-bb18-44e1-be71-90134d5abfd4"],
+Cell[35497, 1065, 1218, 33, 83, "Text",ExpressionUUID->"922f240e-aff2-4553-980f-b4c311574382"],
+Cell[36718, 1100, 440, 11, 83, "Text",ExpressionUUID->"e6580b99-148a-417e-9e8d-a94ec11be54f"],
+Cell[CellGroupData[{
+Cell[37183, 1115, 2576, 75, 432, "Input",ExpressionUUID->"21982e07-f8ab-4bd5-b2c8-648b1a1e6b76"],
+Cell[39762, 1192, 10911, 215, 660, "Output",ExpressionUUID->"9876aa14-ecb6-477f-aade-eee6531e5c93"]
 }, Open  ]],
-Cell[37199, 1024, 71, 0, 50, "Text",ExpressionUUID->"1e4dc1a3-64bd-4df7-b983-a784e319d17a"],
-Cell[37273, 1026, 1853, 46, 184, "Text",ExpressionUUID->"a9d9cab3-bc0c-4a81-898e-5b2e4295da49"],
-Cell[39129, 1074, 217, 4, 50, "Text",ExpressionUUID->"fb6eb94e-b9cc-4acd-8c93-58139383adb8"]
+Cell[50688, 1410, 246, 4, 50, "Text",ExpressionUUID->"c11979ce-1cdd-48a4-a060-018a092a6c90"],
+Cell[CellGroupData[{
+Cell[50959, 1418, 311, 9, 50, "ItemNumbered",ExpressionUUID->"32f66f4c-ecb2-4bb4-ab1c-e1350f75e1b4"],
+Cell[51273, 1429, 338, 9, 50, "ItemNumbered",ExpressionUUID->"18c3ab73-fe2b-49a9-b097-532d51b52027"],
+Cell[51614, 1440, 667, 21, 50, "ItemNumbered",ExpressionUUID->"f8bab608-d34c-463b-bd65-572bb84894a5"]
+}, Open  ]],
+Cell[52296, 1464, 71, 0, 50, "Text",ExpressionUUID->"1e4dc1a3-64bd-4df7-b983-a784e319d17a"],
+Cell[52370, 1466, 1853, 46, 184, "Text",ExpressionUUID->"a9d9cab3-bc0c-4a81-898e-5b2e4295da49"],
+Cell[54226, 1514, 217, 4, 50, "Text",ExpressionUUID->"fb6eb94e-b9cc-4acd-8c93-58139383adb8"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39395, 1084, 153, 3, 97, "Section",ExpressionUUID->"ce22ee2e-3a01-406d-896b-befc7849564f"],
-Cell[39551, 1089, 488, 12, 50, "Text",ExpressionUUID->"c5791f17-b3be-4542-9347-aa97ff80f8b3"],
-Cell[40042, 1103, 389, 8, 83, "Text",ExpressionUUID->"6a514b1a-f441-47fc-8d3d-6cb1e5e2bbb7"],
+Cell[54492, 1524, 153, 3, 97, "Section",ExpressionUUID->"ce22ee2e-3a01-406d-896b-befc7849564f"],
+Cell[54648, 1529, 488, 12, 50, "Text",ExpressionUUID->"c5791f17-b3be-4542-9347-aa97ff80f8b3"],
+Cell[55139, 1543, 389, 8, 83, "Text",ExpressionUUID->"6a514b1a-f441-47fc-8d3d-6cb1e5e2bbb7"],
 Cell[CellGroupData[{
-Cell[40456, 1115, 4772, 121, 508, "Input",ExpressionUUID->"cb9fda57-492d-4c29-a0d8-b3055fb20ed7"],
-Cell[45231, 1238, 14971, 271, 644, "Output",ExpressionUUID->"731dd66f-7b8a-44ef-9b80-ff0a51b0142f"]
+Cell[55553, 1555, 4772, 121, 508, "Input",ExpressionUUID->"cb9fda57-492d-4c29-a0d8-b3055fb20ed7"],
+Cell[60328, 1678, 14971, 271, 644, "Output",ExpressionUUID->"731dd66f-7b8a-44ef-9b80-ff0a51b0142f"]
 }, Open  ]],
-Cell[60217, 1512, 559, 14, 50, "Text",ExpressionUUID->"10d7ee1d-c129-4982-ab43-bfee02467591"],
+Cell[75314, 1952, 559, 14, 50, "Text",ExpressionUUID->"10d7ee1d-c129-4982-ab43-bfee02467591"],
 Cell[CellGroupData[{
-Cell[60801, 1530, 584, 16, 42, "Input",ExpressionUUID->"a6fe7d1d-8026-4907-9832-31291a190983"],
-Cell[61388, 1548, 4182, 102, 374, "Output",ExpressionUUID->"c2b1d7a0-12d0-49cc-906d-c6401926973c"]
+Cell[75898, 1970, 584, 16, 42, "Input",ExpressionUUID->"a6fe7d1d-8026-4907-9832-31291a190983"],
+Cell[76485, 1988, 4182, 102, 374, "Output",ExpressionUUID->"c2b1d7a0-12d0-49cc-906d-c6401926973c"]
 }, Open  ]],
-Cell[65585, 1653, 825, 24, 52, "Text",ExpressionUUID->"7d55ed42-ba7f-4acb-97a8-1c4f07cb2b37"]
+Cell[80682, 2093, 825, 24, 52, "Text",ExpressionUUID->"7d55ed42-ba7f-4acb-97a8-1c4f07cb2b37"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[66447, 1682, 284, 4, 97, "Section",ExpressionUUID->"9a6affb0-75d1-453c-b6c8-6d310f5ec9ed"],
+Cell[81544, 2122, 284, 4, 97, "Section",ExpressionUUID->"9a6affb0-75d1-453c-b6c8-6d310f5ec9ed"],
 Cell[CellGroupData[{
-Cell[66756, 1690, 384, 8, 149, "Subsection",ExpressionUUID->"4b106c00-ba87-4e76-822c-7e6c4cdaa767"],
-Cell[67143, 1700, 1749, 48, 190, "Text",ExpressionUUID->"44044b81-b1ec-42ad-a9c2-b47e054157e5"],
-Cell[68895, 1750, 1405, 35, 226, "Input",ExpressionUUID->"235cd440-a4a0-4f6a-9a8b-985fcb7364d3",
+Cell[81853, 2130, 384, 8, 149, "Subsection",ExpressionUUID->"4b106c00-ba87-4e76-822c-7e6c4cdaa767"],
+Cell[82240, 2140, 1749, 48, 190, "Text",ExpressionUUID->"44044b81-b1ec-42ad-a9c2-b47e054157e5"],
+Cell[83992, 2190, 1405, 35, 226, "Input",ExpressionUUID->"235cd440-a4a0-4f6a-9a8b-985fcb7364d3",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[70325, 1789, 1143, 28, 171, "Input",ExpressionUUID->"d2603c5a-81e8-43f5-8d04-d1e37859f15c"],
-Cell[71471, 1819, 548, 7, 69, "Output",ExpressionUUID->"40521da9-00c2-4aa2-81ce-17f6b0b2ebbb"],
-Cell[72022, 1828, 795, 13, 69, "Output",ExpressionUUID->"a37e0e83-6826-4adc-bd69-fdc92b085e21"]
+Cell[85422, 2229, 1143, 28, 171, "Input",ExpressionUUID->"d2603c5a-81e8-43f5-8d04-d1e37859f15c"],
+Cell[86568, 2259, 548, 7, 69, "Output",ExpressionUUID->"40521da9-00c2-4aa2-81ce-17f6b0b2ebbb"],
+Cell[87119, 2268, 795, 13, 69, "Output",ExpressionUUID->"a37e0e83-6826-4adc-bd69-fdc92b085e21"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[72866, 1847, 387, 8, 135, "Subsection",ExpressionUUID->"9f956903-6117-4f99-ab36-50bb0ccfd55d"],
-Cell[73256, 1857, 771, 13, 51, "Text",ExpressionUUID->"2efabaa9-2601-4894-bd02-8e28dd3879c9"],
-Cell[74030, 1872, 785, 18, 133, "Input",ExpressionUUID->"2abcccf5-0252-4a6e-acaf-06ac9e31921e",
+Cell[87963, 2287, 387, 8, 135, "Subsection",ExpressionUUID->"9f956903-6117-4f99-ab36-50bb0ccfd55d"],
+Cell[88353, 2297, 771, 13, 51, "Text",ExpressionUUID->"2efabaa9-2601-4894-bd02-8e28dd3879c9"],
+Cell[89127, 2312, 785, 18, 133, "Input",ExpressionUUID->"2abcccf5-0252-4a6e-acaf-06ac9e31921e",
  InitializationCell->True],
-Cell[74818, 1892, 157, 3, 51, "Text",ExpressionUUID->"4bc72b3f-fae1-44de-b432-979aff0a6ede"],
+Cell[89915, 2332, 157, 3, 51, "Text",ExpressionUUID->"4bc72b3f-fae1-44de-b432-979aff0a6ede"],
 Cell[CellGroupData[{
-Cell[75000, 1899, 1516, 37, 140, "Input",ExpressionUUID->"949a12d8-f2a2-483b-85f9-e2376cbc9141"],
-Cell[76519, 1938, 836, 13, 72, "Output",ExpressionUUID->"ee91023b-b5c2-483c-9d2a-06a289add75a"]
+Cell[90097, 2339, 1516, 37, 140, "Input",ExpressionUUID->"949a12d8-f2a2-483b-85f9-e2376cbc9141"],
+Cell[91616, 2378, 836, 13, 72, "Output",ExpressionUUID->"ee91023b-b5c2-483c-9d2a-06a289add75a"]
 }, Open  ]]
 }, Open  ]]
 }, Closed]]
