@@ -10,123 +10,79 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6098,        165]
-NotebookOptionsPosition[      4360,        126]
-NotebookOutlinePosition[      4979,        147]
-CellTagsIndexPosition[      4936,        144]
+NotebookDataLength[      3783,        108]
+NotebookOptionsPosition[      2882,         82]
+NotebookOutlinePosition[      3500,        103]
+CellTagsIndexPosition[      3457,        100]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["HW 27a ", "Title",
+Cell["HW 27b ", "Title",
  CellChangeTimes->CompressedData["
-1:eJwdxUEoQ2EcAPBnSSNJDihTaC5rHHYxSXprZFmpNSUHSsguaBM2pincpo2R
-RmixphhDDiib5dlmpTWRNgkvtnmLtykHJd//O/z6lXcPKno5BEGUILCEIyH8
-Doa8iNgyYCuXln6hNSZuM2z8E+WwaGpsLRdOyIOCFNpBvuDldtt6Gj3/4dyA
-80bLKnjbDFmTZvEzxbWHpeghyodf+Ja9qtH7jRQNV0ZX41Z0T/ZmApa0u9wr
-aMP4rwd2ebXCHTTX3FANB4lZtQfNbysahucsp2544tGHP1jUOe/QN9fWPZgb
-DJ3DCpnGDR/FTc+wN/VOw5nhkTgsKzAmYNVlaOseLRJE7PAk1eCFecs6fFTs
-v4J9SwM+mP+pDMOFu/23cEt91QOcxZrxSZ7+CX6LufBKfYCGO386YrBeNcXA
-4j42CddJFdPHJwxpyTfgm1q1ya4zhhRGA/h/0QECOA==
+1:eJwdxUEog2EYAODfkkaSHHDYCk1qjcMuJrT+NbKs1JqSAxKyC9qEjWkKt2lj
+pNFosaYYQw4om2W2mbQm0iZhsc2/2KYclHzvd3h6SrsHJb00giAYCCygCQiv
+lSLPQ+YM2EiPCL/QCh29Cdb+cXOSaPeYKReOi/3sFNpKvuDFFvNaGj3/YVuH
+80ZLyhhbFFmdTuJnimsOmOghtwe/8C16laP3GtwRuDy8GjOie7I34rCgze5Y
+QWvGf52w3aXkbKPpen4V7Cdm5U40q7VoGJ4znDjgiUcPfn9RZbtD31wZd2G6
+P3AGS0QKB3wY0z3DrtR7BM4MjsRgUYE2DssuApv3aC47ZIEn3XwXzFhW4cM8
+7yXsWRrwwKxPaRAu3Om/hZvrKx/grKQen2Con+C3qB0vVfsicMdPexRWy6Yo
+mNeXTMC1Qsn00TFFGvI1+MYWZaLzlCI5YR9eYDphdqHrKq7x/zWfCdA=
   "],ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 
 Cell[CellGroupData[{
 
-Cell[TextData[StyleBox["Do 24.1.  You can as always use any resources you \
-want and ask as many questions as you want in class. ", "ItemNumbered"]], \
-"Item",
- CellChangeTimes->{{3.855987763258849*^9, 3.8559878327579193`*^9}, {
-  3.855987864527082*^9, 3.855987866223198*^9}, {3.855987909553019*^9, 
-  3.855987937658456*^9}},ExpressionUUID->"ff448ef9-9556-4777-bf36-\
-477e10ea3bdb"],
-
-Cell["\<\
-Implement a fixed number of Power Method iterations on the matrix A and \
-initial vector x0 in the directory.\
-\>", "ItemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 
-  3.8568590877389116`*^9}},ExpressionUUID->"6fefaf59-3012-40da-a5e5-\
+Cell[TextData[{
+ "Implement a Rayleigh Quotient function in Julia that takes as arguments a \
+matrix A, an initial vector x, and an initial shift \[Mu].  The function \
+should run until successive shift estimates satisfy ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"|", 
+    RowBox[{
+     SubscriptBox["\[Mu]", 
+      RowBox[{"k", "+", "1"}]], "-", 
+     SubscriptBox["\[Mu]", "k"]}], "|", 
+    RowBox[{"\[LessEqual]", 
+     RowBox[{"|", 
+      SubscriptBox["\[Mu]", "k"], "|", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "8"}]]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d6283f1e-7219-44e4-8477-47899de550a2"],
+ " or ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"k", ">", 
+    SuperscriptBox["10", "3"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "50dd28f6-69df-4f22-9387-a5adc94d2c12"],
+ ".  It should return how many iterations the function took as well as the \
+current shift and eigenvector estimate. "
+}], "ItemNumbered",
+ CellChangeTimes->{{3.856859016471154*^9, 3.8568590877389116`*^9}, {
+  3.856859399378336*^9, 
+  3.8568597254732313`*^9}},ExpressionUUID->"6fefaf59-3012-40da-a5e5-\
 239adf465cf5"],
 
-Cell[CellGroupData[{
-
 Cell["\<\
-Do you look like you have converged after 123 iterations.  What is your \
-eigenvalue estimate at this point.\
+Test your function on the matrix A and initial vector x0 in the directory \
+with initial shift mu0=12.\
 \>", "SubitemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 3.8568591524423895`*^9}, {
-  3.8568592124439564`*^9, 
-  3.856859237414445*^9}},ExpressionUUID->"402477cf-08de-4d19-8865-\
-096e7b57a460"],
-
-Cell["Record the third component of your x after 123 iterations.\t ", \
-"SubitemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 
-  3.85685920786487*^9}},ExpressionUUID->"5936ee4d-72e2-4f29-9c15-\
-bb46c0ae5ebf"]
-}, Open  ]],
-
-Cell["\<\
-Implement a fixed number of Inverse Power Method iterations on the matrix A \
-and initial vector x0 in the directory with shift mu=12.\
-\>", "ItemNumbered",
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.},
  CellChangeTimes->{{3.856859016471154*^9, 3.8568590877389116`*^9}, {
-  3.8568592477319164`*^9, 
-  3.8568592684094048`*^9}},ExpressionUUID->"1a8efec4-1c7a-448a-acc8-\
-7e75aa13eae5"],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-Do you look like you have converged after 123 iterations.  What is your \
-eigenvalue estimate at this point.\
-\>", "SubitemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 3.8568591524423895`*^9}, {
-  3.8568592124439564`*^9, 
-  3.856859237414445*^9}},ExpressionUUID->"a86184cd-8660-47fb-af83-\
-16a82e97196a"],
-
-Cell["Record the third component of your x after 123 iterations.\t ", \
-"SubitemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 
-  3.85685920786487*^9}},ExpressionUUID->"487f584c-4c4a-477d-955f-\
-a577adcbf411"]
-}, Open  ]],
-
-Cell["\<\
-Implement a fixed number of Rayleigh Quotient iterations on the matrix A and \
-initial vector x0 in the directory with initial shift mu0=12.\
-\>", "ItemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 3.8568590877389116`*^9}, {
-  3.8568592477319164`*^9, 
-  3.8568593205133777`*^9}},ExpressionUUID->"7f0f69f0-da95-4805-86e1-\
-d1bcb1c2a419"],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-Do you look like you have converged after 123 iterations.  What is your shift \
-value at this point.\
-\>", "SubitemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 3.8568591524423895`*^9}, {
-  3.8568592124439564`*^9, 3.856859237414445*^9}, {3.8568593255699553`*^9, 
-  3.8568593382149553`*^9}},ExpressionUUID->"4f9b83ab-5841-487f-bdc6-\
-f0e08411a2b6"],
-
-Cell["Record the third component of your x after 123 iterations.\t ", \
-"SubitemNumbered",
- CellChangeTimes->{{3.856859016471154*^9, 
-  3.85685920786487*^9}},ExpressionUUID->"7990ef3b-9ee2-4088-91f3-\
-1c9511f8740d"]
-}, Open  ]]
+  3.856859399378336*^9, 3.8568595355628357`*^9}, {3.8568627382692413`*^9, 
+  3.8568627488377876`*^9}, {3.8568627828187637`*^9, 
+  3.856862791195553*^9}},ExpressionUUID->"e5832721-3449-4a1e-8bf9-\
+09091f3ee9ed"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
 WindowSize->{1268, 965},
-WindowMargins->{{Automatic, -1770}, {Automatic, -4}},
+WindowMargins->{{1643, Automatic}, {68, Automatic}},
 TaggingRules-><|
  "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
 Magnification:>1.5 Inherited,
@@ -147,24 +103,11 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 594, 10, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[580, 22, 606, 10, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 Cell[CellGroupData[{
-Cell[1199, 36, 382, 6, 50, "Item",ExpressionUUID->"ff448ef9-9556-4777-bf36-477e10ea3bdb"],
-Cell[1584, 44, 269, 6, 50, "ItemNumbered",ExpressionUUID->"6fefaf59-3012-40da-a5e5-239adf465cf5"],
-Cell[CellGroupData[{
-Cell[1878, 54, 322, 7, 40, "SubitemNumbered",ExpressionUUID->"402477cf-08de-4d19-8865-096e7b57a460"],
-Cell[2203, 63, 215, 4, 40, "SubitemNumbered",ExpressionUUID->"5936ee4d-72e2-4f29-9c15-bb46c0ae5ebf"]
-}, Open  ]],
-Cell[2433, 70, 347, 7, 83, "ItemNumbered",ExpressionUUID->"1a8efec4-1c7a-448a-acc8-7e75aa13eae5"],
-Cell[CellGroupData[{
-Cell[2805, 81, 322, 7, 40, "SubitemNumbered",ExpressionUUID->"a86184cd-8660-47fb-af83-16a82e97196a"],
-Cell[3130, 90, 215, 4, 40, "SubitemNumbered",ExpressionUUID->"487f584c-4c4a-477d-955f-a577adcbf411"]
-}, Open  ]],
-Cell[3360, 97, 353, 7, 83, "ItemNumbered",ExpressionUUID->"7f0f69f0-da95-4805-86e1-d1bcb1c2a419"],
-Cell[CellGroupData[{
-Cell[3738, 108, 364, 7, 40, "SubitemNumbered",ExpressionUUID->"4f9b83ab-5841-487f-bdc6-f0e08411a2b6"],
-Cell[4105, 117, 215, 4, 40, "SubitemNumbered",ExpressionUUID->"7990ef3b-9ee2-4088-91f3-1c9511f8740d"]
-}, Open  ]]
+Cell[1211, 36, 1162, 31, 152, "ItemNumbered",ExpressionUUID->"6fefaf59-3012-40da-a5e5-239adf465cf5"],
+Cell[2376, 69, 478, 9, 40, "SubitemNumbered",ExpressionUUID->"e5832721-3449-4a1e-8bf9-09091f3ee9ed",
+ CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}]
 }, Open  ]]
 }, Open  ]]
 }
