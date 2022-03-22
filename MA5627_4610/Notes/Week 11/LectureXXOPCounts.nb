@@ -10,31 +10,72 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8757,        237]
-NotebookOptionsPosition[      7170,        200]
-NotebookOutlinePosition[      7796,        221]
-CellTagsIndexPosition[      7753,        218]
+NotebookDataLength[     10692,        287]
+NotebookOptionsPosition[      8668,        242]
+NotebookOutlinePosition[      9294,        263]
+CellTagsIndexPosition[      9251,        260]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["\<\
-32: Iterative Methods
-What, Why, and When\
-\>", "Title",
+Cell["XX: OP Counts", "Title",
  CellChangeTimes->CompressedData["
-1:eJwdzGkow2EAx/G/I0ZSlKsmJryQeeENXkibI4sXkisvJCF74Qi5JxTv3IZG
-rtDchneUzTLDhMjRHGFhM7E5Q3h+z4tvn3dfTlZhYo4lwzAcEuRb8plNqZG3
-ph2xgBKWLuqZWNLGioXNv8H2JqKqYsABGuI1AWailHdNjR8fGXwhdjzMDkHH
-cm8f9oSRF/Jioja6hy16EotUamrnq+CmmDgfrdJBv7N+vYSYbTdqgPw0mbyP
-WFf9rYAyZWXgNJHVHhEENUxTsYLom+xWClu6luWw5lxNXRBXzR4Rd7clc5Cl
-2V+FiYISOVzSt11BpflOB60PyvRQ4NxsgML1/bFjYnCAdhzWqiKUkN1bRT0L
-3dyA6u4CNfR9SjqArjN5hzAunHsKbUzt1Ee26BLe3suoSaItHcz4SL+HImG9
-EYbmmh7p/41rhntuQurFm/gdcrghH/Az3+oPZpb2WJ0QPabqbaH/Uo4DVHjG
-OMHVyVQXmLGT4AE7Gsao0t9IL/g1MUxd+8k+Ea8YeSmt21r4DzEwPBA=
+1:eJwdzE1M0mEAx/F/2oycc7MtiQ1nOOzgogMXqK05SF0slo6huQ6uOW1xsBqw
+XiycutmhzRIKdOR8Yb5AqYV6002QhSC0YrSygdoLMyGYARpNm/n8nsN3n9uX
+13hL0ZzFMEwJCUqzpIzXGpcshiyHoJkVqfhN1PSwLsLufWFukui+N5AHY3J/
+WYpolXynyscsg2mi4dfUEMy/e7KEa4tLROkktevE2Zki4m23h/psW/ZDTXxT
+6Y7A0nB/1ExsOjoSg9J6u+MFsf3BnhPaXfdPTxBZ+vIz0M88UjuJ/Fq2Fj55
+PueAD1c91Glj69Qn4nuf+TVk+QMLUCHTOOBstOcbdKV+RuDh4J0olB3rjkHV
+28DoZ6KwLDQG29zlLsjta6WGxd4l6DHd9ED+ljIICydvfISXzgu+wJyknprg
+6tbhxqadqtQtR2BD5uom1Kk64lB8PZmg/x1BCn5gq6hrO8Y/kCcQZeDfluz/
+8Jq2N3uFyHnVcQSemm3Og86iqgK48PLKcdjwroYDDZ2jVOv+hWK4axumLv5r
+WjHOxyV1T30hOK5+fNlEVHw9Vw0PAD4NRLs=
   "],ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+
+Cell["\<\
+We have looked at lots of algorithms.  Historically folks have used FLOPS \
+(Floating Point Operations per Second) to estimate the arithmetic intensity \
+of algorithms.  There is more than a little bit of ambiguity and tradition in \
+this.\
+\>", "Text",
+ CellChangeTimes->{{3.856970677984902*^9, 
+  3.8569708169629154`*^9}},ExpressionUUID->"b94a9251-c74e-46fc-8051-\
+286823e005ef"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+In olden days a single addition was much faster than a single multiplication.\
+\>", "Item",
+ CellChangeTimes->{{3.856970824701024*^9, 
+  3.8569708856416802`*^9}},ExpressionUUID->"4a7391a0-91d4-4c6d-bc70-\
+0cccab529e38"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox["+", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "84d4453d-c418-4e34-9969-5950e8ae5a00"],
+ "  "
+}], "Subitem",
+ CellChangeTimes->{{3.856970824701024*^9, 
+  3.856970902978777*^9}},ExpressionUUID->"ef297dd5-4e17-407c-969d-\
+0b5877a85872"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Flops", "Section",
+ CellChangeTimes->{{3.847097898203796*^9, 3.847097949004158*^9}, {
+  3.84709811825355*^9, 3.847098131845387*^9}, {3.847100057948483*^9, 
+  3.847100070542018*^9}, {3.8471018011042843`*^9, 3.847101805095915*^9}, {
+  3.847140821387518*^9, 3.847140823364403*^9}, {3.847140887506627*^9, 
+  3.8471408963475122`*^9}, {3.847142140431596*^9, 3.847142158743582*^9}, {
+  3.8569703751253977`*^9, 
+  3.856970376316573*^9}},ExpressionUUID->"6bbc12e2-b1d7-449a-92f2-\
+f019a2e972d5"],
 
 Cell["Iterative solvers:", "Text",
  CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
@@ -46,7 +87,8 @@ Cell["Iterative solvers:", "Text",
    3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
    3.847143060799942*^9}, {3.856969829909539*^9, 
    3.85696984010671*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
-f8ac0b4049d9"],
+f8ac0b4049d9"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -207,7 +249,7 @@ Magnification:>1.5 Inherited,
 FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
   CharacterEncoding -> "UTF-8"],
-ExpressionUUID->"a0459cc7-a296-4651-a10b-f68295c9d831"
+ExpressionUUID->"79424b40-85cf-4607-b3a9-d4ac53587306"
 ]
 (* End of Notebook Content *)
 
@@ -221,21 +263,29 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 709, 14, 281, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
-Cell[1292, 38, 677, 10, 50, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[580, 22, 714, 12, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[1297, 36, 391, 8, 83, "Text",ExpressionUUID->"b94a9251-c74e-46fc-8051-286823e005ef"],
 Cell[CellGroupData[{
-Cell[1994, 52, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
-Cell[2467, 64, 2006, 53, 295, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
- InitializationCell->True],
-Cell[4476, 119, 147, 3, 50, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
-Cell[CellGroupData[{
-Cell[4648, 126, 944, 29, 157, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
-Cell[5595, 157, 449, 10, 66, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
-Cell[6047, 169, 449, 10, 66, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
+Cell[1713, 48, 229, 5, 47, "Item",ExpressionUUID->"4a7391a0-91d4-4c6d-bc70-0cccab529e38"],
+Cell[1945, 55, 301, 9, 40, "Subitem",ExpressionUUID->"ef297dd5-4e17-407c-969d-0b5877a85872"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6533, 184, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
-Cell[6881, 191, 249, 4, 50, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
+Cell[2283, 69, 492, 8, 97, "Section",ExpressionUUID->"6bbc12e2-b1d7-449a-92f2-f019a2e972d5"],
+Cell[2778, 79, 677, 10, 50, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3492, 94, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
+Cell[3965, 106, 2006, 53, 295, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
+ InitializationCell->True],
+Cell[5974, 161, 147, 3, 50, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
+Cell[CellGroupData[{
+Cell[6146, 168, 944, 29, 157, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
+Cell[7093, 199, 449, 10, 66, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
+Cell[7545, 211, 449, 10, 66, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8031, 226, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
+Cell[8379, 233, 249, 4, 50, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
