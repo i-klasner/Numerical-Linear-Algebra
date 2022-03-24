@@ -1,0 +1,236 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8836,        228]
+NotebookOptionsPosition[      7735,        200]
+NotebookOutlinePosition[      8353,        221]
+CellTagsIndexPosition[      8310,        218]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["XX: Convergence", "Title",
+ CellChangeTimes->CompressedData["
+1:eJwdzk0og3EAx/HHSzwkBwcvNXlpLrKpHYaDtEVZnETJQRKyg5eQ94kDN/JO
+IyREGMNBUTbLDBPynrewbM88i81rKfx//8Ovz+3XNyK/LKPQnWGYMDIod5cz
+O9O8bPNq3A2qWUvyK7Gyk02F7b8SXyfRWDviB+3p5mgXcVr2QE2fGh99I3Y/
+a8agf014pGCGl8W9OamtwQnLocRyo4na8654rCAuphgtMOp6mFMTC3wm7FCe
+rdUNEZsbfvRQa6iLmSOyXUliaGbaKvREYVZQFezoXdPBxhsTdamvXnNGPNhT
+L0DWfLQBMxSVOrjCdd5Dg8tqgZ7H1RxUBLTboXLraPKcKIm+moJNxiQDFAzW
+U6/jd7ahqb/UBIUvmccwcL74BKYlii6hl7OL6hCo7uCTTUvNVO1aYO5Xjg2q
+lC08jC9yOuj/h8gFD4OU1NuPvk8YIYr7gt8lHn8wr2rA44IYMtviDaXCSBbu
+WzmxY5WX5TyFxkKpVcPdrJN+/tQO/wEOHSrZ
+  "],ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+
+Cell[TextData[{
+ "We want to quantify how fast a sequence of errors ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["e", "k"], "\[GreaterEqual]", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0c501a11-d5e1-4639-bd48-57c55f644ade"],
+ " converges to zero.  There are lots of properties (in addition to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["e", "k"], "\[Rule]", "0"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7bc1a33b-41a9-4b86-af9f-b4ba1a7bf4de"],
+ ") that would be useful.  "
+}], "Text",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 3.857117166833606*^9}, {3.857117335700138*^9, 
+   3.8571173378816214`*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
+f8ac0b4049d9"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Non-increasing i.e. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["e", 
+     RowBox[{"k", "+", "1"}]], "\[LessEqual]", 
+    SubscriptBox["e", "k"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "019e027f-6ac6-46bc-920a-ba41c08a93c4"],
+ "  is great.  However, ee will rarely know that this holds for an entire \
+sequence and eventually non-increasing i.e. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["e", 
+     RowBox[{"k", "+", "1"}]], "\[LessEqual]", 
+    SubscriptBox["e", "k"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7b219310-b6c8-4605-baa6-07926644ac39"],
+ " for all ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"k", "\[GreaterEqual]", "K"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0623253b-78d9-4e4b-a613-661637a62e24"],
+ " is just about as good."
+}], "Item",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 
+   3.8571173096614256`*^9}},ExpressionUUID->"a7a6fbb9-2970-4076-a420-\
+17b49846304c"],
+
+Cell[TextData[{
+ "Asymptotic Linear Convergence i.e. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["e", 
+     RowBox[{"k", "+", "1"}]], "<", 
+    RowBox[{"C", " ", 
+     SubscriptBox["e", "k"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fcdc087b-3296-4914-a882-cb86a3bd8d7e"],
+ " for all ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"k", "\[GreaterEqual]", "K"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "fd687626-1d93-46fe-940e-09465eb2a6f8"],
+ " is only useful if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", "<", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5917c45a-b835-42d7-9990-2882502d06e2"],
+ " and only good if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"C", " "}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "286c3f11-2a55-4deb-9277-c3496d903040"],
+ "is reasonable well below 1. You are working with this for the HW."
+}], "Item",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 
+   3.857117444148632*^9}},ExpressionUUID->"7bd1fa92-a7cd-4d54-b0ba-\
+22566044f042"],
+
+Cell[TextData[{
+ "Asymptotic Quadratic (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Alpha]", "=", "2"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "320e5380-a527-4c90-9dab-9994c6baf6b0"],
+ ") Cubic (",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Alpha]", "=", "3"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "755347a1-74eb-4f6f-a701-5c5848e92596"],
+ ") Convergence i.e.  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["e", 
+     RowBox[{"k", "+", "1"}]], "<", 
+    RowBox[{"C", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SubscriptBox["e", "k"], ")"}], "\[Alpha]"], "     ", 
+     RowBox[{"\[ForAll]", 
+      RowBox[{"k", "\[GreaterEqual]", "K", " "}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8dfcc483-7f22-4ed6-b306-57fcfe9af8f3"],
+ " is useful for any constant C.  Lets see what this means for a general ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Alpha]", ">", "1"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "33a91cc6-36ca-4006-bebc-3a2f62789b39"],
+ ".      "
+}], "Item",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 
+   3.8571176709193935`*^9}},ExpressionUUID->"0d02dfd8-d39a-40a1-adb8-\
+f3ebb5745858"]
+}, Open  ]],
+
+Cell["", "Text",ExpressionUUID->"26f7811b-551a-4670-9ffe-843b45ac88f1"]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1268, 965},
+WindowMargins->{{1546, Automatic}, {98, Automatic}},
+TaggingRules-><|
+ "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (December 2, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"8b79fe5a-2617-4059-883a-5ddd79c27364"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 655, 11, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[1238, 35, 1320, 27, 83, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[CellGroupData[{
+Cell[2583, 66, 1587, 38, 77, "Item",ExpressionUUID->"a7a6fbb9-2970-4076-a420-17b49846304c"],
+Cell[4173, 106, 1654, 41, 77, "Item",ExpressionUUID->"7bd1fa92-a7cd-4d54-b0ba-22566044f042"],
+Cell[5830, 149, 1803, 45, 77, "Item",ExpressionUUID->"0d02dfd8-d39a-40a1-adb8-f3ebb5745858"]
+}, Open  ]],
+Cell[7648, 197, 71, 0, 50, "Text",ExpressionUUID->"26f7811b-551a-4670-9ffe-843b45ac88f1"]
+}, Open  ]]
+}
+]
+*)
+
