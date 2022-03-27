@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8357,        217]
-NotebookOptionsPosition[      7071,        185]
-NotebookOutlinePosition[      7687,        206]
-CellTagsIndexPosition[      7644,        203]
+NotebookDataLength[      5972,        161]
+NotebookOptionsPosition[      5057,        135]
+NotebookOutlinePosition[      5673,        156]
+CellTagsIndexPosition[      5630,        153]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -120,21 +120,7 @@ matrix ",
   FormBox["Q", TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
   "059c5702-759f-4a18-a659-d12cac36930d"],
- ".  \n\nThe Arnoldi iteration systematically constructs a readily expanded \
-orthogonal basis for ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
-    RowBox[{"A", ",", "b"}], ")"}], TraditionalForm]],ExpressionUUID->
-  "7908da35-944d-4da2-9c9c-452f2c70ea12"],
- ". The Arnoldi eigenvalue algorithm approximates the larger eigenvalues of A \
-by the action of ",
- Cell[BoxData[
-  FormBox["A", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "ad69f603-6227-434e-a798-c18691803b1a"],
- " on this orthogonal basis.    "
+ ".  "
 }], "Text",
  CellChangeTimes->{{3.857383824201223*^9, 3.857383935929935*^9}, {
   3.8573850650448112`*^9, 3.857385069555675*^9}, {3.857385348948452*^9, 
@@ -142,44 +128,8 @@ by the action of ",
   3.857388224313765*^9, 3.8573884887320843`*^9}, {3.857388533099959*^9, 
   3.857388793214662*^9}, {3.857389054602974*^9, 3.857389064057185*^9}, {
   3.8573891974581537`*^9, 
-  3.8573894548655767`*^9}},ExpressionUUID->"915f2246-2dc7-4d39-b874-\
-9feaa4d9beed"],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
- "Initializing this process involves choosing ",
- Cell[BoxData[
-  FormBox["b", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "1267fbff-4a5c-4730-98b1-a44dbe3cb875"]
-}], "Item",
- CellChangeTimes->{{3.857385386132596*^9, 3.857385391817161*^9}, {
-  3.8573854267165003`*^9, 3.857385439252213*^9}, {3.857388804988248*^9, 
-  3.857388823916863*^9}},ExpressionUUID->"4ec903cf-e9af-49d4-9cc1-\
-af604df51dda"],
-
-Cell["\<\
-The subspace expands at each step in the Arnoldi eigenvalue method.  The \
-Arnoldi method needs to be restarted once this subspace becomes unwieldy. \
-\>", "Item",
- CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.},
- CellChangeTimes->{{3.857385386132596*^9, 3.857385391817161*^9}, {
-  3.8573854267165003`*^9, 3.857385439252213*^9}, {3.857388804988248*^9, 
-  3.857388982481206*^9}},ExpressionUUID->"8870acbd-23ac-4314-b8a3-\
-29efc14743f3"]
-}, Open  ]],
-
-Cell["\<\
-The next notebook discusses and implements the Arnoldi iteration. \
-\>", "Text",
- CellChangeTimes->{{3.857384760075901*^9, 3.857385039043775*^9}, {
-  3.857385081300638*^9, 3.857385099459815*^9}, {3.857385549884368*^9, 
-  3.857385615358898*^9}, {3.857385696124716*^9, 3.857385703340053*^9}, {
-  3.857385775060397*^9, 3.8573858225323267`*^9}, {3.857385969932459*^9, 
-  3.85738605675697*^9}, {3.857388994009128*^9, 
-  3.857389021712491*^9}},ExpressionUUID->"d552ec37-d483-4e16-ab3f-\
-1c078b571def"]
+  3.857389478362156*^9}},ExpressionUUID->"915f2246-2dc7-4d39-b874-\
+9feaa4d9beed"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -210,13 +160,7 @@ Cell[580, 22, 676, 12, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400
 Cell[1259, 36, 919, 15, 118, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
 Cell[CellGroupData[{
 Cell[2203, 55, 358, 5, 97, "Section",ExpressionUUID->"9900026f-b42a-4178-8512-5a797ad12d8c"],
-Cell[2564, 62, 3037, 83, 259, "Text",ExpressionUUID->"915f2246-2dc7-4d39-b874-9feaa4d9beed"],
-Cell[CellGroupData[{
-Cell[5626, 149, 437, 10, 48, "Item",ExpressionUUID->"4ec903cf-e9af-49d4-9cc1-af604df51dda"],
-Cell[6066, 161, 457, 8, 78, "Item",ExpressionUUID->"8870acbd-23ac-4314-b8a3-29efc14743f3",
- CellGroupingRules->{"GroupTogetherNestedGrouping", 15000.}]
-}, Open  ]],
-Cell[6538, 172, 505, 9, 51, "Text",ExpressionUUID->"d552ec37-d483-4e16-ab3f-1c078b571def"]
+Cell[2564, 62, 2465, 69, 157, "Text",ExpressionUUID->"915f2246-2dc7-4d39-b874-9feaa4d9beed"]
 }, Open  ]]
 }, Open  ]]
 }
