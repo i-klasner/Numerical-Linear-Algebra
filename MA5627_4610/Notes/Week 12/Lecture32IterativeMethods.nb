@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    141146,       3391]
-NotebookOptionsPosition[    137523,       3322]
-NotebookOutlinePosition[    138138,       3343]
-CellTagsIndexPosition[    138095,       3340]
+NotebookDataLength[    182280,       4364]
+NotebookOptionsPosition[    177767,       4281]
+NotebookOutlinePosition[    178382,       4302]
+CellTagsIndexPosition[    178339,       4299]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1840,7 +1840,8 @@ equations into linear algebra. First number the ",
      RowBox[{"2", "n"}]}], ")"}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
   "857fd26f-0f0b-4f24-9b51-6640ef4717f1"],
- " interior nodes in some order.  "
+ " interior nodes in some order.  Here is a standard very organized numbering \
+scheme."
 }], "Text",
  InitializationCell->True,
  CellChangeTimes->{{3.857022256156871*^9, 3.857023681332889*^9}, {
@@ -1852,8 +1853,8 @@ equations into linear algebra. First number the ",
   3.857026786144264*^9}, {3.857029010827552*^9, 3.857029117903164*^9}, {
   3.857059404121769*^9, 3.8570594114694853`*^9}, {3.85705947200185*^9, 
   3.857059632293727*^9}, {3.85733761937216*^9, 3.8573376390650043`*^9}, {
-  3.857337671098239*^9, 
-  3.857337725006998*^9}},ExpressionUUID->"3e00b904-34d4-4cd3-90a8-\
+  3.857337671098239*^9, 3.857337725006998*^9}, {3.857338044523489*^9, 
+  3.8573380816976013`*^9}},ExpressionUUID->"3e00b904-34d4-4cd3-90a8-\
 3e5981e6caa4"],
 
 Cell[CellGroupData[{
@@ -1885,16 +1886,38 @@ Cell[BoxData[{
           RowBox[{"0", ",", "0"}], "}"}], ",", 
          RowBox[{"{", 
           RowBox[{"2", ",", "1"}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{"{", 
       RowBox[{
-       RowBox[{"PointSize", "[", "0.02", "]"}], ",", 
-       RowBox[{"Table", "[", 
+       RowBox[{"PointSize", "[", "0.01", "]"}], ",", 
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
         RowBox[{
-         RowBox[{"Point", "[", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"x", "[", "i", "]"}], ",", 
-            RowBox[{"y", "[", "j", "]"}]}], "}"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Point", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"x", "[", "i", "]"}], ",", 
+              RowBox[{"y", "[", "j", "]"}]}], "}"}], "]"}], ",", "Blue", ",", 
+           " ", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"i", "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"2", "n"}], "+", "1"}], ")"}], 
+               RowBox[{"(", 
+                RowBox[{"j", "-", "1"}], ")"}]}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"x", "[", "i", "]"}], ",", 
+               RowBox[{"y", "[", "j", "]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "1"}], ",", 
+               RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
          RowBox[{"{", 
           RowBox[{"i", ",", "1", ",", 
            RowBox[{"1", "+", 
@@ -1902,58 +1925,994 @@ Cell[BoxData[{
          RowBox[{"{", 
           RowBox[{"j", ",", "1", ",", " ", "n"}], "}"}]}], "]"}]}], "}"}]}], 
     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"PlotLabel", "->", "\"\<Possible Numbering Scheme\>\""}], ",", 
+   "\[IndentingNewLine]", 
    RowBox[{"Frame", "->", "True"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.857059641918899*^9, 3.857060263938715*^9}, 
    3.857060301342153*^9, {3.8570603313836613`*^9, 3.857060331749614*^9}, {
-   3.8573377364347982`*^9, 3.8573377496814947`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"bb1ca733-4667-428e-bf21-d11cc22c17dc"],
+   3.8573377364347982`*^9, 3.8573377496814947`*^9}, {3.857337898582698*^9, 
+   3.857338017634644*^9}, {3.857338088371337*^9, 3.857338120018478*^9}, {
+   3.857339227684579*^9, 3.8573392541311607`*^9}},
+ CellLabel->
+  "In[124]:=",ExpressionUUID->"bb1ca733-4667-428e-bf21-d11cc22c17dc"],
 
 Cell[BoxData[
  GraphicsBox[{
    {RGBColor[0.88, 1, 0.88], EdgeForm[RGBColor[1, 0, 0]], 
     RectangleBox[{0, 0}, {2, 1}]}, 
    {PointSize[
-    0.02], {PointBox[NCache[{Rational[1, 5], Rational[1, 5]}, {0.2, 0.2}]], 
-     PointBox[NCache[{Rational[1, 5], Rational[2, 5]}, {0.2, 0.4}]], 
-     PointBox[NCache[{Rational[1, 5], Rational[3, 5]}, {0.2, 0.6}]], 
-     PointBox[NCache[{Rational[1, 5], Rational[4, 5]}, {0.2, 0.8}]]}, {
-     PointBox[NCache[{Rational[2, 5], Rational[1, 5]}, {0.4, 0.2}]], 
-     PointBox[NCache[{Rational[2, 5], Rational[2, 5]}, {0.4, 0.4}]], 
-     PointBox[NCache[{Rational[2, 5], Rational[3, 5]}, {0.4, 0.6}]], 
-     PointBox[NCache[{Rational[2, 5], Rational[4, 5]}, {0.4, 0.8}]]}, {
-     PointBox[NCache[{Rational[3, 5], Rational[1, 5]}, {0.6, 0.2}]], 
-     PointBox[NCache[{Rational[3, 5], Rational[2, 5]}, {0.6, 0.4}]], 
-     PointBox[NCache[{Rational[3, 5], Rational[3, 5]}, {0.6, 0.6}]], 
-     PointBox[NCache[{Rational[3, 5], Rational[4, 5]}, {0.6, 0.8}]]}, {
-     PointBox[NCache[{Rational[4, 5], Rational[1, 5]}, {0.8, 0.2}]], 
-     PointBox[NCache[{Rational[4, 5], Rational[2, 5]}, {0.8, 0.4}]], 
-     PointBox[NCache[{Rational[4, 5], Rational[3, 5]}, {0.8, 0.6}]], 
-     PointBox[NCache[{Rational[4, 5], Rational[4, 5]}, {0.8, 0.8}]]}, {
-     PointBox[NCache[{1, Rational[1, 5]}, {1, 0.2}]], 
-     PointBox[NCache[{1, Rational[2, 5]}, {1, 0.4}]], 
-     PointBox[NCache[{1, Rational[3, 5]}, {1, 0.6}]], 
-     PointBox[NCache[{1, Rational[4, 5]}, {1, 0.8}]]}, {
-     PointBox[NCache[{Rational[6, 5], Rational[1, 5]}, {1.2, 0.2}]], 
-     PointBox[NCache[{Rational[6, 5], Rational[2, 5]}, {1.2, 0.4}]], 
-     PointBox[NCache[{Rational[6, 5], Rational[3, 5]}, {1.2, 0.6}]], 
-     PointBox[NCache[{Rational[6, 5], Rational[4, 5]}, {1.2, 0.8}]]}, {
-     PointBox[NCache[{Rational[7, 5], Rational[1, 5]}, {1.4, 0.2}]], 
-     PointBox[NCache[{Rational[7, 5], Rational[2, 5]}, {1.4, 0.4}]], 
-     PointBox[NCache[{Rational[7, 5], Rational[3, 5]}, {1.4, 0.6}]], 
-     PointBox[NCache[{Rational[7, 5], Rational[4, 5]}, {1.4, 0.8}]]}, {
-     PointBox[NCache[{Rational[8, 5], Rational[1, 5]}, {1.6, 0.2}]], 
-     PointBox[NCache[{Rational[8, 5], Rational[2, 5]}, {1.6, 0.4}]], 
-     PointBox[NCache[{Rational[8, 5], Rational[3, 5]}, {1.6, 0.6}]], 
-     PointBox[NCache[{Rational[8, 5], Rational[4, 5]}, {1.6, 0.8}]]}, {
-     PointBox[NCache[{Rational[9, 5], Rational[1, 5]}, {1.8, 0.2}]], 
-     PointBox[NCache[{Rational[9, 5], Rational[2, 5]}, {1.8, 0.4}]], 
-     PointBox[NCache[{Rational[9, 5], Rational[3, 5]}, {1.8, 0.6}]], 
-     PointBox[NCache[{Rational[9, 5], Rational[4, 5]}, {1.8, 0.8}]]}}},
-  Frame->True]], "Output",
+    0.01], {{PointBox[NCache[{Rational[1, 5], Rational[1, 5]}, {0.2, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["1", NCache[{Rational[1, 5], Rational[1, 5]}, {0.2, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[1, 5], Rational[2, 5]}, {0.2, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["10", NCache[{Rational[1, 5], Rational[2, 5]}, {0.2, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[1, 5], Rational[3, 5]}, {0.2, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["19", NCache[{Rational[1, 5], Rational[3, 5]}, {0.2, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[1, 5], Rational[4, 5]}, {0.2, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["28", NCache[{Rational[1, 5], Rational[4, 5]}, {0.2, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{Rational[2, 5], Rational[1, 5]}, {0.4, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["2", NCache[{Rational[2, 5], Rational[1, 5]}, {0.4, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[2, 5], Rational[2, 5]}, {0.4, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["11", NCache[{Rational[2, 5], Rational[2, 5]}, {0.4, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[2, 5], Rational[3, 5]}, {0.4, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["20", NCache[{Rational[2, 5], Rational[3, 5]}, {0.4, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[2, 5], Rational[4, 5]}, {0.4, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["29", NCache[{Rational[2, 5], Rational[4, 5]}, {0.4, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{Rational[3, 5], Rational[1, 5]}, {0.6, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["3", NCache[{Rational[3, 5], Rational[1, 5]}, {0.6, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[3, 5], Rational[2, 5]}, {0.6, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["12", NCache[{Rational[3, 5], Rational[2, 5]}, {0.6, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[3, 5], Rational[3, 5]}, {0.6, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["21", NCache[{Rational[3, 5], Rational[3, 5]}, {0.6, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[3, 5], Rational[4, 5]}, {0.6, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["30", NCache[{Rational[3, 5], Rational[4, 5]}, {0.6, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{Rational[4, 5], Rational[1, 5]}, {0.8, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["4", NCache[{Rational[4, 5], Rational[1, 5]}, {0.8, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[4, 5], Rational[2, 5]}, {0.8, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["13", NCache[{Rational[4, 5], Rational[2, 5]}, {0.8, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[4, 5], Rational[3, 5]}, {0.8, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["22", NCache[{Rational[4, 5], Rational[3, 5]}, {0.8, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[4, 5], Rational[4, 5]}, {0.8, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["31", NCache[{Rational[4, 5], Rational[4, 5]}, {0.8, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{1, Rational[1, 5]}, {1, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["5", NCache[{1, Rational[1, 5]}, {1, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{1, Rational[2, 5]}, {1, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["14", NCache[{1, Rational[2, 5]}, {1, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{1, Rational[3, 5]}, {1, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["23", NCache[{1, Rational[3, 5]}, {1, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{1, Rational[4, 5]}, {1, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["32", NCache[{1, Rational[4, 5]}, {1, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{Rational[6, 5], Rational[1, 5]}, {1.2, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["6", NCache[{Rational[6, 5], Rational[1, 5]}, {1.2, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[6, 5], Rational[2, 5]}, {1.2, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["15", NCache[{Rational[6, 5], Rational[2, 5]}, {1.2, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[6, 5], Rational[3, 5]}, {1.2, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["24", NCache[{Rational[6, 5], Rational[3, 5]}, {1.2, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[6, 5], Rational[4, 5]}, {1.2, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["33", NCache[{Rational[6, 5], Rational[4, 5]}, {1.2, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{Rational[7, 5], Rational[1, 5]}, {1.4, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["7", NCache[{Rational[7, 5], Rational[1, 5]}, {1.4, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[7, 5], Rational[2, 5]}, {1.4, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["16", NCache[{Rational[7, 5], Rational[2, 5]}, {1.4, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[7, 5], Rational[3, 5]}, {1.4, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["25", NCache[{Rational[7, 5], Rational[3, 5]}, {1.4, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[7, 5], Rational[4, 5]}, {1.4, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["34", NCache[{Rational[7, 5], Rational[4, 5]}, {1.4, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{Rational[8, 5], Rational[1, 5]}, {1.6, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["8", NCache[{Rational[8, 5], Rational[1, 5]}, {1.6, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[8, 5], Rational[2, 5]}, {1.6, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["17", NCache[{Rational[8, 5], Rational[2, 5]}, {1.6, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[8, 5], Rational[3, 5]}, {1.6, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["26", NCache[{Rational[8, 5], Rational[3, 5]}, {1.6, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[8, 5], Rational[4, 5]}, {1.6, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["35", NCache[{Rational[8, 5], Rational[4, 5]}, {1.6, 0.8}], 
+        ImageScaled[{0, 0}]]}}}, {{
+      PointBox[NCache[{Rational[9, 5], Rational[1, 5]}, {1.8, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["9", NCache[{Rational[9, 5], Rational[1, 5]}, {1.8, 0.2}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[9, 5], Rational[2, 5]}, {1.8, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["18", NCache[{Rational[9, 5], Rational[2, 5]}, {1.8, 0.4}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[9, 5], Rational[3, 5]}, {1.8, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["27", NCache[{Rational[9, 5], Rational[3, 5]}, {1.8, 0.6}], 
+        ImageScaled[{0, 0}]]}}, {
+      PointBox[NCache[{Rational[9, 5], Rational[4, 5]}, {1.8, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["36", NCache[{Rational[9, 5], Rational[4, 5]}, {1.8, 0.8}], 
+        ImageScaled[{0, 0}]]}}}}},
+  Frame->True,
+  PlotLabel->FormBox[
+   "\"Possible Numbering Scheme\"", TraditionalForm]]], "Output",
  CellChangeTimes->{{3.857060048078554*^9, 3.85706011674368*^9}, {
    3.857060166267476*^9, 3.8570602675547743`*^9}, 3.857060301911161*^9, 
-   3.857060332279038*^9, 3.857337750207437*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"84b610f0-e0a2-4f73-9ec2-3a0159ce700a"]
+   3.857060332279038*^9, 3.857337750207437*^9, {3.857337950695978*^9, 
+   3.857338020671137*^9}, 3.857338084493103*^9, 3.857338120742613*^9, 
+   3.8573392545722237`*^9, 3.8573398836506433`*^9},
+ CellLabel->
+  "Out[128]=",ExpressionUUID->"fe4c2438-1a4e-49f2-a5a4-a78f8e43884b"]
+}, Open  ]],
+
+Cell["\<\
+I am going to make a function that implements this numbering scheme. \
+\>", "Text",
+ CellChangeTimes->{{3.8573381345430307`*^9, 
+  3.85733817980171*^9}},ExpressionUUID->"b5a4300d-ff21-4447-8d0b-\
+620c5e093068"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"kFromij", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i_", ",", "j_"}], "}"}], ",", "n_"}], "]"}], ":=", 
+   RowBox[{"i", "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", "n"}], "+", "1"}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"j", "-", "1"}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", " ", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"LightGreen", ",", 
+       RowBox[{"EdgeForm", "[", "Red", "]"}], ",", 
+       RowBox[{"Rectangle", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"2", ",", "1"}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.01", "]"}], ",", 
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Point", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"x", "[", "i", "]"}], ",", 
+              RowBox[{"y", "[", "j", "]"}]}], "}"}], "]"}], ",", 
+           "\[IndentingNewLine]", "Blue", ",", " ", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"kFromij", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"i", ",", "j"}], "}"}], ",", "n"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"x", "[", "i", "]"}], ",", 
+               RowBox[{"y", "[", "j", "]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "1"}], ",", 
+               RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", "Red", ",", " ", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"i", ",", "j"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"x", "[", "i", "]"}], ",", 
+               RowBox[{"y", "[", "j", "]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", "1"}], "}"}]}], "]"}]}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", 
+           RowBox[{"1", "+", 
+            RowBox[{"2", "n"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", " ", "n"}], "}"}]}], "]"}]}], "}"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"PlotLabel", "->", "\"\<Possible Numbering Scheme\>\""}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Frame", "->", "True"}]}], "]"}], "\[IndentingNewLine]"}], "Input",\
+
+ CellChangeTimes->{{3.857338717249247*^9, 3.8573388408043413`*^9}, {
+  3.857338933030377*^9, 3.857338987255563*^9}, {3.857339123666877*^9, 
+  3.857339134007716*^9}, {3.857339716636935*^9, 3.857339735777383*^9}, {
+  3.8573397658819227`*^9, 3.8573397895780973`*^9}, {3.857339845107774*^9, 
+  3.857339868051525*^9}},
+ CellLabel->
+  "In[129]:=",ExpressionUUID->"41741772-7ffa-4d08-a058-1017507efaf3"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.88, 1, 0.88], EdgeForm[RGBColor[1, 0, 0]], 
+    RectangleBox[{0, 0}, {2, 1}]}, 
+   {PointSize[
+    0.01], {{PointBox[NCache[{Rational[1, 5], Rational[1, 5]}, {0.2, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["1", NCache[{Rational[1, 5], Rational[1, 5]}, {0.2, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1"}], "}"}], 
+        NCache[{Rational[1, 5], Rational[1, 5]}, {0.2, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[1, 5], Rational[2, 5]}, {0.2, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["10", NCache[{Rational[1, 5], Rational[2, 5]}, {0.2, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2"}], "}"}], 
+        NCache[{Rational[1, 5], Rational[2, 5]}, {0.2, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[1, 5], Rational[3, 5]}, {0.2, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["19", NCache[{Rational[1, 5], Rational[3, 5]}, {0.2, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"1", ",", "3"}], "}"}], 
+        NCache[{Rational[1, 5], Rational[3, 5]}, {0.2, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[1, 5], Rational[4, 5]}, {0.2, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["28", NCache[{Rational[1, 5], Rational[4, 5]}, {0.2, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"1", ",", "4"}], "}"}], 
+        NCache[{Rational[1, 5], Rational[4, 5]}, {0.2, 0.8}], 
+        ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{Rational[2, 5], Rational[1, 5]}, {0.4, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["2", NCache[{Rational[2, 5], Rational[1, 5]}, {0.4, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"2", ",", "1"}], "}"}], 
+        NCache[{Rational[2, 5], Rational[1, 5]}, {0.4, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[2, 5], Rational[2, 5]}, {0.4, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["11", NCache[{Rational[2, 5], Rational[2, 5]}, {0.4, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"2", ",", "2"}], "}"}], 
+        NCache[{Rational[2, 5], Rational[2, 5]}, {0.4, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[2, 5], Rational[3, 5]}, {0.4, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["20", NCache[{Rational[2, 5], Rational[3, 5]}, {0.4, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"2", ",", "3"}], "}"}], 
+        NCache[{Rational[2, 5], Rational[3, 5]}, {0.4, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[2, 5], Rational[4, 5]}, {0.4, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["29", NCache[{Rational[2, 5], Rational[4, 5]}, {0.4, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"2", ",", "4"}], "}"}], 
+        NCache[{Rational[2, 5], Rational[4, 5]}, {0.4, 0.8}], 
+        ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{Rational[3, 5], Rational[1, 5]}, {0.6, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["3", NCache[{Rational[3, 5], Rational[1, 5]}, {0.6, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"3", ",", "1"}], "}"}], 
+        NCache[{Rational[3, 5], Rational[1, 5]}, {0.6, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[3, 5], Rational[2, 5]}, {0.6, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["12", NCache[{Rational[3, 5], Rational[2, 5]}, {0.6, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"3", ",", "2"}], "}"}], 
+        NCache[{Rational[3, 5], Rational[2, 5]}, {0.6, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[3, 5], Rational[3, 5]}, {0.6, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["21", NCache[{Rational[3, 5], Rational[3, 5]}, {0.6, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"3", ",", "3"}], "}"}], 
+        NCache[{Rational[3, 5], Rational[3, 5]}, {0.6, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[3, 5], Rational[4, 5]}, {0.6, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["30", NCache[{Rational[3, 5], Rational[4, 5]}, {0.6, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"3", ",", "4"}], "}"}], 
+        NCache[{Rational[3, 5], Rational[4, 5]}, {0.6, 0.8}], 
+        ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{Rational[4, 5], Rational[1, 5]}, {0.8, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["4", NCache[{Rational[4, 5], Rational[1, 5]}, {0.8, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"4", ",", "1"}], "}"}], 
+        NCache[{Rational[4, 5], Rational[1, 5]}, {0.8, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[4, 5], Rational[2, 5]}, {0.8, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["13", NCache[{Rational[4, 5], Rational[2, 5]}, {0.8, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"4", ",", "2"}], "}"}], 
+        NCache[{Rational[4, 5], Rational[2, 5]}, {0.8, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[4, 5], Rational[3, 5]}, {0.8, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["22", NCache[{Rational[4, 5], Rational[3, 5]}, {0.8, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"4", ",", "3"}], "}"}], 
+        NCache[{Rational[4, 5], Rational[3, 5]}, {0.8, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[4, 5], Rational[4, 5]}, {0.8, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["31", NCache[{Rational[4, 5], Rational[4, 5]}, {0.8, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"4", ",", "4"}], "}"}], 
+        NCache[{Rational[4, 5], Rational[4, 5]}, {0.8, 0.8}], 
+        ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{1, Rational[1, 5]}, {1, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["5", NCache[{1, Rational[1, 5]}, {1, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"5", ",", "1"}], "}"}], 
+        NCache[{1, Rational[1, 5]}, {1, 0.2}], ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{1, Rational[2, 5]}, {1, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["14", NCache[{1, Rational[2, 5]}, {1, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"5", ",", "2"}], "}"}], 
+        NCache[{1, Rational[2, 5]}, {1, 0.4}], ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{1, Rational[3, 5]}, {1, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["23", NCache[{1, Rational[3, 5]}, {1, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"5", ",", "3"}], "}"}], 
+        NCache[{1, Rational[3, 5]}, {1, 0.6}], ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{1, Rational[4, 5]}, {1, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["32", NCache[{1, Rational[4, 5]}, {1, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"5", ",", "4"}], "}"}], 
+        NCache[{1, Rational[4, 5]}, {1, 0.8}], ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{Rational[6, 5], Rational[1, 5]}, {1.2, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["6", NCache[{Rational[6, 5], Rational[1, 5]}, {1.2, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"6", ",", "1"}], "}"}], 
+        NCache[{Rational[6, 5], Rational[1, 5]}, {1.2, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[6, 5], Rational[2, 5]}, {1.2, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["15", NCache[{Rational[6, 5], Rational[2, 5]}, {1.2, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"6", ",", "2"}], "}"}], 
+        NCache[{Rational[6, 5], Rational[2, 5]}, {1.2, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[6, 5], Rational[3, 5]}, {1.2, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["24", NCache[{Rational[6, 5], Rational[3, 5]}, {1.2, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"6", ",", "3"}], "}"}], 
+        NCache[{Rational[6, 5], Rational[3, 5]}, {1.2, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[6, 5], Rational[4, 5]}, {1.2, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["33", NCache[{Rational[6, 5], Rational[4, 5]}, {1.2, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"6", ",", "4"}], "}"}], 
+        NCache[{Rational[6, 5], Rational[4, 5]}, {1.2, 0.8}], 
+        ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{Rational[7, 5], Rational[1, 5]}, {1.4, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["7", NCache[{Rational[7, 5], Rational[1, 5]}, {1.4, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"7", ",", "1"}], "}"}], 
+        NCache[{Rational[7, 5], Rational[1, 5]}, {1.4, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[7, 5], Rational[2, 5]}, {1.4, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["16", NCache[{Rational[7, 5], Rational[2, 5]}, {1.4, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"7", ",", "2"}], "}"}], 
+        NCache[{Rational[7, 5], Rational[2, 5]}, {1.4, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[7, 5], Rational[3, 5]}, {1.4, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["25", NCache[{Rational[7, 5], Rational[3, 5]}, {1.4, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"7", ",", "3"}], "}"}], 
+        NCache[{Rational[7, 5], Rational[3, 5]}, {1.4, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[7, 5], Rational[4, 5]}, {1.4, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["34", NCache[{Rational[7, 5], Rational[4, 5]}, {1.4, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"7", ",", "4"}], "}"}], 
+        NCache[{Rational[7, 5], Rational[4, 5]}, {1.4, 0.8}], 
+        ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{Rational[8, 5], Rational[1, 5]}, {1.6, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["8", NCache[{Rational[8, 5], Rational[1, 5]}, {1.6, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"8", ",", "1"}], "}"}], 
+        NCache[{Rational[8, 5], Rational[1, 5]}, {1.6, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[8, 5], Rational[2, 5]}, {1.6, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["17", NCache[{Rational[8, 5], Rational[2, 5]}, {1.6, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"8", ",", "2"}], "}"}], 
+        NCache[{Rational[8, 5], Rational[2, 5]}, {1.6, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[8, 5], Rational[3, 5]}, {1.6, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["26", NCache[{Rational[8, 5], Rational[3, 5]}, {1.6, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"8", ",", "3"}], "}"}], 
+        NCache[{Rational[8, 5], Rational[3, 5]}, {1.6, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[8, 5], Rational[4, 5]}, {1.6, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["35", NCache[{Rational[8, 5], Rational[4, 5]}, {1.6, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"8", ",", "4"}], "}"}], 
+        NCache[{Rational[8, 5], Rational[4, 5]}, {1.6, 0.8}], 
+        ImageScaled[{1, 1}]]}}}, {{
+      PointBox[NCache[{Rational[9, 5], Rational[1, 5]}, {1.8, 0.2}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["9", NCache[{Rational[9, 5], Rational[1, 5]}, {1.8, 0.2}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"9", ",", "1"}], "}"}], 
+        NCache[{Rational[9, 5], Rational[1, 5]}, {1.8, 0.2}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[9, 5], Rational[2, 5]}, {1.8, 0.4}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["18", NCache[{Rational[9, 5], Rational[2, 5]}, {1.8, 0.4}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"9", ",", "2"}], "}"}], 
+        NCache[{Rational[9, 5], Rational[2, 5]}, {1.8, 0.4}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[9, 5], Rational[3, 5]}, {1.8, 0.6}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["27", NCache[{Rational[9, 5], Rational[3, 5]}, {1.8, 0.6}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"9", ",", "3"}], "}"}], 
+        NCache[{Rational[9, 5], Rational[3, 5]}, {1.8, 0.6}], 
+        ImageScaled[{1, 1}]]}}, {
+      PointBox[NCache[{Rational[9, 5], Rational[4, 5]}, {1.8, 0.8}]], 
+      {RGBColor[0, 0, 1], 
+       InsetBox["36", NCache[{Rational[9, 5], Rational[4, 5]}, {1.8, 0.8}], 
+        ImageScaled[{0, 0}]]}, 
+      {RGBColor[1, 0, 0], InsetBox[
+        RowBox[{"{", 
+         RowBox[{"9", ",", "4"}], "}"}], 
+        NCache[{Rational[9, 5], Rational[4, 5]}, {1.8, 0.8}], 
+        ImageScaled[{1, 1}]]}}}}},
+  Frame->True,
+  PlotLabel->FormBox[
+   "\"Possible Numbering Scheme\"", TraditionalForm]]], "Output",
+ CellChangeTimes->{
+  3.857339736963647*^9, 3.85733979056398*^9, {3.857339846424371*^9, 
+   3.857339887571506*^9}},
+ CellLabel->
+  "Out[130]=",ExpressionUUID->"393580ef-b2fb-4f6a-bf6d-d664a820fa88"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ijFromk", "[", 
+     RowBox[{"k_", ",", "n_"}], "]"}], ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"i", ",", "j"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"i", "=", 
+        RowBox[{"Mod", "[", 
+         RowBox[{"k", ",", 
+          RowBox[{
+           RowBox[{"2", "n"}], "+", "1"}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"j", "=", 
+        RowBox[{"1", "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"k", "-", "i"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"2", "n"}], "+", "1"}], ")"}]}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "j"}], "}"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", "12"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", "j"}], "}"}], "=", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"k", "=", 
+    RowBox[{"kFromij", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"i", ",", "j"}], "}"}], ",", "n"}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ijFromk", "[", 
+    RowBox[{"k", ",", "n"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.85733884418925*^9, 3.8573389236781893`*^9}, {
+  3.857338969768218*^9, 3.857338971342545*^9}, {3.857339894654608*^9, 
+  3.857339976266427*^9}},
+ CellLabel->
+  "In[156]:=",ExpressionUUID->"8bcf5d32-f28a-4060-a044-59ff943167b3"],
+
+Cell[BoxData["130"], "Output",
+ CellChangeTimes->{{3.857338858263636*^9, 3.857338992998043*^9}, {
+   3.857339141030637*^9, 3.857339146066502*^9}, 3.8573398234402246`*^9, {
+   3.857339895808514*^9, 3.857339911159214*^9}, {3.857339952673871*^9, 
+   3.857339977078907*^9}},
+ CellLabel->
+  "Out[159]=",ExpressionUUID->"c6fe50c3-1c46-40b8-a2f6-b90aa9c48b07"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "6"}], "}"}]], "Output",
+ CellChangeTimes->{{3.857338858263636*^9, 3.857338992998043*^9}, {
+   3.857339141030637*^9, 3.857339146066502*^9}, 3.8573398234402246`*^9, {
+   3.857339895808514*^9, 3.857339911159214*^9}, {3.857339952673871*^9, 
+   3.85733997708167*^9}},
+ CellLabel->
+  "Out[160]=",ExpressionUUID->"7baf32e8-10ef-43a0-bef7-a1185724adff"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Mod"}]], "Input",
+ CellChangeTimes->{{3.85733880279985*^9, 3.857338804011079*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"f59e3abe-bc65-49c6-a773-5848609de88f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"]], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"]]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Mod",
+              ButtonNote->"paclet:ref/Mod"],
+             "\"paclet:ref/Mod\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Mod\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"m\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"n\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) gives the remainder on division of \
+\\!\\(\\*StyleBox[\\\"m\\\", \\\"TI\\\"]\\) by \\!\\(\\*StyleBox[\\\"n\\\", \
+\\\"TI\\\"]\\). \\n\\!\\(\\*RowBox[{\\\"Mod\\\", \\\"[\\\", RowBox[{StyleBox[\
+\\\"m\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"n\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"d\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) uses an offset \
+\\!\\(\\*StyleBox[\\\"d\\\", \\\"TI\\\"]\\). \"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Documentation\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Documentation", "Tooltip"]& ], 
+                   TemplateBox[{
+                    
+                    TemplateBox[{
+                    "\"Local \[RightGuillemet]\"", "paclet:ref/Mod", 
+                    "paclet:ref/Mod", "Link", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"], "\"  \"", 
+                    StyleBox[
+                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
+                    "\"  \"", 
+                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
+                    URL["http://reference.wolfram.com/language/ref/Mod.html"],
+                     None}, 
+                    "http://reference.wolfram.com/language/ref/Mod.html", 
+                    "Hyperlink", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"]},
+                    "RowDefault"]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", 
+                    RowBox[{
+                    "Listable", ",", "NumericFunction", ",", "Protected", ",",
+                     "ReadProtected"}], "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"System`Mod\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox[
+           PaneBox[
+            TooltipBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIcon"],
+                ImageSizeCache->{21., {6., 15.}}], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "InformationHelpIconHot"],
+                ImageSizeCache->{21., {6., 15.}}]}, Dynamic[
+                CurrentValue["MouseOver"]]],
+              Appearance->None,
+              BaseStyle->"Link",
+              ButtonData->"paclet:ref/Mod",
+              ButtonNote->"paclet:ref/Mod"],
+             "\"paclet:ref/Mod\""],
+            FrameMargins->{{0, 4}, {0, 2}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Mod\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"m\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"n\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) gives the remainder on division of \
+\\!\\(\\*StyleBox[\\\"m\\\", \\\"TI\\\"]\\) by \\!\\(\\*StyleBox[\\\"n\\\", \
+\\\"TI\\\"]\\). \\n\\!\\(\\*RowBox[{\\\"Mod\\\", \\\"[\\\", RowBox[{StyleBox[\
+\\\"m\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"n\\\", \\\"TI\\\"], \
+\\\",\\\", StyleBox[\\\"d\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) uses an offset \
+\\!\\(\\*StyleBox[\\\"d\\\", \\\"TI\\\"]\\). \"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{16., {3., 13.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{16., {3., 13.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "\!\(\*RowBox[{\"Mod\", \"[\", RowBox[{StyleBox[\"m\", \"TI\"], \",\", \
+StyleBox[\"n\", \"TI\"]}], \"]\"}]\) gives the remainder on division of \
+\!\(\*StyleBox[\"m\", \"TI\"]\) by \!\(\*StyleBox[\"n\", \"TI\"]\). \n\
+\!\(\*RowBox[{\"Mod\", \"[\", RowBox[{StyleBox[\"m\", \"TI\"], \",\", \
+StyleBox[\"n\", \"TI\"], \",\", StyleBox[\"d\", \"TI\"]}], \"]\"}]\) uses an \
+offset \!\(\*StyleBox[\"d\", \"TI\"]\). ", 
+    "Documentation" -> <|
+     "Local" -> "paclet:ref/Mod", "Web" -> 
+      "http://reference.wolfram.com/language/ref/Mod.html"|>, "OwnValues" -> 
+    None, "UpValues" -> None, "DownValues" -> None, "SubValues" -> None, 
+    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> None, 
+    "Attributes" -> {Listable, NumericFunction, Protected, ReadProtected}, 
+    "FullName" -> "System`Mod"|>, False]]], "Output",
+ CellChangeTimes->{3.857338804563487*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"f05a2388-44fe-4c6b-a29c-347ff705a782"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -3367,29 +4326,43 @@ Cell[48164, 1194, 16614, 354, 361, "Output",ExpressionUUID->"79a94609-c324-492f-
 }, Closed]],
 Cell[CellGroupData[{
 Cell[64827, 1554, 242, 4, 74, "Section",ExpressionUUID->"b5d28b5b-05bc-49e3-9c85-d16587da7d54"],
-Cell[65072, 1560, 9533, 296, 694, "Text",ExpressionUUID->"3e00b904-34d4-4cd3-90a8-3e5981e6caa4",
+Cell[65072, 1560, 9634, 297, 728, "Text",ExpressionUUID->"3e00b904-34d4-4cd3-90a8-3e5981e6caa4",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[74630, 1860, 1799, 48, 295, "Input",ExpressionUUID->"bb1ca733-4667-428e-bf21-d11cc22c17dc"],
-Cell[76432, 1910, 2915, 45, 332, "Output",ExpressionUUID->"84b610f0-e0a2-4f73-9ec2-3a0159ce700a"]
+Cell[74731, 1861, 2848, 75, 405, "Input",ExpressionUUID->"bb1ca733-4667-428e-bf21-d11cc22c17dc"],
+Cell[77582, 1938, 8076, 158, 354, "Output",ExpressionUUID->"fe4c2438-1a4e-49f2-a5a4-a78f8e43884b"]
 }, Open  ]],
-Cell[79362, 1958, 1493, 44, 264, "Input",ExpressionUUID->"275d39ee-e775-478e-b9bf-845ac1b9149a"],
-Cell[80858, 2004, 612, 17, 143, "Input",ExpressionUUID->"f0e1d0b2-0722-4460-b2b2-30f4fcb0f76f"],
-Cell[81473, 2023, 5113, 157, 589, "Text",ExpressionUUID->"3c3a5850-f657-4239-89fa-316103a980da",
+Cell[85673, 2099, 220, 5, 51, "Text",ExpressionUUID->"b5a4300d-ff21-4447-8d0b-620c5e093068"],
+Cell[CellGroupData[{
+Cell[85918, 2108, 3153, 84, 405, "Input",ExpressionUUID->"41741772-7ffa-4d08-a058-1017507efaf3"],
+Cell[89074, 2194, 14783, 332, 354, "Output",ExpressionUUID->"393580ef-b2fb-4f6a-bf6d-d664a820fa88"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103894, 2531, 1599, 48, 281, "Input",ExpressionUUID->"8bcf5d32-f28a-4060-a044-59ff943167b3"],
+Cell[105496, 2581, 353, 6, 69, "Output",ExpressionUUID->"c6fe50c3-1c46-40b8-a2f6-b90aa9c48b07"],
+Cell[105852, 2589, 395, 8, 111, "Output",ExpressionUUID->"7baf32e8-10ef-43a0-bef7-a1185724adff"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[106284, 2602, 190, 3, 46, "Input",ExpressionUUID->"f59e3abe-bc65-49c6-a773-5848609de88f"],
+Cell[106477, 2607, 13114, 307, 199, "Output",ExpressionUUID->"f05a2388-44fe-4c6b-a29c-347ff705a782"]
+}, Open  ]],
+Cell[119606, 2917, 1493, 44, 264, "Input",ExpressionUUID->"275d39ee-e775-478e-b9bf-845ac1b9149a"],
+Cell[121102, 2963, 612, 17, 143, "Input",ExpressionUUID->"f0e1d0b2-0722-4460-b2b2-30f4fcb0f76f"],
+Cell[121717, 2982, 5113, 157, 589, "Text",ExpressionUUID->"3c3a5850-f657-4239-89fa-316103a980da",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[86611, 2184, 4203, 120, 711, "Input",ExpressionUUID->"8b1b03d6-bfa4-451a-a8f5-80dc6bc9d9e7"],
-Cell[90817, 2306, 19994, 386, 399, "Output",ExpressionUUID->"ee57e916-c67f-4c57-960b-b3428db10264"],
-Cell[110814, 2694, 2342, 55, 396, "Output",ExpressionUUID->"380cb0f3-d8b7-400b-817f-1d9c98ef6bd0"]
+Cell[126855, 3143, 4203, 120, 711, "Input",ExpressionUUID->"8b1b03d6-bfa4-451a-a8f5-80dc6bc9d9e7"],
+Cell[131061, 3265, 19994, 386, 399, "Output",ExpressionUUID->"ee57e916-c67f-4c57-960b-b3428db10264"],
+Cell[151058, 3653, 2342, 55, 396, "Output",ExpressionUUID->"380cb0f3-d8b7-400b-817f-1d9c98ef6bd0"]
 }, Open  ]],
-Cell[113171, 2752, 2399, 69, 267, "Text",ExpressionUUID->"02baac2d-9752-4c41-9c3f-600470fae094"],
+Cell[153415, 3711, 2399, 69, 267, "Text",ExpressionUUID->"02baac2d-9752-4c41-9c3f-600470fae094"],
 Cell[CellGroupData[{
-Cell[115595, 2825, 1723, 48, 325, "Input",ExpressionUUID->"c502c7f7-ff24-481f-9f5d-9a73b631134a"],
-Cell[117321, 2875, 2707, 61, 368, "Output",ExpressionUUID->"37244ab4-252a-41b1-937f-f5ec775bc171"]
+Cell[155839, 3784, 1723, 48, 325, "Input",ExpressionUUID->"c502c7f7-ff24-481f-9f5d-9a73b631134a"],
+Cell[157565, 3834, 2707, 61, 368, "Output",ExpressionUUID->"37244ab4-252a-41b1-937f-f5ec775bc171"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[120065, 2941, 801, 20, 140, "Input",ExpressionUUID->"68e33e77-cd24-4772-a510-fe86cf5cf82a"],
-Cell[120869, 2963, 16614, 354, 361, "Output",ExpressionUUID->"cba72836-d920-4715-9632-b94e6e579936"]
+Cell[160309, 3900, 801, 20, 140, "Input",ExpressionUUID->"68e33e77-cd24-4772-a510-fe86cf5cf82a"],
+Cell[161113, 3922, 16614, 354, 361, "Output",ExpressionUUID->"cba72836-d920-4715-9632-b94e6e579936"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
