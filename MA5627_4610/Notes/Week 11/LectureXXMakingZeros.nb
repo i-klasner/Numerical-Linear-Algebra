@@ -1,0 +1,426 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17238,        418]
+NotebookOptionsPosition[     15853,        384]
+NotebookOutlinePosition[     16485,        405]
+CellTagsIndexPosition[     16442,        402]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["XX: Making Zeros", "Title",
+ CellChangeTimes->CompressedData["
+1:eJwdzk0og3EAx/HHSzwkBwcvNYXmIqMcvBykLcriJEoOkpAdvMTyMiY7cBF5
+pxESIozhoJCxzDAh7+9hmWeexea1FP6//+HX5/brG5xbkpbvzDBMEBmUOEuY
+rXFevH457ATVrDnxlVjeyibD5t8oTzvRUDXgBa2ppjAHcVx8T00dGx58I7Y/
+a4agd2VQiGCCF8e82akN/nHzgcRSg5Ha8S59KCPOJhnMMPSqn1MT8zxGrFCS
+qdX1EetrftagVl8dPkVk2xIioIlpLFsjCjP85LClc0kHa6+N1LkuheaEuLej
+noGs6WAVpknLdXCBa72DeofFDF0PKzgo9Wm2QtnGwegpMSrscgzWGRL0UNCr
+oF7Fbm1CY3exEQpf0g+h73ThEUyJF51DN3sb1SZQ3sLHJy01XblthtlfWU9Q
+KVPxMLbAbqP/HyIH3PeTUW8+uj5hsCjmC34XufzBHHmPyxkxYFLlDqOFISzc
+tXARtkVenPUYGAmjLRruepn088dWWBja/tK0Qjq8L6j/CBUz/Q==
+  "],ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+
+Cell["\<\
+We had some questions about how to make various zero patterns.  Lets talk \
+about the middle one. \
+\>", "Text",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 3.857117166833606*^9}, {3.857117335700138*^9, 
+   3.8571173378816214`*^9}, {3.857473412949991*^9, 
+   3.8574734421089745`*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
+f8ac0b4049d9"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "We were asked if we could transform a general ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"3", "\[Times]", "3"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c562b5a9-1679-4bf0-afbc-53aa9de2fc1d"],
+ " matrix A to the following pattern ",
+ Cell[BoxData[
+  RowBox[{"(", GridBox[{
+     {"x", "x", "0"},
+     {"x", "0", "x"},
+     {"0", "x", "x"}
+    }], ")"}]],ExpressionUUID->"f5147260-70be-4354-aa90-567b7c9bd805"],
+ ". This may not be how it was intended to be done but it works! "
+}], "Item",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 3.8571173096614256`*^9}, {3.857120394961598*^9, 
+   3.8571203959775114`*^9}, {3.857473459907257*^9, 
+   3.8574735958875146`*^9}},ExpressionUUID->"b3fc7796-0d44-468f-96e6-\
+633cb3b96d8b"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Compute the ",
+ Cell[BoxData[
+  FormBox["SVD", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7e250c3e-2e74-4060-8d99-0cb00c22ba74"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{"U", ".", "\[CapitalSigma]", ".", 
+     RowBox[{"V", "\[Transpose]"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d8ed64cf-3758-4709-b1b5-404cca042b41"],
+ " we now have a two sided orthogonal transformation to the pattern ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", GridBox[{
+      {"x", "0", "0"},
+      {"0", "x", "0"},
+      {"0", "0", "x"}
+     }], ")"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "70cc56c4-1a20-43ed-a104-46de1355410c"],
+ " with lots of zeros!"
+}], "Subitem",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 3.8571173096614256`*^9}, {3.857120394961598*^9, 
+   3.8571203959775114`*^9}, {3.857473459907257*^9, 3.8574734923612676`*^9}, {
+   3.8574735860114636`*^9, 
+   3.8574737004651775`*^9}},ExpressionUUID->"3e32c98f-9434-4dc0-bc70-\
+040618d9522f"],
+
+Cell[TextData[{
+ "The orthogonal row op ",
+ Cell[BoxData[
+  RowBox[{"(", GridBox[{
+     {"0", "1", "0"},
+     {
+      RowBox[{"-", "1"}], "0", "0"},
+     {"0", "0", "1"}
+    }], ")"}]],
+  CellChangeTimes->{{3.857473829687228*^9, 3.857474075901783*^9}, {
+   3.8574741159393682`*^9, 3.857474160889759*^9}, {3.8574742595776215`*^9, 
+   3.8574743490051236`*^9}},ExpressionUUID->
+  "57d3ab82-9b8d-4fc6-a4e0-4ff3cffba86a"],
+ " uses only the top two rows and zeros the diagonal entries  The result is a \
+pattern ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", GridBox[{
+      {"0", "x", "0"},
+      {"x", "0", "0"},
+      {"0", "0", "x"}
+     }], ")"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "286d1ea7-27bb-4fe4-8cc0-9cfe5561e590"],
+ " which has a lot more zeros than asked for. "
+}], "Subitem",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.8560901823257103`*^9, 3.856090323750142*^9}, {
+   3.857117017568968*^9, 3.8571173096614256`*^9}, {3.857120394961598*^9, 
+   3.8571203959775114`*^9}, {3.857473459907257*^9, 3.8574734923612676`*^9}, {
+   3.8574735860114636`*^9, 3.8574738263898087`*^9}, {3.8574743864318104`*^9, 
+   3.857474451136303*^9}},ExpressionUUID->"90e70b51-4616-4ff8-ac8f-\
+3e74c7aed08a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "3"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"U", ",", "S", ",", "V"}], "}"}], "=", 
+   RowBox[{"SingularValueDecomposition", "[", "A", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Q", "=", 
+   RowBox[{"(", GridBox[{
+      {"0", "1", "0"},
+      {
+       RowBox[{"-", "1"}], "0", "0"},
+      {"0", "0", "1"}
+     }], ")"}]}], ";", " ", 
+  RowBox[{"Map", "[", 
+   RowBox[{"OrthogonalMatrixQ", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Q", ".", 
+       RowBox[{"U", "\[Transpose]"}]}], ",", "V"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"MatrixPlot", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{"Mesh", "->", "All"}]}], "]"}], "&"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"A", ",", 
+     RowBox[{"Chop", "[", 
+      RowBox[{
+       RowBox[{"U", "\[Transpose]"}], ".", "A", ".", "V"}], "]"}], ",", 
+     RowBox[{"Chop", "[", 
+      RowBox[{"Q", ".", 
+       RowBox[{"U", "\[Transpose]"}], ".", "A", ".", "V"}], "]"}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.857473829687228*^9, 3.857474075901783*^9}, {
+  3.8574741159393682`*^9, 3.857474160889759*^9}, {3.8574742595776215`*^9, 
+  3.8574743490051236`*^9}, {3.857474477622229*^9, 3.8574744879863396`*^9}},
+ CellLabel->"In[63]:=",ExpressionUUID->"d2cc3575-b2a5-4446-b2b7-5fab0f5e979d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"True", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8574738645102463`*^9, {3.8574739598147354`*^9, 3.857473974425339*^9}, {
+   3.8574740154040384`*^9, 3.8574740766297092`*^9}, 3.8574741546027327`*^9, {
+   3.8574742708856554`*^9, 3.8574743192590437`*^9}, 3.857474349765213*^9, 
+   3.8574744889403048`*^9},
+ CellLabel->"Out[65]=",ExpressionUUID->"26387f03-570a-4489-a9ba-97d456a57e1d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   GraphicsBox[{
+     RasterBox[{{{0.3830014429981253, 0.649559644606464, 
+      0.8005211787188761}, {0.9267604870912403, 0.8416910983366326, 
+      0.5956097011866855}, {0.8928316188143485, 0.5264583064060132, 
+      0.005335613849837174}}, {{0.24728323251331116`, 0.41875680197163, 
+      0.872658087215159}, {0.8683436613738202, 0.5942562073491696, 
+      0.07662402551176278}, {0.895185195332643, 0.7116375990876384, 
+      0.30746197203113523`}}, {{1., 0.42, 0.}, {0.68492887756549, 
+      0.8241136643674849, 0.8958540953206047}, {0.25964965115525795`, 
+      0.35997987435659, 0.8903697187350603}}}, {{0, 0}, {3, 3}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 3}, {3, 3}}, {{0, 2}, {3, 2}}, {{0, 1}, {3, 1}}, {{0, 
+         0}, {3, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 3}}, {{1, 0}, {1, 3}}, {{2, 0}, {2, 3}}, {{3, 
+         0}, {3, 3}}}],
+        Antialiasing->False]}}},
+    Frame->True,
+    FrameLabel->{None, None},
+    FrameTicks->{{{{2.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {0.5, 
+         FormBox["3", TraditionalForm]}}, {{2.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {0.5, 
+         FormBox["3", TraditionalForm]}}}, {{{0.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {2.5, 
+         FormBox["3", TraditionalForm]}}, {{0.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {2.5, 
+         FormBox["3", TraditionalForm]}}}},
+    GridLinesStyle->Directive[
+      GrayLevel[0.5, 0.4]],
+    Method->{
+     "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+      "DefaultGraphicsInteraction" -> {
+       "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+        "Effects" -> {
+         "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+          "Droplines" -> {
+           "freeformCursorMode" -> True, 
+            "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+      "DefaultPlotStyle" -> Automatic, "DomainPadding" -> Scaled[0.02], 
+      "RangePadding" -> Scaled[0.05]}], ",", 
+   GraphicsBox[{
+     RasterBox[{{{1., 1., 1.}, {1., 1., 1.}, {0.9271717431840363, 
+      0.8432451293362939, 0.5996518697841904}}, {{1., 1., 1.}, {
+      0.8890923495547968, 0.6849928209557852, 0.2550633270813023}, {1., 1., 
+      1.}}, {{1., 0.42, 0.}, {1., 1., 1.}, {1., 1., 1.}}}, {{0, 0}, {3, 3}}, {
+      0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 3}, {3, 3}}, {{0, 2}, {3, 2}}, {{0, 1}, {3, 1}}, {{0, 
+         0}, {3, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 3}}, {{1, 0}, {1, 3}}, {{2, 0}, {2, 3}}, {{3, 
+         0}, {3, 3}}}],
+        Antialiasing->False]}}},
+    Frame->True,
+    FrameLabel->{None, None},
+    FrameTicks->{{{{2.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {0.5, 
+         FormBox["3", TraditionalForm]}}, {{2.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {0.5, 
+         FormBox["3", TraditionalForm]}}}, {{{0.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {2.5, 
+         FormBox["3", TraditionalForm]}}, {{0.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {2.5, 
+         FormBox["3", TraditionalForm]}}}},
+    GridLinesStyle->Directive[
+      GrayLevel[0.5, 0.4]],
+    Method->{
+     "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+      "DefaultGraphicsInteraction" -> {
+       "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+        "Effects" -> {
+         "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+          "Droplines" -> {
+           "freeformCursorMode" -> True, 
+            "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+      "DefaultPlotStyle" -> Automatic, "DomainPadding" -> Scaled[0.02], 
+      "RangePadding" -> Scaled[0.05]}], ",", 
+   GraphicsBox[{
+     RasterBox[{{{1., 1., 1.}, {1., 1., 1.}, {0.9044607052979317, 
+      0.7522005665573778, 0.3872316184526822}}, {{0.260487, 0.356, 
+      0.891569}, {1., 1., 1.}, {1., 1., 1.}}, {{1., 1., 1.}, {
+      0.9235636062044723, 0.49592994259340784`, 0.0038055541835657525`}, {1., 
+      1., 1.}}}, {{0, 0}, {3, 3}}, {0, 1}], {
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 3}, {3, 3}}, {{0, 2}, {3, 2}}, {{0, 1}, {3, 1}}, {{0, 
+         0}, {3, 0}}}],
+        Antialiasing->False]}, 
+      {GrayLevel[
+        NCache[-1 + GoldenRatio, 0.6180339887498949]], 
+       StyleBox[
+        LineBox[{{{0, 0}, {0, 3}}, {{1, 0}, {1, 3}}, {{2, 0}, {2, 3}}, {{3, 
+         0}, {3, 3}}}],
+        Antialiasing->False]}}},
+    Frame->True,
+    FrameLabel->{None, None},
+    FrameTicks->{{{{2.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {0.5, 
+         FormBox["3", TraditionalForm]}}, {{2.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {0.5, 
+         FormBox["3", TraditionalForm]}}}, {{{0.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {2.5, 
+         FormBox["3", TraditionalForm]}}, {{0.5, 
+         FormBox["1", TraditionalForm]}, {1.5, 
+         FormBox["2", TraditionalForm]}, {2.5, 
+         FormBox["3", TraditionalForm]}}}},
+    GridLinesStyle->Directive[
+      GrayLevel[0.5, 0.4]],
+    Method->{
+     "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+      "DefaultGraphicsInteraction" -> {
+       "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+        "Effects" -> {
+         "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+          "Droplines" -> {
+           "freeformCursorMode" -> True, 
+            "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+      "DefaultPlotStyle" -> Automatic, "DomainPadding" -> Scaled[0.02], 
+      "RangePadding" -> Scaled[0.05]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8574738645102463`*^9, {3.8574739598147354`*^9, 3.857473974425339*^9}, {
+   3.8574740154040384`*^9, 3.8574740766297092`*^9}, 3.8574741546027327`*^9, {
+   3.8574742708856554`*^9, 3.8574743192590437`*^9}, 3.857474349765213*^9, 
+   3.8574744890028286`*^9},
+ CellLabel->"Out[66]=",ExpressionUUID->"1730a4b4-5b73-40ec-a6f4-5e97f07bf6d0"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1268, 965},
+WindowMargins->{{1546, Automatic}, {98, Automatic}},
+TaggingRules->Association[
+ "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> False],
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"9e03ea1f-8429-459e-a19c-039ee641622d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 672, 11, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[1255, 35, 918, 15, 50, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[CellGroupData[{
+Cell[2198, 54, 1330, 27, 124, "Item",ExpressionUUID->"b3fc7796-0d44-468f-96e6-633cb3b96d8b"],
+Cell[CellGroupData[{
+Cell[3553, 85, 1630, 38, 116, "Subitem",ExpressionUUID->"3e32c98f-9434-4dc0-bc70-040618d9522f"],
+Cell[5186, 125, 1716, 38, 163, "Subitem",ExpressionUUID->"90e70b51-4616-4ff8-ac8f-3e74c7aed08a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6951, 169, 1614, 49, 187, "Input",ExpressionUUID->"d2cc3575-b2a5-4446-b2b7-5fab0f5e979d"],
+Cell[8568, 220, 435, 8, 48, "Output",ExpressionUUID->"26387f03-570a-4489-a9ba-97d456a57e1d"],
+Cell[9006, 230, 6819, 150, 329, "Output",ExpressionUUID->"1730a4b4-5b73-40ec-a6f4-5e97f07bf6d0"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
