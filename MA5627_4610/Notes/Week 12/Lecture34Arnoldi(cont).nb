@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     11870,        328]
-NotebookOptionsPosition[     10198,        290]
-NotebookOutlinePosition[     10813,        311]
-CellTagsIndexPosition[     10770,        308]
+NotebookDataLength[      5817,        165]
+NotebookOptionsPosition[      5012,        142]
+NotebookOutlinePosition[      5646,        163]
+CellTagsIndexPosition[      5603,        160]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -131,170 +131,22 @@ f8ac0b4049d9"],
 
 Cell["\<\
 We will see that the polynomial implicitly built by Arnoldi and other Krylov \
-methods is the best polynomial in specifc ways.  This means any polynomial \
-you make provides a bound on the convergence.  you can estimate the  \
+methods is the best polynomial in a very specific sense which gives \
+convergence information.  \
 \>", "Text",
- CellChangeTimes->{{3.857420571304595*^9, 
-  3.857420780087392*^9}},ExpressionUUID->"53230990-acd3-44eb-879a-\
-c3a432fa9a0d"],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-Backsubstitution:
-Function\
-\>", "Section",
- CellChangeTimes->{{3.847097898203796*^9, 3.847097949004158*^9}, {
-  3.84709811825355*^9, 3.847098131845387*^9}, {3.847100057948483*^9, 
-  3.847100070542018*^9}, {3.8471018011042843`*^9, 3.847101805095915*^9}, {
-  3.847140821387518*^9, 3.847140823364403*^9}, {3.847140887506627*^9, 
-  3.8471408963475122`*^9}, {3.847142140431596*^9, 
-  3.847142158743582*^9}},ExpressionUUID->"89580b5d-13b3-45be-828b-\
-4d89ec582bfd"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"BackSubstitution", "[", 
-   RowBox[{"R_", ",", "b_"}], "]"}], ":=", 
-  RowBox[{"Module", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"x", "=", 
-       RowBox[{"0", "*", "R"}]}], ",", "m"}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"m", "=", 
-      RowBox[{"Length", "[", "R", "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"(*", " ", 
-      RowBox[{
-      "R", " ", "is", " ", "assumed", " ", "to", " ", "be", " ", "square", 
-       " ", "and", " ", "lower", " ", "triangular"}], " ", "*)"}], 
-     "\[IndentingNewLine]", 
-     RowBox[{"Do", "[", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"x", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], 
-        "=", 
-        RowBox[{
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{
-           "b", "\[LeftDoubleBracket]", "j", "\[RightDoubleBracket]"}], "-", 
-           RowBox[{"Sum", "[", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"R", "\[LeftDoubleBracket]", 
-               RowBox[{"j", ",", "k"}], "\[RightDoubleBracket]"}], 
-              RowBox[{
-              "x", "\[LeftDoubleBracket]", "k", "\[RightDoubleBracket]"}]}], 
-             ",", 
-             RowBox[{"{", 
-              RowBox[{"k", ",", 
-               RowBox[{"j", "+", "1"}], ",", "m"}], "}"}]}], "]"}]}], ")"}], 
-         "/", 
-         RowBox[{"R", "\[LeftDoubleBracket]", 
-          RowBox[{"j", ",", "j"}], "\[RightDoubleBracket]"}]}]}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{"j", ",", "m", ",", "1", ",", 
-         RowBox[{"-", "1"}]}], "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"(*", " ", 
-      RowBox[{"return", " ", "x"}], " ", "*)"}], "\[IndentingNewLine]", 
-     "x"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
- InitializationCell->True,
- CellChangeTimes->{{3.8471421635800858`*^9, 
-  3.847142363312398*^9}},ExpressionUUID->"19e69048-c026-4b2d-b819-\
-6d1b04dde99d"],
-
-Cell["Test.", "Text",
- CellChangeTimes->{{3.847142378785109*^9, 
-  3.847142385503264*^9}},ExpressionUUID->"70188ed1-cf00-44ca-8f3b-\
-552f8196fa59"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"m", "=", "6"}], ";"}], " "}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"R", "=", 
-   RowBox[{"UpperTriangularize", "[", 
-    RowBox[{"RandomReal", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"m", ",", "m"}], "}"}]}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"b", "=", 
-   RowBox[{"RandomReal", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", "m"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"LinearSolve", "[", 
-  RowBox[{"R", ",", "b"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"BackSubstitution", "[", 
-  RowBox[{"R", ",", "b"}], "]"}]}], "Input",
- CellChangeTimes->{{3.847142387208961*^9, 3.847142456918702*^9}},
- CellLabel->
-  "In[171]:=",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"-", "0.8087410179862085`"}], ",", 
-   RowBox[{"-", "16.289049711820972`"}], ",", 
-   RowBox[{"-", "8.650909634847142`"}], ",", "2.6039673479063814`", ",", 
-   RowBox[{"-", "1.9501554629953735`"}], ",", "0.20794954875340738`"}], 
-  "}"}]], "Output",
- CellChangeTimes->{{3.847142441351371*^9, 3.847142457325328*^9}},
- CellLabel->
-  "Out[174]=",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"-", "0.8087410179862032`"}], ",", 
-   RowBox[{"-", "16.289049711820976`"}], ",", 
-   RowBox[{"-", "8.650909634847142`"}], ",", "2.6039673479063814`", ",", 
-   RowBox[{"-", "1.9501554629953735`"}], ",", "0.20794954875340738`"}], 
-  "}"}]], "Output",
- CellChangeTimes->{{3.847142441351371*^9, 3.847142457330001*^9}},
- CellLabel->
-  "Out[175]=",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Bad News abut Char Polys", "Subsection",
- CellChangeTimes->{{3.847100051790153*^9, 3.847100054149733*^9}, 
-   3.8471007934535437`*^9, {3.847101811807887*^9, 3.847101818240234*^9}, {
-   3.8471408359797497`*^9, 3.847140837331977*^9}, {3.847140875497809*^9, 
-   3.847140882299526*^9}},ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-\
-21877115862f"],
-
-Cell["Whatever", "Text",
- CellChangeTimes->{{3.847102022875555*^9, 3.847102031166675*^9}, {
-  3.8471020623504763`*^9, 3.847102170638315*^9}, {3.847140830235691*^9, 
-  3.8471408329011793`*^9}},ExpressionUUID->"e8a23721-b391-482e-8648-\
-0e0fae894d57"]
-}, Open  ]]
-}, Open  ]]
+ CellChangeTimes->{{3.857420571304595*^9, 3.857420780087392*^9}, {
+  3.8574681012855*^9, 
+  3.8574681591470766`*^9}},ExpressionUUID->"53230990-acd3-44eb-879a-\
+c3a432fa9a0d"]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
 WindowSize->{1268, 965},
 WindowMargins->{{Automatic, -1675}, {Automatic, -96}},
-TaggingRules-><|
- "PresenterSettings" -> <|"Dialogs" -> {}|>, "TryRealOnly" -> False|>,
+TaggingRules->Association[
+ "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> False],
 Magnification:>1.5 Inherited,
-FrontEndVersion->"13.0 for Mac OS X ARM (64-bit) (December 2, 2021)",
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"8f6d05fc-e61a-44b4-af31-504df32613fd"
@@ -312,23 +164,8 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 732, 13, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
-Cell[1315, 37, 3304, 92, 223, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
-Cell[4622, 131, 375, 7, 85, "Text",ExpressionUUID->"53230990-acd3-44eb-879a-c3a432fa9a0d"],
-Cell[CellGroupData[{
-Cell[5022, 142, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
-Cell[5495, 154, 2006, 53, 319, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
- InitializationCell->True],
-Cell[7504, 209, 147, 3, 51, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
-Cell[CellGroupData[{
-Cell[7676, 216, 944, 29, 171, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
-Cell[8623, 247, 449, 10, 69, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
-Cell[9075, 259, 449, 10, 69, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[9561, 274, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
-Cell[9909, 281, 249, 4, 51, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
-}, Open  ]]
-}, Open  ]]
+Cell[1315, 37, 3304, 92, 219, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[4622, 131, 374, 8, 83, "Text",ExpressionUUID->"53230990-acd3-44eb-879a-c3a432fa9a0d"]
 }, Open  ]]
 }
 ]
