@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    544498,      10868]
-NotebookOptionsPosition[    542129,      10819]
-NotebookOutlinePosition[    542763,      10840]
-CellTagsIndexPosition[    542720,      10837]
+NotebookDataLength[    546189,      10918]
+NotebookOptionsPosition[    543816,      10869]
+NotebookOutlinePosition[    544450,      10890]
+CellTagsIndexPosition[    544407,      10887]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -146,7 +146,7 @@ sequence of orthogonal matrices ",
      RowBox[{"m", "\[Times]", "n"}]]}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
   "b4aa81f4-b823-4605-836d-a3d8523cacb0"],
- " and almost Upper Hessenberg matrices ",
+ " and rectangular Upper Hessenberg matrices ",
  Cell[BoxData[
   FormBox[
    RowBox[{
@@ -206,51 +206,101 @@ sequence of orthogonal matrices ",
    SubscriptBox["H", "n"], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
   "7b10ee67-4a25-4fe9-9b8d-0d874ba070c5"],
- " the matrix for this map in the orthogonal basis. In other words,\n\t",
+ " the matrix for this map in the orthogonal basis. In other words, since ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c21f592f-e525-4a61-8c64-2b83949780c3"],
+ " is Upper Hessenberg\n\t",
  Cell[BoxData[
   FormBox[
    RowBox[{
     RowBox[{"A", ".", 
      SubscriptBox["Q", "n"]}], "=", 
     RowBox[{
-     SubscriptBox["Q", 
-      RowBox[{"n", "+", "1"}]], ".", "H"}]}], TraditionalForm]],
+     RowBox[{
+      SubscriptBox["Q", 
+       RowBox[{"n", "+", "1"}]], ".", 
+      SubscriptBox["H", "n"]}], "=", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["Q", "n"], ".", 
+       RowBox[{
+        SubscriptBox["H", "n"], "[", 
+        RowBox[{
+         RowBox[{"1", ":", "n"}], ",", 
+         RowBox[{"1", ":", "n"}]}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["H", "n"], "[", 
+        RowBox[{
+         RowBox[{"n", "+", "1"}], ",", "n"}], "]"}], " ", 
+       SubscriptBox["q", 
+        RowBox[{"n", "+", "1"}]]}]}]}]}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
   "ec8b128e-e51b-4493-adf0-6085e970e414"],
- "\nand ",
+ ". \nIf the bottom corner of ",
  Cell[BoxData[
   FormBox[
    SubscriptBox["H", "n"], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "8e0f3469-c8f9-4853-b0e0-625011a1897d"],
- " is the matrix for the action of ",
+  "996e2191-ad87-4f0c-a00a-8b7913b80b78"],
+ " is zero the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "8ed2f14b-7712-442f-aa02-526cb1db4ad3"],
+ " is an invariant space of ",
  Cell[BoxData[
   FormBox["A", TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "1a07937d-4541-4763-bd20-396ad9ff2ec6"],
- " from ",
+  "fc8edc65-9edf-4d77-b72f-44428d9d88e9"],
+ " and eigenvalues of the square Upper Hessenberg matrix\n\t",
  Cell[BoxData[
   FormBox[
    RowBox[{
+    SubscriptBox[
+     OverscriptBox["H", "^"], "n"], "=", 
     RowBox[{
-     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
-     RowBox[{"A", ",", "b"}], ")"}], "\[Rule]", 
-    RowBox[{
-     SubscriptBox["\[ScriptCapitalK]", 
-      RowBox[{"n", "+", "1"}]], "(", 
-     RowBox[{"A", ",", "b"}], ")"}]}], TraditionalForm]],ExpressionUUID->
-  "ff215665-c74d-4793-b340-7d151909edb4"],
- "  \nwhich are linked by the almost Upper Hessenberg matrices he action of ",
+     SubscriptBox["H", "n"], "[", 
+     RowBox[{
+      RowBox[{"1", ":", "n"}], ",", 
+      RowBox[{"1", ":", "n"}]}], "]"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "91cb0ff3-41bd-4950-aa3f-cc55990061d2"],
+ "\nare eigenvalues of ",
  Cell[BoxData[
   FormBox["A", TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "03568561-e8c7-476c-b42f-1470a8d5f20d"],
- " and a  "
+  "f75100d9-e6cb-4fbb-b3b9-d2a5d7434fbf"],
+ ".  When ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "n"], "[", 
+    RowBox[{
+     RowBox[{"n", "+", "1"}], ",", "n"}], "]"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "6a8330f9-022e-4a65-b9dd-c717af2261b5"],
+ " is small the eigenvalues of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    OverscriptBox["H", "^"], "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ac604ef8-ecea-4a32-811d-147624d87b46"],
+ " are close to eigen values of in the following sense  "
 }], "Text",
  InitializationCell->True,
  CellChangeTimes->{{3.857468659402404*^9, 3.857468826455107*^9}, {
   3.8574688676135674`*^9, 3.857468980128008*^9}, {3.8574690168137884`*^9, 
-  3.857469456094802*^9}},ExpressionUUID->"3e2c6761-956e-4465-9661-\
+  3.857469456094802*^9}, {3.857469598320408*^9, 3.8574696008379107`*^9}, {
+  3.857469656813803*^9, 3.857469670751476*^9}, {3.8574697083673115`*^9, 
+  3.857469726229716*^9}, {3.85746989433012*^9, 3.857469917407742*^9}, {
+  3.8574701618625126`*^9, 3.8574702450022745`*^9}, {3.857470337391472*^9, 
+  3.857470586983824*^9}},ExpressionUUID->"3e2c6761-956e-4465-9661-\
 551e25e47c2d"],
 
 Cell[CellGroupData[{
@@ -10843,30 +10893,30 @@ Cell[CellGroupData[{
 Cell[580, 22, 732, 13, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 Cell[1315, 37, 3180, 88, 219, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
 Cell[4498, 127, 374, 8, 83, "Text",ExpressionUUID->"53230990-acd3-44eb-879a-c3a432fa9a0d"],
-Cell[4875, 137, 3895, 116, 253, "Text",ExpressionUUID->"3e2c6761-956e-4465-9661-551e25e47c2d",
+Cell[4875, 137, 5582, 166, 387, "Text",ExpressionUUID->"3e2c6761-956e-4465-9661-551e25e47c2d",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[8795, 257, 161, 3, 100, "Subchapter",ExpressionUUID->"30cd596c-3081-49c0-b367-6217b49231e1"],
+Cell[10482, 307, 161, 3, 100, "Subchapter",ExpressionUUID->"30cd596c-3081-49c0-b367-6217b49231e1"],
 Cell[CellGroupData[{
-Cell[8981, 264, 445, 7, 97, "Section",ExpressionUUID->"8f8386c7-023c-4191-955d-77ca5071bf22"],
-Cell[9429, 273, 353, 7, 83, "Text",ExpressionUUID->"46b3718f-6e98-44ce-9658-d30fb68842cb"],
-Cell[9785, 282, 3280, 85, 409, "Input",ExpressionUUID->"af3cffc5-6ea2-4e47-a118-8026dce2f4d0",
+Cell[10668, 314, 445, 7, 97, "Section",ExpressionUUID->"8f8386c7-023c-4191-955d-77ca5071bf22"],
+Cell[11116, 323, 353, 7, 83, "Text",ExpressionUUID->"46b3718f-6e98-44ce-9658-d30fb68842cb"],
+Cell[11472, 332, 3280, 85, 409, "Input",ExpressionUUID->"af3cffc5-6ea2-4e47-a118-8026dce2f4d0",
  InitializationCell->True],
-Cell[13068, 369, 246, 4, 50, "Text",ExpressionUUID->"18b800f3-d43a-4c1d-ab2f-93c1060361a0"],
+Cell[14755, 419, 246, 4, 50, "Text",ExpressionUUID->"18b800f3-d43a-4c1d-ab2f-93c1060361a0"],
 Cell[CellGroupData[{
-Cell[13339, 377, 2111, 66, 186, "Input",ExpressionUUID->"22dad20e-85cc-4d0f-b778-b8aeaf033133"],
-Cell[15453, 445, 668, 11, 48, "Output",ExpressionUUID->"f9054829-b66a-4054-b448-de308276c2ef"]
+Cell[15026, 427, 2111, 66, 186, "Input",ExpressionUUID->"22dad20e-85cc-4d0f-b778-b8aeaf033133"],
+Cell[17140, 495, 668, 11, 48, "Output",ExpressionUUID->"f9054829-b66a-4054-b448-de308276c2ef"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[16170, 462, 483, 7, 74, "Section",ExpressionUUID->"c08a15d0-1e1b-4f74-94b6-a1d80c49b5cb"],
-Cell[16656, 471, 2050, 54, 150, "Text",ExpressionUUID->"532f7b05-fc8c-464b-af85-494717b76f0a"],
-Cell[18709, 527, 351, 7, 50, "Text",ExpressionUUID->"1856703c-68a5-4567-ab2a-7eb7bf49ce3f"],
+Cell[17857, 512, 483, 7, 74, "Section",ExpressionUUID->"c08a15d0-1e1b-4f74-94b6-a1d80c49b5cb"],
+Cell[18343, 521, 2050, 54, 150, "Text",ExpressionUUID->"532f7b05-fc8c-464b-af85-494717b76f0a"],
+Cell[20396, 577, 351, 7, 50, "Text",ExpressionUUID->"1856703c-68a5-4567-ab2a-7eb7bf49ce3f"],
 Cell[CellGroupData[{
-Cell[19085, 538, 3260, 94, 471, "Input",ExpressionUUID->"8e2ae717-44fb-4a96-9712-ef2d0bbb28b5"],
-Cell[22348, 634, 519396, 10170, 682, "Output",ExpressionUUID->"54eb8dd5-ad30-4c68-a879-54c3dfaefcd3"]
+Cell[20772, 588, 3260, 94, 471, "Input",ExpressionUUID->"8e2ae717-44fb-4a96-9712-ef2d0bbb28b5"],
+Cell[24035, 684, 519396, 10170, 682, "Output",ExpressionUUID->"54eb8dd5-ad30-4c68-a879-54c3dfaefcd3"]
 }, Open  ]],
-Cell[541759, 10807, 330, 7, 85, "Text",ExpressionUUID->"d8ba3c59-ffc6-440a-92e0-88747f3bc926"]
+Cell[543446, 10857, 330, 7, 85, "Text",ExpressionUUID->"d8ba3c59-ffc6-440a-92e0-88747f3bc926"]
 }, Closed]]
 }, Open  ]]
 }, Open  ]]
