@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28333,        704]
-NotebookOptionsPosition[     25828,        655]
-NotebookOutlinePosition[     26463,        676]
-CellTagsIndexPosition[     26420,        673]
+NotebookDataLength[     34286,        865]
+NotebookOptionsPosition[     31325,        808]
+NotebookOutlinePosition[     31960,        829]
+CellTagsIndexPosition[     31917,        826]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -72,10 +72,10 @@ f8ac0b4049d9"],
 
 Cell[CellGroupData[{
 
-Cell["Toeplitz, Hankel, and Circulant", "Subsection",
+Cell["Toeplitz, Hankel, and Circulant Matrices", "Subsection",
  CellChangeTimes->{{3.857734627706726*^9, 3.8577346337415657`*^9}, {
-  3.857735002052054*^9, 
-  3.857735023584098*^9}},ExpressionUUID->"c3e65175-14eb-48bd-9bc0-\
+  3.857735002052054*^9, 3.857735023584098*^9}, {3.8577401894654913`*^9, 
+  3.8577401933803215`*^9}},ExpressionUUID->"c3e65175-14eb-48bd-9bc0-\
 21d6bc370341"],
 
 Cell["\<\
@@ -650,12 +650,165 @@ Cell["Toeplitz and Hankel matrices also use Fourier tricks.  ", "Text",
  CellChangeTimes->{{3.8577401096920204`*^9, 
   3.857740143821416*^9}},ExpressionUUID->"41f64b03-49f2-40df-afa8-\
 2d94bf0a24f1"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Cauchy Matrices", "Subsection",
+ CellChangeTimes->{{3.857734627706726*^9, 3.8577346337415657`*^9}, {
+   3.857735002052054*^9, 3.857735023584098*^9}, {3.8577401794815683`*^9, 
+   3.857740184191235*^9}, {3.857740481535084*^9, 3.8577404856634407`*^9}, 
+   3.8577409693851037`*^9},ExpressionUUID->"1dd1a476-15b5-423a-9b52-\
+5b2b7ae0930a"],
+
+Cell[TextData[{
+ "A Cauchy matrix is defined by two vectors ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "5fad0594-630a-4860-8a88-49dc234084ec"],
+ " and ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "876513df-797c-4ddc-9baf-06448f2ce1f5"],
+ " and has the form \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", 
+     RowBox[{"i", ",", "j"}]], "=", 
+    FractionBox["1", 
+     RowBox[{
+      SubscriptBox["x", "i"], "-", 
+      SubscriptBox["y", "j"]}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b3cca0d9-90ef-4f4d-a3a3-0393edf3eead"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "i"], "\[NotEqual]", 
+    SubscriptBox["y", "j"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a9760eb1-663b-4a8c-a1be-caf8a4519a58"],
+ ".  \nA Cauchy like matrix is defined by four vectors ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "4ab45a7f-7ef2-4ace-8519-0ea528319c6e"],
+ " and ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c1576acd-0cae-4951-8799-703d82f00837"],
+ " and r and s\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["C", 
+     RowBox[{"i", ",", "j"}]], "=", 
+    FractionBox[
+     RowBox[{
+      SubscriptBox["r", "i"], 
+      SubscriptBox["s", "j"]}], 
+     RowBox[{
+      SubscriptBox["x", "i"], "-", 
+      SubscriptBox["y", "j"]}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b03d013a-5029-4b27-b03a-d94f11182b14"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "i"], "\[NotEqual]", 
+    SubscriptBox["y", "j"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ea687f4e-07fe-4e6d-bb54-8afbcde32788"],
+ ".  \nYou can approximate C.v in ",
+ Cell[BoxData[
+  FormBox[
+  Cell["O(m log(m))",ExpressionUUID->"f2225ce6-dc3f-4f16-996b-cdc5e5fa0ef9"], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "269f0bec-f297-4afd-a569-680cb66d17dc"],
+ " operations with a fast multi-pole transformation"
+}], "Text",
+ CellChangeTimes->{{3.8577350323575*^9, 3.85773512892981*^9}, {
+  3.8577402989114523`*^9, 3.857740311286652*^9}, {3.8577404466777143`*^9, 
+  3.8577405116617827`*^9}, {3.8577406640990562`*^9, 3.8577406846549406`*^9}, {
+  3.8577407683610077`*^9, 3.8577409196919193`*^9}, {3.8577409735620747`*^9, 
+  3.857741055455266*^9}},ExpressionUUID->"9dfa5897-04bb-44cd-bce0-\
+a2130d01331d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Vandermonde Matrices", "Subsection",
+ CellChangeTimes->{{3.857734627706726*^9, 3.8577346337415657`*^9}, {
+   3.857735002052054*^9, 3.857735023584098*^9}, {3.8577401794815683`*^9, 
+   3.857740184191235*^9}, {3.857740481535084*^9, 3.8577404856634407`*^9}, 
+   3.8577409693851037`*^9, {3.8577410760375643`*^9, 
+   3.857741078963058*^9}},ExpressionUUID->"b14b95b9-3fdd-4b62-b281-\
+fe21fe66c373"],
+
+Cell[TextData[{
+ "We have already seen the last \[OpenCurlyDoubleQuote]fast\
+\[CloseCurlyDoubleQuote] matrix with we are going to look at.  The \
+Vandermonde matrix defined by a single ",
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "395157dd-81fc-43be-8699-38925b33e8c9"],
+ " vector x is \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["M", 
+     RowBox[{"i", ",", "j"}]], "=", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      SubscriptBox["x", "i"], ")"}], 
+     RowBox[{"j", "-", "1"}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "cf31a4e9-8575-49da-b2f9-714d1f9c72ae"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"1", "\[LessEqual]", "i"}], ",", 
+    RowBox[{"j", "\[LessEqual]", "m"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f00d9bcd-461c-408b-980f-5252929a0090"],
+ "\nThe matrix vector product ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"M", ".", "v"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "eaf95fa2-ae7c-4953-b3ec-ee09d44e9c20"],
+ " is the polynomial defined by the coefficient list ",
+ Cell[BoxData[
+  FormBox["v", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "063b97a6-ea23-421f-8897-2c07dc89f915"],
+ " evaluated at the m different x values. When thought of like that fast \
+multiplication becomes very plausible.  This is implemented with another FFT \
+based algorithm.    "
+}], "Text",
+ CellChangeTimes->{{3.8577350323575*^9, 3.85773512892981*^9}, {
+  3.8577402989114523`*^9, 3.857740311286652*^9}, {3.8577404466777143`*^9, 
+  3.8577405116617827`*^9}, {3.8577406640990562`*^9, 3.8577406846549406`*^9}, {
+  3.8577407683610077`*^9, 3.8577409196919193`*^9}, {3.8577409735620747`*^9, 
+  3.857741055455266*^9}, {3.8577412942721725`*^9, 3.8577413803618608`*^9}, {
+  3.8577415798749113`*^9, 3.8577416729185567`*^9}, {3.857741865803161*^9, 
+  3.857742061681731*^9}},ExpressionUUID->"660c55b7-3338-46a5-8626-\
+527c6b4c49c4"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
 WindowSize->{1268, 738},
-WindowMargins->{{1464.5, Automatic}, {251, Automatic}},
+WindowMargins->{{1747, Automatic}, {184.5, Automatic}},
 TaggingRules->Association[
  "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> False],
 Magnification:>1.5 Inherited,
@@ -679,31 +832,39 @@ Cell[CellGroupData[{
 Cell[580, 22, 761, 12, 281, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 Cell[1344, 36, 1621, 34, 117, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
 Cell[CellGroupData[{
-Cell[2990, 74, 230, 4, 72, "Subsection",ExpressionUUID->"c3e65175-14eb-48bd-9bc0-21d6bc370341"],
-Cell[3223, 80, 440, 8, 83, "Text",ExpressionUUID->"8568a2b4-dad1-4731-8dc6-fae5a2015c9a"],
+Cell[2990, 74, 289, 4, 72, "Subsection",ExpressionUUID->"c3e65175-14eb-48bd-9bc0-21d6bc370341"],
+Cell[3282, 80, 440, 8, 83, "Text",ExpressionUUID->"8568a2b4-dad1-4731-8dc6-fae5a2015c9a"],
 Cell[CellGroupData[{
-Cell[3688, 92, 1593, 41, 243, "Input",ExpressionUUID->"fa872a61-bb8d-4d6b-953a-050f09e8a5fc"],
-Cell[5284, 135, 648, 13, 48, "Output",ExpressionUUID->"36f77da2-2a4d-4146-9de2-8d0f8fd9f6ea"],
-Cell[5935, 150, 4156, 107, 183, "Output",ExpressionUUID->"62cabff4-c28c-4b2b-9a7d-15586d8ef8f6"]
+Cell[3747, 92, 1593, 41, 243, "Input",ExpressionUUID->"fa872a61-bb8d-4d6b-953a-050f09e8a5fc"],
+Cell[5343, 135, 648, 13, 48, "Output",ExpressionUUID->"36f77da2-2a4d-4146-9de2-8d0f8fd9f6ea"],
+Cell[5994, 150, 4156, 107, 183, "Output",ExpressionUUID->"62cabff4-c28c-4b2b-9a7d-15586d8ef8f6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10128, 262, 1446, 32, 243, "Input",ExpressionUUID->"bf8c89ff-9c3d-43bb-9a83-80254a7c3266"],
-Cell[11577, 296, 5092, 138, 223, "Output",ExpressionUUID->"2638d23b-e88b-47d9-a2c7-cd8e4afbbb8c"]
+Cell[10187, 262, 1446, 32, 243, "Input",ExpressionUUID->"bf8c89ff-9c3d-43bb-9a83-80254a7c3266"],
+Cell[11636, 296, 5092, 138, 223, "Output",ExpressionUUID->"2638d23b-e88b-47d9-a2c7-cd8e4afbbb8c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16706, 439, 939, 22, 157, "Input",ExpressionUUID->"2953bffb-242a-4f9b-9beb-125c6394a394"],
-Cell[17648, 463, 1206, 29, 89, "Output",ExpressionUUID->"c4d9f158-6562-4bdd-86d0-bd8056a3a16e"]
+Cell[16765, 439, 939, 22, 157, "Input",ExpressionUUID->"2953bffb-242a-4f9b-9beb-125c6394a394"],
+Cell[17707, 463, 1206, 29, 89, "Output",ExpressionUUID->"c4d9f158-6562-4bdd-86d0-bd8056a3a16e"]
 }, Open  ]],
-Cell[18869, 495, 1742, 33, 184, "Text",ExpressionUUID->"993d62fc-1612-4ad1-93b1-1c42836365a2"],
+Cell[18928, 495, 1742, 33, 184, "Text",ExpressionUUID->"993d62fc-1612-4ad1-93b1-1c42836365a2"],
 Cell[CellGroupData[{
-Cell[20636, 532, 2722, 67, 328, "Input",ExpressionUUID->"b97395b7-bc88-4dbf-b12d-19757fe97c7b"],
-Cell[23361, 601, 406, 6, 48, "Output",ExpressionUUID->"95389116-a3c2-448a-9508-3dff3ddaa412"],
-Cell[23770, 609, 462, 8, 48, "Output",ExpressionUUID->"ea2986be-1fe5-48f9-b4ba-97f918340275"],
-Cell[24235, 619, 460, 8, 48, "Output",ExpressionUUID->"d94700c4-8fc6-487c-aca0-273d86d4f58d"],
-Cell[24698, 629, 460, 8, 48, "Output",ExpressionUUID->"72f73f38-af7f-48ca-9fa6-aee9bce03de5"],
-Cell[25161, 639, 425, 6, 48, "Output",ExpressionUUID->"7ff0f50d-ff46-4abb-9c20-c626d80ded8f"]
+Cell[20695, 532, 2722, 67, 328, "Input",ExpressionUUID->"b97395b7-bc88-4dbf-b12d-19757fe97c7b"],
+Cell[23420, 601, 406, 6, 48, "Output",ExpressionUUID->"95389116-a3c2-448a-9508-3dff3ddaa412"],
+Cell[23829, 609, 462, 8, 48, "Output",ExpressionUUID->"ea2986be-1fe5-48f9-b4ba-97f918340275"],
+Cell[24294, 619, 460, 8, 48, "Output",ExpressionUUID->"d94700c4-8fc6-487c-aca0-273d86d4f58d"],
+Cell[24757, 629, 460, 8, 48, "Output",ExpressionUUID->"72f73f38-af7f-48ca-9fa6-aee9bce03de5"],
+Cell[25220, 639, 425, 6, 48, "Output",ExpressionUUID->"7ff0f50d-ff46-4abb-9c20-c626d80ded8f"]
 }, Open  ]],
-Cell[25601, 648, 199, 3, 50, "Text",ExpressionUUID->"41f64b03-49f2-40df-afa8-2d94bf0a24f1"]
+Cell[25660, 648, 199, 3, 50, "Text",ExpressionUUID->"41f64b03-49f2-40df-afa8-2d94bf0a24f1"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25896, 656, 340, 5, 58, "Subsection",ExpressionUUID->"1dd1a476-15b5-423a-9b52-5b2b7ae0930a"],
+Cell[26239, 663, 2606, 78, 212, "Text",ExpressionUUID->"9dfa5897-04bb-44cd-bce0-a2130d01331d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28882, 746, 397, 6, 72, "Subsection",ExpressionUUID->"b14b95b9-3fdd-4b62-b281-fe21fe66c373"],
+Cell[29282, 754, 2015, 50, 219, "Text",ExpressionUUID->"660c55b7-3338-46a5-8626-527c6b4c49c4"]
 }, Open  ]]
 }, Open  ]]
 }
