@@ -1,0 +1,294 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10017,        286]
+NotebookOptionsPosition[      8779,        256]
+NotebookOutlinePosition[      9306,        275]
+CellTagsIndexPosition[      9263,        272]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QR Update and Down Date", "Title",
+ CellChangeTimes->{{3.8408045680270576`*^9, 3.840804594403828*^9}, {
+  3.85411875300292*^9, 
+  3.854118758969781*^9}},ExpressionUUID->"c3366442-ee7d-4693-9ffa-\
+7b7aa7ba3129"],
+
+Cell[TextData[{
+ "I have an ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"m", "\[Times]", "n"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b953d7a9-8369-42bc-a6fe-b2d4e5b93847"],
+ " QRDecomomp ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{"Q", ".", "R"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ecc736bf-2fe0-4f70-9494-5c42ba415e07"],
+ " and I want to add a block of ",
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "95672426-8807-4605-b17b-29ec8f6e9ac3"],
+ " columns and compute an expanded QRDecomoposition ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{"A", "|", 
+      OverscriptBox["A", "~"]}], "]"}], "=", 
+    RowBox[{
+     OverscriptBox["Q", "~"], ".", 
+     OverscriptBox["R", "~"]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "9864e94a-14e6-4105-9b7b-41531aea8ad8"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.8541187618404307`*^9, 3.8541189692516565`*^9}, 
+   3.8541191561301827`*^9},ExpressionUUID->"b6e54c84-c5d8-4503-ac94-\
+f153503241be"],
+
+Cell[TextData[{
+ "I have an ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"m", "+", "s"}], ")"}], "\[Times]", "n"}], TraditionalForm]],
+  ExpressionUUID->"df18bd2d-d3ce-4d86-b5d3-54a4db0124f2"],
+ " QRDecomomp ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"[", 
+     RowBox[{"A", "|", 
+      OverscriptBox["A", "~"]}], "]"}], "=", 
+    RowBox[{
+     OverscriptBox["Q", "~"], ".", 
+     OverscriptBox["R", "~"]}]}], TraditionalForm]],ExpressionUUID->
+  "deb19b0a-1383-4d9f-a90a-47f066d6a2eb"],
+ " and I want to delete a block of ",
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]],ExpressionUUID->
+  "5c429451-3013-4add-9b79-4012384065d4"],
+ " columns and compute a smaller QRDecomoposition ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", "=", 
+    RowBox[{"Q", ".", "R"}]}], TraditionalForm]],ExpressionUUID->
+  "e5e4a44b-03ce-4335-bb3c-6aec69243c76"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.8541187618404307`*^9, 3.8541189692516565`*^9}, {
+  3.8541191561301827`*^9, 
+  3.854119227659994*^9}},ExpressionUUID->"0e947cce-39e9-42bf-9703-\
+4adba144995a"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+What I really want to do is replace a block of \[OpenCurlyDoubleQuote]s\
+\[CloseCurlyDoubleQuote] columns in the decomposition.  I think this is just \
+a low rank-update\
+\>", "Item",
+ CellChangeTimes->{{3.8541187618404307`*^9, 3.8541189692516565`*^9}, {
+   3.8541191561301827`*^9, 3.8541192823319*^9}, {3.8541193149693527`*^9, 
+   3.8541193335454683`*^9}, 
+   3.8541227669548206`*^9},ExpressionUUID->"83674c92-d0c6-498a-ade7-\
+6334c9d68b5b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"m", ",", "n"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "7"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", "n"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Q", ",", "R"}], "}"}], "=", 
+   RowBox[{"QRDecomposition", "[", "A", "]"}]}], ";", 
+  RowBox[{"Q", "=", 
+   RowBox[{"Q", "\[Transpose]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"A", "\[LeftDoubleBracket]", 
+    RowBox[{"All", ",", "k"}], "\[RightDoubleBracket]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Dimensions", "[", "a", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", 
+   RowBox[{"A", "+", 
+    RowBox[{"KroneckerProduct", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"SparseArray", "[", 
+         RowBox[{
+          RowBox[{"k", "->", "1"}], ",", "m"}], "]"}], "-", "a"}], ")"}], ",", 
+      RowBox[{"SparseArray", "[", 
+       RowBox[{
+        RowBox[{"k", "->", "1"}], ",", "n"}], "]"}]}], "]"}]}]}], " ", 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Map", "[", 
+  RowBox[{"Dimensions", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Q", "\[Transpose]"}], ",", "B"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{"Chop", "[", 
+   RowBox[{
+    RowBox[{"Q", "\[Transpose]"}], ".", "B"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.854122836687066*^9, 3.8541228535329213`*^9}, {
+  3.854122899458217*^9, 3.854122983179661*^9}, {3.854123025163054*^9, 
+  3.85412309100406*^9}, {3.8541231294978886`*^9, 3.854123146723036*^9}, {
+  3.8541232499962187`*^9, 3.854123373002124*^9}, {3.8541234364844017`*^9, 
+  3.8541234546754103`*^9}, {3.854123494987031*^9, 3.8541236586674833`*^9}, {
+  3.854123720356632*^9, 3.854123742713752*^9}},
+ CellLabel->
+  "In[144]:=",ExpressionUUID->"53bb8712-4283-4bb9-b3e2-39be0dff95b7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"7", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "7"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.85412296133714*^9, 3.8541229837494555`*^9}, {
+   3.8541230689295864`*^9, 3.8541230953753614`*^9}, {3.854123133487503*^9, 
+   3.8541231497366943`*^9}, {3.8541233194124627`*^9, 3.854123373593136*^9}, 
+   3.8541234583980227`*^9, {3.854123519521186*^9, 3.854123638494633*^9}, 
+   3.8541236694067097`*^9, {3.854123722320921*^9, 3.8541237432024736`*^9}},
+ CellLabel->
+  "Out[151]=",ExpressionUUID->"764ed53f-6d71-4e92-b88d-c404e2dec33a"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", "2.3677753802482684`"}], "0.31471635473593107`", 
+      "0.3307176703704992`", "1.1291021231117309`", 
+      RowBox[{"-", "0.20129924077587208`"}], "0.6767821734870046`", 
+      RowBox[{"-", "0.45851773674062735`"}]},
+     {"0", 
+      RowBox[{"-", "1.6973661397705155`"}], "0.08966716917881723`", 
+      RowBox[{"-", "0.15501047639648302`"}], "0.3318416528300611`", 
+      RowBox[{"-", "0.1048670298960417`"}], 
+      RowBox[{"-", "0.9664128145656777`"}]},
+     {"0", "0", 
+      RowBox[{"-", "0.1561541631412786`"}], 
+      RowBox[{"-", "0.8183665227613234`"}], 
+      RowBox[{"-", "0.8728290494664498`"}], "0.7691911556071287`", 
+      "1.1214899850397129`"},
+     {"0", "0", "0.3106564829626345`", 
+      RowBox[{"-", "1.2281587261592404`"}], "0.25632530675757076`", 
+      "0.029995225649091187`", 
+      RowBox[{"-", "0.6089113506437572`"}]},
+     {"0", "0", "0.2660022332622475`", "0", "1.7174736091235692`", 
+      "0.5674015217469904`", "0.768410216412526`"},
+     {"0", "0", 
+      RowBox[{"-", "0.13658319694675958`"}], "0", "0", 
+      RowBox[{"-", "1.5918954330094157`"}], 
+      RowBox[{"-", "0.09424929920830266`"}]},
+     {"0", "0", 
+      RowBox[{"-", "0.316617213204426`"}], "0", "0", "0", 
+      "1.5796598307579295`"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.85412296133714*^9, 3.8541229837494555`*^9}, {
+   3.8541230689295864`*^9, 3.8541230953753614`*^9}, {3.854123133487503*^9, 
+   3.8541231497366943`*^9}, {3.8541233194124627`*^9, 3.854123373593136*^9}, 
+   3.8541234583980227`*^9, {3.854123519521186*^9, 3.854123638494633*^9}, 
+   3.8541236694067097`*^9, {3.854123722320921*^9, 3.854123743213917*^9}},
+ CellLabel->
+  "Out[152]//MatrixForm=",ExpressionUUID->"06631d8c-4e4c-4e02-afb5-\
+36af93d21361"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["C", "Section",
+ CellChangeTimes->{{3.8408046517692966`*^9, 3.840804652249253*^9}, {
+  3.8541187499444723`*^9, 
+  3.854118750289456*^9}},ExpressionUUID->"e0f820fa-a2a7-4f73-bca3-\
+c27c3d5d1c20"]
+}, Open  ]]
+},
+WindowToolbars->{"RulerBar", "EditBar"},
+WindowSize->{1141, 580},
+WindowMargins->{{1268.5, Automatic}, {294.5, Automatic}},
+TaggingRules->Association["TryRealOnly" -> False],
+Magnification:>1.5 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ac27ef75-330a-4b5b-b938-5a33f67f9317"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 216, 4, 146, "Title",ExpressionUUID->"c3366442-ee7d-4693-9ffa-7b7aa7ba3129"],
+Cell[799, 28, 1124, 35, 81, "Item",ExpressionUUID->"b6e54c84-c5d8-4503-ac94-f153503241be"],
+Cell[1926, 65, 1078, 34, 81, "Item",ExpressionUUID->"0e947cce-39e9-42bf-9703-4adba144995a"],
+Cell[CellGroupData[{
+Cell[3029, 103, 452, 9, 79, "Item",ExpressionUUID->"83674c92-d0c6-498a-ade7-6334c9d68b5b"],
+Cell[CellGroupData[{
+Cell[3506, 116, 2219, 63, 271, "Input",ExpressionUUID->"53bb8712-4283-4bb9-b3e2-39be0dff95b7"],
+Cell[5728, 181, 627, 13, 48, "Output",ExpressionUUID->"764ed53f-6d71-4e92-b88d-c404e2dec33a"],
+Cell[6358, 196, 2179, 49, 259, "Output",ExpressionUUID->"06631d8c-4e4c-4e02-afb5-36af93d21361"]
+}, Open  ]]
+}, Open  ]],
+Cell[8564, 249, 199, 4, 100, "Section",ExpressionUUID->"e0f820fa-a2a7-4f73-bca3-c27c3d5d1c20"]
+}, Open  ]]
+}
+]
+*)
+
