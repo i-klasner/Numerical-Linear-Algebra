@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     94626,       2154]
-NotebookOptionsPosition[     86337,       2021]
-NotebookOutlinePosition[     86974,       2042]
-CellTagsIndexPosition[     86931,       2039]
+NotebookDataLength[     94327,       2143]
+NotebookOptionsPosition[     86039,       2010]
+NotebookOutlinePosition[     86676,       2031]
+CellTagsIndexPosition[     86633,       2028]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1679,8 +1679,7 @@ in the Strassen algorithm for multiplying ",
   FormBox[
    RowBox[{
     SuperscriptBox["2", "n"], "\[Times]", 
-    SuperscriptBox["2", "n"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    SuperscriptBox["2", "n"]}], TraditionalForm]],ExpressionUUID->
   "7ca10047-f014-41fc-a533-e2bfec84000f"],
  " matrices we see that we have worked out that\n\t",
  Cell[BoxData[
@@ -1689,8 +1688,7 @@ in the Strassen algorithm for multiplying ",
     RowBox[{"s", "(", "n", ")"}], "=", 
     RowBox[{"7", "*", 
      RowBox[{"s", "(", 
-      RowBox[{"n", "-", "1"}], ")"}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+      RowBox[{"n", "-", "1"}], ")"}]}]}], TraditionalForm]],ExpressionUUID->
   "6e773638-46b4-4a08-ac75-bc30ac923153"],
  "\nAll we need now is a base case! The algorithm takes 7 multiplications for \
 a ",
@@ -1698,31 +1696,27 @@ a ",
   FormBox[
    RowBox[{
     SuperscriptBox["2", "1"], "\[Times]", 
-    SuperscriptBox["2", "1"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    SuperscriptBox["2", "1"]}], TraditionalForm]],ExpressionUUID->
   "c0592e81-8023-4775-8dc6-a656b768f43d"],
  ". In other words, ",
  Cell[BoxData[
   FormBox[
    RowBox[{
     RowBox[{"s", 
-     RowBox[{"(", "1", ")"}]}], "=", "7"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+     RowBox[{"(", "1", ")"}]}], "=", "7"}], TraditionalForm]],ExpressionUUID->
   "b0e14d06-6045-446b-ae30-d431fc17e303"],
  ". The solution of this recursive equation is simply ",
  Cell[BoxData[
   FormBox[
    RowBox[{
     RowBox[{"s", "[", "n", "]"}], "=", 
-    SuperscriptBox["7", "n"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    SuperscriptBox["7", "n"]}], TraditionalForm]],ExpressionUUID->
   "b44754c7-3848-4343-b063-7a85856f580d"],
  ". Since ",
  Cell[BoxData[
   FormBox[
    RowBox[{"m", "=", 
-    SuperscriptBox["2", "n"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+    SuperscriptBox["2", "n"]}], TraditionalForm]],ExpressionUUID->
   "94dc157e-4e3a-4162-b740-49e2af457c99"],
  " we have ",
  Cell[BoxData[
@@ -1730,8 +1724,7 @@ a ",
    RowBox[{"n", "=", 
     RowBox[{
      SubscriptBox["ln", "2"], "(", "m", ")"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "3c98b1f8-db65-4b4f-bce6-1bcbeaf23447"],
+  ExpressionUUID->"3c98b1f8-db65-4b4f-bce6-1bcbeaf23447"],
  " and we find out that Strassen\[CloseCurlyQuote]s algorithm involves\n\t",
  Cell[BoxData[
   FormBox[
@@ -1744,36 +1737,32 @@ a ",
       RowBox[{
        RowBox[{"Log", "[", "7", "]"}], "/", 
        RowBox[{"Log", "[", "2", "]"}]}]], "\[TildeTilde]", 
-     SuperscriptBox["m", "2.80735"]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+     SuperscriptBox["m", "2.80735"]}]}], TraditionalForm]],ExpressionUUID->
   "bb78e5ab-b217-453c-9200-1a9bb20a0fd8"],
  "\nmultiplications! There are more complicated versions with lower \
 exponents! A wiki page with a hopefully updating graph of the current record \
 is at https://en.wikipedia.org/wiki/Computational_complexity_of_matrix_\
 multiplication.\nThe current record seems to be ",
  Cell[BoxData[
-  FormBox["2.3728596", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["2.3728596", TraditionalForm]],ExpressionUUID->
   "bc3eb21c-bc0e-461c-89ab-750c1dbd0576"],
- ".  There is a conjecture that there is are algorithms with exponent ",
+ ".  There is a conjecture that there are algorithms with exponent ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"2", "+", "\[Epsilon]"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"2", "+", "\[Epsilon]"}], TraditionalForm]],ExpressionUUID->
   "bb6bf402-e16a-45ea-8234-1d64f7249cdb"],
- " for every ",
+ " for any ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"\[Epsilon]", ">", "0"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+   RowBox[{"\[Epsilon]", ">", "0"}], TraditionalForm]],ExpressionUUID->
   "871f2ebf-ffb9-4a81-8f72-3259d3332207"],
  ".  "
 }], "Text",
  CellChangeTimes->{{3.8570407988652506`*^9, 3.8570411333167744`*^9}, {
   3.857041207459833*^9, 3.857041361928669*^9}, {3.85704140589793*^9, 
   3.8570414734946194`*^9}, {3.8570415496732273`*^9, 3.85704158591984*^9}, {
-  3.857041771729212*^9, 
-  3.8570418994122224`*^9}},ExpressionUUID->"636ecd54-aa3c-415c-8261-\
+  3.857041771729212*^9, 3.8570418994122224`*^9}, {3.857818172887584*^9, 
+  3.8578181798704395`*^9}},ExpressionUUID->"636ecd54-aa3c-415c-8261-\
 291e62f20765"]
 }, Open  ]]
 }, Open  ]],
@@ -2130,29 +2119,29 @@ Cell[36145, 957, 37602, 675, 567, "Output",ExpressionUUID->"c21d8377-bb4a-4f09-a
 Cell[CellGroupData[{
 Cell[73796, 1638, 229, 4, 57, "Subsubsection",ExpressionUUID->"b9560d52-3c08-4e55-8605-92e04babdc50"],
 Cell[74028, 1644, 1211, 28, 184, "Text",ExpressionUUID->"715b3a26-3bf9-48c8-9858-f5cb174cd467"],
-Cell[75242, 1674, 3659, 102, 418, "Text",ExpressionUUID->"636ecd54-aa3c-415c-8261-291e62f20765"]
+Cell[75242, 1674, 3361, 91, 418, "Text",ExpressionUUID->"636ecd54-aa3c-415c-8261-291e62f20765"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[78950, 1782, 280, 4, 72, "Subsection",ExpressionUUID->"4bfa0a25-c755-47eb-ab1f-d45d477c08ae"],
-Cell[79233, 1788, 406, 11, 50, "Text",ExpressionUUID->"8d182ecb-0053-4391-8555-89ad2fb0983a"],
-Cell[79642, 1801, 1480, 53, 271, "Program",ExpressionUUID->"85e6e8f8-410c-471d-a780-dbd8475d12c4"],
-Cell[81125, 1856, 267, 4, 50, "Text",ExpressionUUID->"bf45fbc7-dad8-4be7-869f-2272c64354ed"]
+Cell[78652, 1771, 280, 4, 72, "Subsection",ExpressionUUID->"4bfa0a25-c755-47eb-ab1f-d45d477c08ae"],
+Cell[78935, 1777, 406, 11, 50, "Text",ExpressionUUID->"8d182ecb-0053-4391-8555-89ad2fb0983a"],
+Cell[79344, 1790, 1480, 53, 271, "Program",ExpressionUUID->"85e6e8f8-410c-471d-a780-dbd8475d12c4"],
+Cell[80827, 1845, 267, 4, 50, "Text",ExpressionUUID->"bf45fbc7-dad8-4be7-869f-2272c64354ed"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[81429, 1865, 326, 5, 72, "Subsection",ExpressionUUID->"299d07be-d263-454e-b2d4-e0d9efc8f780"],
-Cell[81758, 1872, 462, 11, 50, "Text",ExpressionUUID->"046bd0d5-e699-458b-903d-83304692340d"],
-Cell[82223, 1885, 1210, 37, 218, "Program",ExpressionUUID->"cb8b1f76-7e88-4bdd-a20d-fd255cd1683f"],
-Cell[83436, 1924, 267, 4, 50, "Text",ExpressionUUID->"72b22e58-0b29-406b-8f9a-8c59dc58d899"]
+Cell[81131, 1854, 326, 5, 72, "Subsection",ExpressionUUID->"299d07be-d263-454e-b2d4-e0d9efc8f780"],
+Cell[81460, 1861, 462, 11, 50, "Text",ExpressionUUID->"046bd0d5-e699-458b-903d-83304692340d"],
+Cell[81925, 1874, 1210, 37, 218, "Program",ExpressionUUID->"cb8b1f76-7e88-4bdd-a20d-fd255cd1683f"],
+Cell[83138, 1913, 267, 4, 50, "Text",ExpressionUUID->"72b22e58-0b29-406b-8f9a-8c59dc58d899"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[83752, 1934, 161, 3, 97, "Section",ExpressionUUID->"030015fe-bb1f-41a2-a130-c4506fa4e474"],
-Cell[83916, 1939, 1277, 43, 79, "Text",ExpressionUUID->"2aeacc37-2388-41c8-8520-a618e69d8a6c"],
+Cell[83454, 1923, 161, 3, 97, "Section",ExpressionUUID->"030015fe-bb1f-41a2-a130-c4506fa4e474"],
+Cell[83618, 1928, 1277, 43, 79, "Text",ExpressionUUID->"2aeacc37-2388-41c8-8520-a618e69d8a6c"],
 Cell[CellGroupData[{
-Cell[85218, 1986, 450, 11, 75, "Input",ExpressionUUID->"5fe37a47-6eca-4fc6-99ed-9b4b476646c7"],
-Cell[85671, 1999, 269, 6, 67, "Output",ExpressionUUID->"779af3b7-bebd-4edc-aa21-0f47e6a2f76b"],
-Cell[85943, 2007, 354, 9, 68, "Output",ExpressionUUID->"375d9658-a037-4f98-8a05-c4053614146b"]
+Cell[84920, 1975, 450, 11, 75, "Input",ExpressionUUID->"5fe37a47-6eca-4fc6-99ed-9b4b476646c7"],
+Cell[85373, 1988, 269, 6, 67, "Output",ExpressionUUID->"779af3b7-bebd-4edc-aa21-0f47e6a2f76b"],
+Cell[85645, 1996, 354, 9, 68, "Output",ExpressionUUID->"375d9658-a037-4f98-8a05-c4053614146b"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
