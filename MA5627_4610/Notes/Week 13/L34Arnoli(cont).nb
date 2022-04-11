@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   2373780,      40629]
-NotebookOptionsPosition[   2368431,      40533]
-NotebookOutlinePosition[   2369067,      40554]
-CellTagsIndexPosition[   2369024,      40551]
+NotebookDataLength[   2389600,      41044]
+NotebookOptionsPosition[   2383109,      40930]
+NotebookOutlinePosition[   2383745,      40951]
+CellTagsIndexPosition[   2383702,      40948]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -27197,8 +27197,7 @@ sequence of orthogonal matrices ",
   "f3604aac-e013-4f58-8d6f-fd86b41ffae1"],
  " are close to eigenvalues of ",
  Cell[BoxData[
-  FormBox["A", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
+  FormBox["A", TraditionalForm]],ExpressionUUID->
   "fb874770-9ed2-4b8a-bdac-06349505674d"],
  ". "
 }], "Text",
@@ -40528,6 +40527,404 @@ sneakier to understand the convergence to a complex conjugate pair.  \
  CellChangeTimes->{{3.8576438725460453`*^9, 
   3.85764397468442*^9}},ExpressionUUID->"2d1f155e-61a5-407d-b899-\
 a5475cdd0eed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bells and Whistles", "Section",
+ CellChangeTimes->{{3.858673713872938*^9, 
+  3.8586737252509317`*^9}},ExpressionUUID->"44b9a435-b301-471c-9fa0-\
+098517ee77d5"],
+
+Cell[CellGroupData[{
+
+Cell["Block Arnoldi", "Subsection",
+ CellChangeTimes->{{3.8586739876539593`*^9, 3.858673991777794*^9}, {
+  3.8586743515786123`*^9, 
+  3.858674354270316*^9}},ExpressionUUID->"8cfe41cb-d614-43e0-9f7c-\
+c021dc46a538"],
+
+Cell[TextData[{
+ "On a GPU you can compute ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", ".", "X"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "b83770ca-5001-4bd4-8588-a50717476a0c"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"X", "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{"m", "\[Times]", "16"}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "3af9f03b-3384-4f5e-b987-91d9c362130c"],
+ " in the same time as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", ".", "x"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "557559ea-19c0-4848-bbf7-3004fea4b19c"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "\[Element]", 
+    RowBox[{
+     SuperscriptBox["\[DoubleStruckCapitalR]", "m"], "."}]}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "959bfdfa-e0b9-4b39-b2be-82d2ca075eae"],
+ "  For some details on the dominant GPU programming paradigm see the \
+introduction in\n\thttps://docs.nvidia.com/cuda/cuda-c-programming-guide/\n\
+Note, 16 is a small (but not completely atypical example) dimension for block \
+algorithms that take advantage of such bulk buy efficiencies. I describe it \
+as buy one get 15 free with even better discounts for larger blocks.  Not \
+surprisingly, significantly larger block sizes are not common for large \
+problems. \n\tA block Arnoldi Process efficiently and incrementally generates \
+a sequence of orthogonal basis ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "372229f3-c4bc-44ce-b857-7efb9f917825"],
+ " and block Upper Hessenberg action matrix ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "77be94fb-c170-465d-85c3-623283752a6a"],
+ " with initial block ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{"m", "\[Times]", "b"}]], " "}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0a4c364c-d249-4546-aa7d-5175b0ab198d"],
+ "for the block Krylov Space \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "B"}], ")"}], ":=", 
+    RowBox[{"span", "(", 
+     RowBox[{"{", 
+      RowBox[{"B", ",", 
+       RowBox[{"A", ".", "B"}], ",", 
+       RowBox[{
+        SuperscriptBox["A", "2"], ".", "B"}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        SuperscriptBox["A", 
+         RowBox[{"n", "-", "1"}]], ".", "B"}]}], "}"}], ")"}]}], 
+   TraditionalForm]],ExpressionUUID->"ba0c55a6-7b53-4f98-8f19-075f28bc4975"],
+ "\nof dimension ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "*", "b"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f9f1f16e-6ad5-417b-8645-eeebe1bbbd72"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.8586737290809774`*^9, 3.858673852036502*^9}, {
+  3.858673995973452*^9, 3.858674003478671*^9}, {3.858674104997331*^9, 
+  3.8586741193061347`*^9}, {3.8586741716182833`*^9, 3.8586743453452806`*^9}, {
+  3.858674390511218*^9, 3.858674626319195*^9}, {3.8586746577122855`*^9, 
+  3.858674839922226*^9}},ExpressionUUID->"3823ae6e-9801-4fa2-9131-\
+bb139272f9d8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Block Arnoldi", "Subsection",
+ CellChangeTimes->{{3.8586739876539593`*^9, 3.858673991777794*^9}, {
+  3.8586743515786123`*^9, 
+  3.858674354270316*^9}},ExpressionUUID->"89d9da25-028b-4aa7-bd2b-\
+a4b71191423d"],
+
+Cell[TextData[{
+ "On a GPU you can compute ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", ".", "X"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f6d94464-0fc0-44ce-8211-b289e75eb4b9"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"X", "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{"m", "\[Times]", "16"}]]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "41e4c9f0-5394-4f62-b7fb-5882cfc06bea"],
+ " in the same time as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"A", ".", "x"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "025d3a43-28a4-47da-a13b-e9f499a22d98"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "\[Element]", 
+    RowBox[{
+     SuperscriptBox["\[DoubleStruckCapitalR]", "m"], "."}]}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "1fd55028-4f45-448c-8937-8451d90c491e"],
+ "  For some details on the dominant GPU programming paradigm see the \
+introduction in\n\thttps://docs.nvidia.com/cuda/cuda-c-programming-guide/\n\
+Note, 16 is a small (but not completely atypical example) dimension for block \
+algorithms that take advantage of such bulk buy efficiencies. I describe it \
+as buy one get 15 free with even better discounts for larger blocks.  Not \
+surprisingly, significantly larger block sizes are not common for large \
+problems. \n\tA block Arnoldi Process efficiently and incrementally generates \
+a sequence of orthogonal basis ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e456f32d-90c2-4b64-9a54-a3321c1bf984"],
+ " and block Upper Hessenberg action matrix ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "n"], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "789032d7-0e94-44c5-90ff-fcc78a30c1cf"],
+ " with initial block ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{"m", "\[Times]", "b"}]], " "}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "ab793fc8-1558-4e93-b006-0fcd5272d0d0"],
+ "for the block Krylov Space \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "B"}], ")"}], ":=", 
+    RowBox[{"span", "(", 
+     RowBox[{"{", 
+      RowBox[{"B", ",", 
+       RowBox[{"A", ".", "B"}], ",", 
+       RowBox[{
+        SuperscriptBox["A", "2"], ".", "B"}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        SuperscriptBox["A", 
+         RowBox[{"n", "-", "1"}]], ".", "B"}]}], "}"}], ")"}]}], 
+   TraditionalForm]],ExpressionUUID->"75f4817d-d85b-4be5-b168-3ed33226cd18"],
+ "\nof dimension ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"n", "*", "b"}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "79414f20-2afd-4d6d-bdf8-bd295a32fb2e"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.8586737290809774`*^9, 3.858673852036502*^9}, {
+  3.858673995973452*^9, 3.858674003478671*^9}, {3.858674104997331*^9, 
+  3.8586741193061347`*^9}, {3.8586741716182833`*^9, 3.8586743453452806`*^9}, {
+  3.858674390511218*^9, 3.858674626319195*^9}, {3.8586746577122855`*^9, 
+  3.8586748458055267`*^9}},ExpressionUUID->"a6fe5adf-95a8-48c1-af8c-\
+48d05b351a67"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Filters and Restarts ", "Subsection",
+ CellChangeTimes->{{3.8586739876539593`*^9, 3.858673991777794*^9}, {
+  3.8586743515786123`*^9, 3.858674354270316*^9}, {3.858674855661112*^9, 
+  3.8586748654247303`*^9}},ExpressionUUID->"e0254bb2-4028-41ee-b820-\
+dbdbfbfa570e"],
+
+Cell[TextData[{
+ "As we saw Arnoldi naturally computes the \[OpenCurlyDoubleQuote]outside\
+\[CloseCurlyDoubleQuote] eigenvalues.  If a linear solve is practical we can \
+compute eigenvalues near a shift \[Mu] by building the shifted inverse Krylov \
+space\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"A", "-", 
+         RowBox[{"\[Mu]", " ", "I"}]}], ")"}], 
+       RowBox[{"-", "1"}]], ",", "B"}], ")"}], ":=", 
+    RowBox[{"span", "(", 
+     RowBox[{"{", 
+      RowBox[{"B", ",", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", 
+           RowBox[{"\[Mu]", " ", "I"}]}], ")"}], 
+         RowBox[{"-", "1"}]], ".", "B"}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", 
+           RowBox[{"\[Mu]", " ", "I"}]}], ")"}], 
+         RowBox[{"-", "n"}]], ".", "B"}]}], "}"}], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "7b3f4fb8-4f02-45ce-af08-f7e2b59df4a0"],
+ ".\nRepeated linear solves are rarely feasible and an alternative is to \
+approximately filter needed eigenvectors from a standard Krylov space and \
+repeatedly restart.  The standard restart consists of several steps of a \
+Shifted QR algorithm to sweep the wanted algorithms to the bottom of the \
+Hessenberg matrix.  The Krylov algorithm is then restarted with the bottom \
+most Ritz vectors and the process is repeated.  This Implicitly Restarted \
+Block Arnoldi is the standard algorithm for computing eigenvalues near any \
+point on the outside border of the spectrum. Software provides access to \
+various standard filters: largest positive real part, largest imaginary part, \
+most negative real part, etc.       "
+}], "Text",
+ CellChangeTimes->{{3.8586737290809774`*^9, 3.858673852036502*^9}, {
+  3.858673995973452*^9, 3.858674003478671*^9}, {3.858674104997331*^9, 
+  3.8586741193061347`*^9}, {3.8586741716182833`*^9, 3.8586743453452806`*^9}, {
+  3.858674390511218*^9, 3.858674626319195*^9}, {3.8586746577122855`*^9, 
+  3.858675612889645*^9}},ExpressionUUID->"2931710a-14a0-4163-a628-\
+a57e359a2d52"],
+
+Cell[TextData[{
+ "As we saw Arnoldi naturally computes the \[OpenCurlyDoubleQuote]outside\
+\[CloseCurlyDoubleQuote] eigenvalues.  If a linear solve is practical we can \
+compute eigenvalues near a shift \[Mu] by building the shifted inverse Krylov \
+space\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"A", "-", 
+         RowBox[{"\[Mu]", " ", "I"}]}], ")"}], 
+       RowBox[{"-", "1"}]], ",", "B"}], ")"}], ":=", 
+    RowBox[{"span", "(", 
+     RowBox[{"{", 
+      RowBox[{"B", ",", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", 
+           RowBox[{"\[Mu]", " ", "I"}]}], ")"}], 
+         RowBox[{"-", "1"}]], ".", "B"}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"A", "-", 
+           RowBox[{"\[Mu]", " ", "I"}]}], ")"}], 
+         RowBox[{"-", "n"}]], ".", "B"}]}], "}"}], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "03af48a5-b690-426f-a4d6-b34854691a99"],
+ ".\nRepeated linear solves are rarely feasible and an alternative is to \
+approximately filter needed eigenvectors from a standard Krylov space and \
+repeatedly restart.  The standard restart consists of several steps of a \
+Shifted QR algorithm to sweep the wanted algorithms to the bottom of the \
+Hessenberg matrix.  The Krylov algorithm is then restarted with the bottom \
+most Ritz vectors and the process is repeated.  This Implicitly Restarted \
+Block Arnoldi is the standard algorithm for computing eigenvalues near any \
+point on the outside border of the spectrum. Software provides access to \
+various standard filters: largest positive real part, largest imaginary part, \
+most negative real part, etc.  "
+}], "Text",
+ CellChangeTimes->{{3.8586737290809774`*^9, 3.858673852036502*^9}, {
+  3.858673995973452*^9, 3.858674003478671*^9}, {3.858674104997331*^9, 
+  3.8586741193061347`*^9}, {3.8586741716182833`*^9, 3.8586743453452806`*^9}, {
+  3.858674390511218*^9, 3.858674626319195*^9}, {3.8586746577122855`*^9, 
+  3.858675612889645*^9}, {3.8586764728489923`*^9, 
+  3.8586764747870398`*^9}},ExpressionUUID->"d5c1822d-4fb4-44ba-850b-\
+c38a015779c9"],
+
+Cell[TextData[{
+ "B=rand(m,b)\nUntil converged\n\t#Run n Block Arnoldi Steps\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["Q", "n"], ",", 
+      SubscriptBox[
+       OverscriptBox["H", "^"], "n"]}], ")"}], "\[LeftArrow]", 
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "B"}], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "60111bed-a5cc-4f55-b309-24be8473a2a8"],
+ "\n\t#Extract Block Ritz Matrix\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"H", "="}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "0f3fd095-f52b-4926-96dc-c53d9057b261"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["H", "^"], "n"], "[", 
+    RowBox[{
+     RowBox[{"1", ":", 
+      RowBox[{"n", "*", "b"}]}], ",", 
+     RowBox[{"1", ":", 
+      RowBox[{"n", "*", "b"}]}]}], "]"}], TraditionalForm]],ExpressionUUID->
+  "247dee50-5a92-4e78-ac8a-2bad1f8c8951"],
+ "\n\t#Filter ",
+ Cell[BoxData[
+  FormBox["H", TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e38917a7-7046-453e-94b4-08f471c3596b"],
+ " for eigen vectors near \[Mu] with q shifted QR steps\n\tdo i in 1:q\n\t\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"H", "-", 
+      RowBox[{"\[Mu]", " ", "I"}]}], "=", 
+     RowBox[{"U", ".", "R"}]}], ";", " ", 
+    RowBox[{"H", "=", 
+     RowBox[{
+      RowBox[{"R", ".", "U"}], "+", 
+      RowBox[{"\[Mu]", " ", "I"}]}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "a9c860ca-b71e-4746-a7c0-6f19eb6ea83b"],
+ "\n\tend\n\t#Construct restarted Arnoldi Block from enriched subspace \n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"B", "=", 
+    RowBox[{
+     SubscriptBox["Q", "n"], ".", 
+     RowBox[{"U", "[", 
+      RowBox[{
+       RowBox[{"1", ":", 
+        RowBox[{"n", "*", "b"}]}], ",", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"n", "-", "1"}], ")"}], "*", 
+        RowBox[{"b", ":", 
+         RowBox[{"n", "*", "b"}]}]}]}], "]"}]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "f5848dab-9811-4aa5-834e-0c226f5229b8"],
+ " "
+}], "CodeText",
+ CellChangeTimes->{{3.858675638652752*^9, 
+  3.8586762809313383`*^9}},ExpressionUUID->"6a7dcf00-a0e9-4777-8c2f-\
+f42c405b62fc"],
+
+Cell["\<\
+Computing a few internal eigenvalues efficiently is a topic of active \
+research. \
+\>", "Text",
+ CellChangeTimes->{{3.8586762954251056`*^9, 
+  3.8586763395880337`*^9}},ExpressionUUID->"302719f5-56dc-4c62-b0c1-\
+8ba7dc55aaec"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -40568,67 +40965,85 @@ Cell[1637235, 27041, 331, 7, 117, "Text",ExpressionUUID->"b8b111dd-0d25-4e49-910
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1637603, 27053, 163, 3, 97, "Section",ExpressionUUID->"38971ed7-064e-40a3-bf8e-a7df853b291c"],
-Cell[1637769, 27058, 5266, 155, 487, "Text",ExpressionUUID->"09f61c34-55e1-460d-8041-a94a291ec5b2",
+Cell[1637769, 27058, 5235, 154, 487, "Text",ExpressionUUID->"09f61c34-55e1-460d-8041-a94a291ec5b2",
  InitializationCell->True],
-Cell[1643038, 27215, 3275, 84, 438, "Input",ExpressionUUID->"58b35083-43b3-4bf9-94eb-1caa56e2b970",
+Cell[1643007, 27214, 3275, 84, 438, "Input",ExpressionUUID->"58b35083-43b3-4bf9-94eb-1caa56e2b970",
  InitializationCell->True],
-Cell[1646316, 27301, 154, 3, 50, "Text",ExpressionUUID->"f2cee27d-7529-4c9d-9a94-56c410cce3b9"],
+Cell[1646285, 27300, 154, 3, 50, "Text",ExpressionUUID->"f2cee27d-7529-4c9d-9a94-56c410cce3b9"],
 Cell[CellGroupData[{
-Cell[1646495, 27308, 792, 25, 84, "Item",ExpressionUUID->"8e92d833-d3e4-40c8-8d9e-2b39b4b3576d"],
-Cell[1647290, 27335, 917, 26, 77, "Item",ExpressionUUID->"6d2f6c66-d31d-4b75-9dbd-a792ca765c55"],
-Cell[1648210, 27363, 990, 29, 77, "Item",ExpressionUUID->"e2f3dfd8-9095-4b2d-a678-d0438c953d86"]
+Cell[1646464, 27307, 792, 25, 84, "Item",ExpressionUUID->"8e92d833-d3e4-40c8-8d9e-2b39b4b3576d"],
+Cell[1647259, 27334, 917, 26, 77, "Item",ExpressionUUID->"6d2f6c66-d31d-4b75-9dbd-a792ca765c55"],
+Cell[1648179, 27362, 990, 29, 77, "Item",ExpressionUUID->"e2f3dfd8-9095-4b2d-a678-d0438c953d86"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1649249, 27398, 188, 3, 97, "Section",ExpressionUUID->"14d1f01e-2775-4ad7-abfd-f4288df0fbd9"],
-Cell[1649440, 27403, 2058, 52, 224, "Text",ExpressionUUID->"44569a8e-4ede-4047-bf96-818c113296d9",
+Cell[1649218, 27397, 188, 3, 97, "Section",ExpressionUUID->"14d1f01e-2775-4ad7-abfd-f4288df0fbd9"],
+Cell[1649409, 27402, 2058, 52, 224, "Text",ExpressionUUID->"44569a8e-4ede-4047-bf96-818c113296d9",
  InitializationCell->True],
-Cell[1651501, 27457, 354, 7, 83, "Text",ExpressionUUID->"b6c7ca9b-fb7e-4b92-a388-a5d81fca90fc"],
+Cell[1651470, 27456, 354, 7, 83, "Text",ExpressionUUID->"b6c7ca9b-fb7e-4b92-a388-a5d81fca90fc"],
 Cell[CellGroupData[{
-Cell[1651880, 27468, 2786, 76, 365, "Input",ExpressionUUID->"a3956bc4-91cf-4db1-b52e-5406e8905606"],
-Cell[1654669, 27546, 3205, 68, 448, "Output",ExpressionUUID->"9a7cbc7e-4d55-4393-a7b5-0fbd9ac1aaaf"]
+Cell[1651849, 27467, 2786, 76, 365, "Input",ExpressionUUID->"a3956bc4-91cf-4db1-b52e-5406e8905606"],
+Cell[1654638, 27545, 3205, 68, 448, "Output",ExpressionUUID->"9a7cbc7e-4d55-4393-a7b5-0fbd9ac1aaaf"]
 }, Open  ]],
-Cell[1657889, 27617, 215, 5, 50, "Text",ExpressionUUID->"c24d9d3e-0d22-43a3-81c3-e2776f20ae00"],
+Cell[1657858, 27616, 215, 5, 50, "Text",ExpressionUUID->"c24d9d3e-0d22-43a3-81c3-e2776f20ae00"],
 Cell[CellGroupData[{
-Cell[1658129, 27626, 5648, 143, 728, "Input",ExpressionUUID->"a8461efd-ea36-4fd8-8f2f-5e2c9f2e2f9a"],
-Cell[1663780, 27771, 670854, 11858, 511, "Output",ExpressionUUID->"96af776c-7518-4c05-9277-9e3918b9064a"]
+Cell[1658098, 27625, 5648, 143, 728, "Input",ExpressionUUID->"a8461efd-ea36-4fd8-8f2f-5e2c9f2e2f9a"],
+Cell[1663749, 27770, 670854, 11858, 511, "Output",ExpressionUUID->"96af776c-7518-4c05-9277-9e3918b9064a"]
 }, Open  ]],
-Cell[2334649, 39632, 487, 9, 117, "Text",ExpressionUUID->"2c8f611c-90b5-46a2-b72a-be7ecabe4110"]
+Cell[2334618, 39631, 487, 9, 117, "Text",ExpressionUUID->"2c8f611c-90b5-46a2-b72a-be7ecabe4110"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2335173, 39646, 213, 4, 97, "Section",ExpressionUUID->"d8283fed-e8ae-4361-a26c-ed6d01f4e16c"],
-Cell[2335389, 39652, 2018, 52, 226, "Text",ExpressionUUID->"c025bcec-31a9-41d0-aa84-3022f7b0625d"],
+Cell[2335142, 39645, 213, 4, 97, "Section",ExpressionUUID->"d8283fed-e8ae-4361-a26c-ed6d01f4e16c"],
+Cell[2335358, 39651, 2018, 52, 226, "Text",ExpressionUUID->"c025bcec-31a9-41d0-aa84-3022f7b0625d"],
 Cell[CellGroupData[{
-Cell[2337432, 39708, 2343, 61, 79, "Item",ExpressionUUID->"3d8c3135-5a5f-45c0-bb0b-f90290125a7f"],
+Cell[2337401, 39707, 2343, 61, 79, "Item",ExpressionUUID->"3d8c3135-5a5f-45c0-bb0b-f90290125a7f"],
 Cell[CellGroupData[{
-Cell[2339800, 39773, 1641, 39, 40, "Subitem",ExpressionUUID->"118b0064-b0a9-4fa5-98dc-9f6328b72471"],
-Cell[2341444, 39814, 1497, 33, 40, "Subitem",ExpressionUUID->"c4200bb0-6b95-47cd-83fe-882b5614bf03",
+Cell[2339769, 39772, 1641, 39, 40, "Subitem",ExpressionUUID->"118b0064-b0a9-4fa5-98dc-9f6328b72471"],
+Cell[2341413, 39813, 1497, 33, 40, "Subitem",ExpressionUUID->"c4200bb0-6b95-47cd-83fe-882b5614bf03",
  InitializationCell->True]
 }, Open  ]],
-Cell[2342956, 39850, 1259, 25, 77, "Item",ExpressionUUID->"670b9007-1b76-42db-b8b7-aeacbc87d655"],
+Cell[2342925, 39849, 1259, 25, 77, "Item",ExpressionUUID->"670b9007-1b76-42db-b8b7-aeacbc87d655"],
 Cell[CellGroupData[{
-Cell[2344240, 39879, 1541, 37, 40, "Subitem",ExpressionUUID->"60508a4c-0c41-40de-a009-2dc8c78b99bc"],
-Cell[2345784, 39918, 1556, 37, 46, "Subitem",ExpressionUUID->"35d8e84f-b22b-4613-9d55-629d97e1abaf"]
+Cell[2344209, 39878, 1541, 37, 40, "Subitem",ExpressionUUID->"60508a4c-0c41-40de-a009-2dc8c78b99bc"],
+Cell[2345753, 39917, 1556, 37, 46, "Subitem",ExpressionUUID->"35d8e84f-b22b-4613-9d55-629d97e1abaf"]
 }, Open  ]],
-Cell[2347355, 39958, 3096, 96, 109, "Item",ExpressionUUID->"dc461478-7d3c-4137-8700-42c4c7a44368"],
+Cell[2347324, 39957, 3096, 96, 109, "Item",ExpressionUUID->"dc461478-7d3c-4137-8700-42c4c7a44368"],
 Cell[CellGroupData[{
-Cell[2350476, 40058, 615, 14, 40, "Subitem",ExpressionUUID->"7580ac3a-0cd7-4a44-9500-14f2c9eea89a"],
-Cell[2351094, 40074, 694, 17, 40, "Subitem",ExpressionUUID->"0f8f127a-1093-4db3-bfc8-8b61e33b5439"]
+Cell[2350445, 40057, 615, 14, 40, "Subitem",ExpressionUUID->"7580ac3a-0cd7-4a44-9500-14f2c9eea89a"],
+Cell[2351063, 40073, 694, 17, 40, "Subitem",ExpressionUUID->"0f8f127a-1093-4db3-bfc8-8b61e33b5439"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2351849, 40098, 270, 5, 97, "Section",ExpressionUUID->"5b33c3dd-829f-420c-a97c-adfd9a75787b"],
-Cell[2352122, 40105, 5244, 153, 630, "Text",ExpressionUUID->"0ad49251-14d0-46d4-b0c3-1050ef848572"],
+Cell[2351818, 40097, 270, 5, 97, "Section",ExpressionUUID->"5b33c3dd-829f-420c-a97c-adfd9a75787b"],
+Cell[2352091, 40104, 5244, 153, 630, "Text",ExpressionUUID->"0ad49251-14d0-46d4-b0c3-1050ef848572"],
 Cell[CellGroupData[{
-Cell[2357391, 40262, 2866, 69, 222, "Input",ExpressionUUID->"ae217889-7282-4f8d-9aa4-88c3dd265b49"],
-Cell[2360260, 40333, 327, 6, 48, "Output",ExpressionUUID->"2dd425c5-c739-4e87-bf1b-7eae2f1e3156"]
+Cell[2357360, 40261, 2866, 69, 222, "Input",ExpressionUUID->"ae217889-7282-4f8d-9aa4-88c3dd265b49"],
+Cell[2360229, 40332, 327, 6, 48, "Output",ExpressionUUID->"2dd425c5-c739-4e87-bf1b-7eae2f1e3156"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2360624, 40344, 2745, 62, 243, "Input",ExpressionUUID->"3d5abc40-4aea-48e9-ab88-3dd1bb7729da"],
-Cell[2363372, 40408, 4637, 111, 357, "Output",ExpressionUUID->"657561a2-a731-44b5-b41c-e659c913b926"]
+Cell[2360593, 40343, 2745, 62, 243, "Input",ExpressionUUID->"3d5abc40-4aea-48e9-ab88-3dd1bb7729da"],
+Cell[2363341, 40407, 4637, 111, 357, "Output",ExpressionUUID->"657561a2-a731-44b5-b41c-e659c913b926"]
 }, Open  ]],
-Cell[2368024, 40522, 379, 7, 150, "Text",ExpressionUUID->"2d1f155e-61a5-407d-b899-a5475cdd0eed"]
+Cell[2367993, 40521, 379, 7, 150, "Text",ExpressionUUID->"2d1f155e-61a5-407d-b899-a5475cdd0eed"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2368409, 40533, 165, 3, 97, "Section",ExpressionUUID->"44b9a435-b301-471c-9fa0-098517ee77d5"],
+Cell[CellGroupData[{
+Cell[2368599, 40540, 214, 4, 72, "Subsection",ExpressionUUID->"8cfe41cb-d614-43e0-9f7c-c021dc46a538"],
+Cell[2368816, 40546, 3286, 87, 487, "Text",ExpressionUUID->"3823ae6e-9801-4fa2-9131-bb139272f9d8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2372139, 40638, 214, 4, 72, "Subsection",ExpressionUUID->"89d9da25-028b-4aa7-bd2b-a4b71191423d"],
+Cell[2372356, 40644, 3288, 87, 487, "Text",ExpressionUUID->"a6fe5adf-95a8-48c1-af8c-48d05b351a67"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2375681, 40736, 270, 4, 72, "Subsection",ExpressionUUID->"e0254bb2-4028-41ee-b820-dbdbfbfa570e"],
+Cell[2375954, 40742, 2251, 49, 521, "Text",ExpressionUUID->"2931710a-14a0-4163-a628-a57e359a2d52"],
+Cell[2378208, 40793, 2299, 50, 487, "Text",ExpressionUUID->"d5c1822d-4fb4-44ba-850b-c38a015779c9"],
+Cell[2380510, 40845, 2320, 72, 392, "CodeText",ExpressionUUID->"6a7dcf00-a0e9-4777-8c2f-f42c405b62fc"],
+Cell[2382833, 40919, 236, 6, 83, "Text",ExpressionUUID->"302719f5-56dc-4c62-b0c1-8ba7dc55aaec"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
