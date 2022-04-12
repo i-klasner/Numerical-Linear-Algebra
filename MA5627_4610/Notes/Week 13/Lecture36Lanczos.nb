@@ -10,41 +10,98 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9062,        246]
-NotebookOptionsPosition[      7469,        208]
-NotebookOutlinePosition[      8100,        230]
-CellTagsIndexPosition[      8057,        227]
+NotebookDataLength[     23681,        652]
+NotebookOptionsPosition[     21604,        607]
+NotebookOutlinePosition[     22238,        628]
+CellTagsIndexPosition[     22195,        625]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Lanczos Iteration", "Title",
+Cell["36: Lanczos Iteration", "Title",
  CellChangeTimes->CompressedData["
-1:eJwdzFtIk2EAh/HPA/YpEhjkASa6tkJk82IXbQYxNjUaeSGiFF0MERftQhMd
-arNFE/PO8JAaK/KAG1PLmu5OxM3h59SJjYUVW4o50q1JbfMQCdr7fy8efncP
-v/ZRpSaRYRgBCSoTlcyKNaJY9I8lQBMbLP1DbO5hb8PuM0lalMi1vU2H4XJP
-YYxoVfygllvGhuPEvl/TI/Bia/4V3kREIY1Hqc+zi2dziY2cm9p/qNptIn4s
-44LwauBNyESsSx0PQ+U9m+M18Vn7qRPaXI9F74hsr7wIepiuJidRWJ2lgy9e
-zjngk+9u6syAfnqTuLFm+gBZj3cBVqqaHdAe6tmBrtheECb7WkJQdak7DLVL
-XvMXoqTQb4FPObkL8l7pqQHZyjJ0Dza4ofB3lQ9mvn/4Gd65Kf4GU6K91AOe
-YRv+3LdRqwyrQag+ub8PDVpjBMoeRA/o/0gcg5+ytNSto4FjyBdLT+Df+qRz
-WKMbSvpKzJkyXoDX7Jp06My9lQEXJu9ehur1ihzY12GmWs9K8uC/iVFq6VKj
-AHL860JoH1EXwM4bXipP4BDB+doGCfwPc2ZK/Q==
-  
+1:eJwdzEFIk2EAh/EvjVwiQUFNYaLLJSGuww7NhJCtKQ53iLEwOoyQjHZoiUrq
+cpKR0WWyWdNYUmu0Ma3M1cCDhN8cfs2a6FCs0Ax16DY3bFvLUNDe/3t4+N0e
+YcMddWMWwzAiEpRnyZlpd1w2ueQ4BG28sOI3scXMq4WmfUluksi1v8iDMVWw
+LEV0y9aoKpfjZZrYtzVih8faik8LhuIyaTpJ7cm/8LGQ2MQFqE/+KNebiaPV
+XBieWR6M2og3jr6OQflVD/uceP/eng96/B3lb4k8S9U5GGQeNfuIoiv8Vtj7
+dJyFnT8D1A9Ww8gicfar7T3kBUMTUK1sYaE3al6F/tRmGB6evxuFyhOmGNRN
+hZzfiJKyJRfs4qr8UPDMQF2umP4MA/36ABRta+bhqXe3FmDdRfEPeCRpoSYE
+xl9wI+KhaoxfwlC7cy0CjbruOKy4mUzQf0acgnN8HXUlY/0LhWLpDvx3O/sA
+Xm8dyP5OLHjTnQNLvY150FdYcxxODNefhNqZywWw74GT6t6/VAR3h15RFVNN
+JZATnhdBr117Fj6sDFEFJWw5/NSgl8Ax+2A0h43LHI8nqf8BeWFUlw==
   "],ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
 
 Cell[TextData[{
- "We know how to solve triangular systems of equations.  We are going to see \
-how to reduce a general system \n\t",
+ "Arnoldi and all sorts of other stuff gets simpler for symmetric matrices. \
+As you would expect Upper Hessenberg matrices become tridiagonal.  One other \
+thing that happens is the general Arnoldi Iteration gets called Lanczos in \
+the special symmetric case. Just as a reminder the Krylov space is \t\n\t",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    RowBox[{"A", ".", "x"}], "=", "b"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "724ba2e4-5d97-44b6-a05e-0ffbf84b8c8a"],
- " \nto two triangular systems. "
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "b"}], ")"}], ":=", 
+    RowBox[{"span", "(", 
+     RowBox[{"{", 
+      RowBox[{"b", ",", 
+       RowBox[{"A", ".", "b"}], ",", 
+       RowBox[{
+        SuperscriptBox["A", "2"], ".", "b"}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        SuperscriptBox["A", 
+         RowBox[{"n", "-", "1"}]], ".", "b"}]}], "}"}], ")"}]}], 
+   TraditionalForm]],ExpressionUUID->"c91ce224-9c68-4acb-95d9-c3c5a261b80f"],
+ "\nand Arnoldi iteratively computes a nested sequence of orthonormal basis \
+for the Krylov space (represented by orthogonal matrices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["Q", "n"], "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{"m", "\[Times]", "n"}]]}], TraditionalForm]],ExpressionUUID->
+  "7df52d0e-632c-46e4-af4f-bf41327060c7"],
+ ") and a rectangular Upper Hessenberg matrices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "n"], "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"n", "+", "1"}], ")"}], "\[Times]", "n"}]]}], 
+   TraditionalForm]],ExpressionUUID->"cbe7a7ff-b185-46ba-a9cf-365b9e6c061c"],
+ " which represents the action of A on these basis through\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", ".", 
+     SubscriptBox["Q", "n"]}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["Q", 
+       RowBox[{"n", "+", "1"}]], ".", 
+      SubscriptBox["H", "n"]}], "=", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["Q", "n"], ".", 
+       RowBox[{
+        SubscriptBox["H", "n"], "[", 
+        RowBox[{
+         RowBox[{"1", ":", "n"}], ",", 
+         RowBox[{"1", ":", "n"}]}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["H", "n"], "[", 
+        RowBox[{
+         RowBox[{"n", "+", "1"}], ",", "n"}], "]"}], " ", 
+       SubscriptBox["q", 
+        RowBox[{"n", "+", "1"}]]}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "3da0ee12-817f-43a6-83ed-0b3fdb37f664"],
+ ". \nThe question is what simplifies when A is real symmetric. "
 }], "Text",
  CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
    3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
@@ -53,8 +110,350 @@ how to reduce a general system \n\t",
    3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
    3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
    3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
-   3.847143060799942*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
+   3.847143060799942*^9}, {3.8587758902452593`*^9, 3.858776033873631*^9}, {
+   3.8587760880076685`*^9, 
+   3.85877631985137*^9}},ExpressionUUID->"19c34891-b4a5-4bb2-9167-\
 f8ac0b4049d9"],
+
+Cell[CellGroupData[{
+
+Cell["Arnoldi Reminder", "Section",
+ CellChangeTimes->{{3.8575473463438177`*^9, 
+  3.857547355871465*^9}},ExpressionUUID->"5ec5bd9f-ed34-4338-aa11-\
+c081cd77b08d"],
+
+Cell[TextData[{
+ "Just as a reminder: The Arnoldi process iteratively computes a nested \
+sequence of orthogonal matrices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["Q", "n"], "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{"m", "\[Times]", "n"}]]}], TraditionalForm]],ExpressionUUID->
+  "18439c01-474f-43a3-80b2-678d92e0c79c"],
+ " and rectangular Upper Hessenberg matrices ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "n"], "\[Element]", 
+    SuperscriptBox["\[DoubleStruckCapitalR]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"n", "+", "1"}], ")"}], "\[Times]", "n"}]]}], 
+   TraditionalForm]],ExpressionUUID->"e15d698f-5f84-4787-a7f1-48ffd011381e"],
+ ".  Columns of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "n"], TraditionalForm]],ExpressionUUID->
+  "b49865d1-1a40-4fbe-ab95-6fd685418eda"],
+ " are an orthonormal basis for the Krylov space\t\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "b"}], ")"}], ":=", 
+    RowBox[{"span", "(", 
+     RowBox[{"{", 
+      RowBox[{"b", ",", 
+       RowBox[{"A", ".", "b"}], ",", 
+       RowBox[{
+        SuperscriptBox["A", "2"], ".", "b"}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        SuperscriptBox["A", 
+         RowBox[{"n", "-", "1"}]], ".", "b"}]}], "}"}], ")"}]}], 
+   TraditionalForm]],ExpressionUUID->"a0b39bae-0319-4e0c-844b-58a1167a21c5"],
+ ".\nBy construction, ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],ExpressionUUID->
+  "83f84e1f-c5b3-4ad3-bec3-1f5f3ee00aa8"],
+ " maps ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "b"}], ")"}], "\[Rule]", 
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", 
+      RowBox[{"n", "+", "1"}]], "(", 
+     RowBox[{"A", ",", "b"}], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "0d2124a0-5eca-47c9-8e64-ea5bd629fbe7"],
+ " with ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "n"], TraditionalForm]],ExpressionUUID->
+  "98c8d352-641a-4a93-90a5-a11fe46dd395"],
+ " the matrix for this map in the orthogonal basis. In other words, since ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "n"], TraditionalForm]],ExpressionUUID->
+  "e574f9cf-1a48-4913-b99e-dd9e636e526f"],
+ " is Upper Hessenberg\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"A", ".", 
+     SubscriptBox["Q", "n"]}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["Q", 
+       RowBox[{"n", "+", "1"}]], ".", 
+      SubscriptBox["H", "n"]}], "=", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["Q", "n"], ".", 
+       RowBox[{
+        SubscriptBox["H", "n"], "[", 
+        RowBox[{
+         RowBox[{"1", ":", "n"}], ",", 
+         RowBox[{"1", ":", "n"}]}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["H", "n"], "[", 
+        RowBox[{
+         RowBox[{"n", "+", "1"}], ",", "n"}], "]"}], " ", 
+       SubscriptBox["q", 
+        RowBox[{"n", "+", "1"}]]}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "0c5af42d-cf0f-4ed7-8774-ecd9c9ceb4ca"],
+ ". \nIf the bottom corner of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "n"], TraditionalForm]],ExpressionUUID->
+  "bef34ce4-e8b7-4c2c-9585-06b8ecb15755"],
+ " is zero the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Q", "n"], TraditionalForm]],ExpressionUUID->
+  "2829ab70-7103-4acf-a6ef-da29a969058f"],
+ " is an invariant space of ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],ExpressionUUID->
+  "b0f2289d-7194-4015-865c-497697fb21c7"],
+ " and eigenvalues of the square Upper Hessenberg matrix\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox[
+     OverscriptBox["H", "^"], "n"], "=", 
+    RowBox[{
+     SubscriptBox["H", "n"], "[", 
+     RowBox[{
+      RowBox[{"1", ":", "n"}], ",", 
+      RowBox[{"1", ":", "n"}]}], "]"}]}], TraditionalForm]],ExpressionUUID->
+  "a075fb88-786e-4f22-8cd8-1d1e40071c23"],
+ "\nare eigenvalues of ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],ExpressionUUID->
+  "e4b8bb36-4b5e-4c2d-8a6a-6ea68bf29022"],
+ ".  Hopefully when ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["H", "n"], "[", 
+    RowBox[{
+     RowBox[{"n", "+", "1"}], ",", "n"}], "]"}], TraditionalForm]],
+  ExpressionUUID->"877a9154-8bbf-461d-9580-4b4057a3a955"],
+ " is small the eigenvalues of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox[
+    OverscriptBox["H", "^"], "n"], TraditionalForm]],ExpressionUUID->
+  "c4e9405a-a6c6-4a6d-972c-82ab7d86039f"],
+ " are close to eigenvalues of ",
+ Cell[BoxData[
+  FormBox["A", TraditionalForm]],ExpressionUUID->
+  "a8b706a4-35d2-4d1f-824f-221cefd7d871"],
+ ". "
+}], "Text",
+ InitializationCell->True,
+ CellChangeTimes->{{3.857468659402404*^9, 3.857468826455107*^9}, {
+  3.8574688676135674`*^9, 3.857468980128008*^9}, {3.8574690168137884`*^9, 
+  3.857469456094802*^9}, {3.857469598320408*^9, 3.8574696008379107`*^9}, {
+  3.857469656813803*^9, 3.857469670751476*^9}, {3.8574697083673115`*^9, 
+  3.857469726229716*^9}, {3.85746989433012*^9, 3.857469917407742*^9}, {
+  3.8574701618625126`*^9, 3.8574702450022745`*^9}, {3.857470337391472*^9, 
+  3.857470586983824*^9}, {3.8575482337578273`*^9, 
+  3.857548270612883*^9}},ExpressionUUID->"dc7721f6-9bd8-4368-a69a-\
+355736e4bb27"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Arnoldi", "[", "A_", "]"}], "[", 
+   RowBox[{"{", 
+    RowBox[{"Q_", ",", "H_"}], "}"}], "]"}], ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"m", ",", "n", ",", "HNew", ",", "w", ",", "h", ",", "q"}], 
+     "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"m", ",", "n"}], "}"}], "=", 
+      RowBox[{"Dimensions", "[", "Q", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"HNew", "=", 
+      RowBox[{"ConstantArray", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"n", "+", "1"}], ",", "n"}], "}"}]}], "]"}]}], ";", 
+     RowBox[{
+      RowBox[{"HNew", "\[LeftDoubleBracket]", 
+       RowBox[{
+        RowBox[{"1", ";;", "n"}], ",", 
+        RowBox[{"1", ";;", 
+         RowBox[{"n", "-", "1"}]}]}], "\[RightDoubleBracket]"}], "=", "H"}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"w", "=", 
+      RowBox[{"A", ".", 
+       RowBox[{"Q", "\[LeftDoubleBracket]", 
+        RowBox[{"All", ",", "n"}], "\[RightDoubleBracket]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"q", "=", 
+         RowBox[{"Q", "\[LeftDoubleBracket]", 
+          RowBox[{"All", ",", "k"}], "\[RightDoubleBracket]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"HNew", "\[LeftDoubleBracket]", 
+          RowBox[{"k", ",", "n"}], "\[RightDoubleBracket]"}], "=", 
+         RowBox[{"q", ".", "w"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"w", "=", 
+         RowBox[{"w", "-", 
+          RowBox[{
+           RowBox[{"HNew", "\[LeftDoubleBracket]", 
+            RowBox[{"k", ",", "n"}], "\[RightDoubleBracket]"}], " ", 
+           "q"}]}]}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"HNew", "\[LeftDoubleBracket]", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "n"}], "\[RightDoubleBracket]"}], "=", 
+      RowBox[{"Norm", "[", "w", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"w", "=", 
+      RowBox[{"w", "/", 
+       RowBox[{"HNew", "\[LeftDoubleBracket]", 
+        RowBox[{
+         RowBox[{"n", "+", "1"}], ",", "n"}], "\[RightDoubleBracket]"}]}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ArrayFlatten", "[", 
+        RowBox[{"(", "\[NoBreak]", GridBox[{
+           {"Q", 
+            RowBox[{
+             RowBox[{"{", "w", "}"}], "\[Transpose]"}]}
+          }], "\[NoBreak]", ")"}], "]"}], ",", "HNew"}], "\[NoBreak]", 
+      "}"}]}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQnbytJit57xtHk1tBZSB61m21KhCtVPNzG4i+9Sjy
+LIgO6EsA00KNbDdBtAHvt8cg+pxh3FcQfbjw4E8QvadtN28KkHZZ3CUJog+U
+3JYH0R89egxAtNf/XSYgOtdDxAxEr3BbZgeiraaIuoFoue9VXiD6gedDML1p
+1eQSEN1Vz90JogWeh2wC0ZW+tdtA9NGT7r/B5jBv+guixeb31acD6e7DBo0g
+mudu6EYQfcIhYTuILlfM3g2iT5X7nwXRJRWZF0H0jIp7l0D0xrcLb4DoMpEr
+t0B019mlL0G0ZkfBBxCt84T9O4i+tFv1B9jc2sp/ILq/JogjA0gDADiJu8U=
+
+  "],
+ CellLabel->"In[1]:=",ExpressionUUID->"d7a5da77-3339-4ffe-9767-bca21bd5f6c8"],
+
+Cell[TextData[{
+ "How and why does the Arnoldi eigenvalue work? We have a lot of slightly \
+fancy machinery.  We construct and are looking in the Krylov space\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "b"}], ")"}], ":=", 
+    RowBox[{"span", "(", 
+     RowBox[{"{", 
+      RowBox[{"b", ",", 
+       RowBox[{"A", ".", "b"}], ",", 
+       RowBox[{
+        SuperscriptBox["A", "2"], ".", "b"}], ",", "\[Ellipsis]", ",", 
+       RowBox[{
+        SuperscriptBox["A", 
+         RowBox[{"n", "-", "1"}]], ".", "b"}]}], "}"}], ")"}]}], 
+   TraditionalForm]],ExpressionUUID->"8665e727-6727-4730-a732-aa5010b5061c"],
+ ".\nBy definition any ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "\[Element]", 
+    RowBox[{
+     SubscriptBox["\[ScriptCapitalK]", "n"], "(", 
+     RowBox[{"A", ",", "b"}], ")"}]}], TraditionalForm]],ExpressionUUID->
+  "daf8b1e4-f547-4db5-99c4-8c368a773c29"],
+ "  satisfies ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["c", "0"], "b"}], "+", 
+      RowBox[{
+       SubscriptBox["c", "1"], 
+       RowBox[{"A", ".", "b"}]}], "+", " ", 
+      RowBox[{
+       SubscriptBox["c", "2"], 
+       RowBox[{
+        SuperscriptBox["A", "2"], ".", "b"}]}], "+", "\[Ellipsis]", "+", 
+      RowBox[{
+       SubscriptBox["c", 
+        RowBox[{"n", "-", "1"}]], 
+       RowBox[{
+        SuperscriptBox["A", 
+         RowBox[{"n", "-", "1"}]], ".", "b"}]}]}], "=", 
+     RowBox[{
+      RowBox[{"q", "(", "A", ")"}], ".", "b"}]}]}], TraditionalForm]],
+  ExpressionUUID->"0c4bb9d2-671e-479a-b0c9-e55065158102"],
+ " where ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"q", "(", "A", ")"}], TraditionalForm]],ExpressionUUID->
+  "eba2a130-70cd-4292-ad45-b2ce14da5e82"],
+ " is the polynomial\n\t",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"q", "(", "A", ")"}], "=", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["c", "0"], "Id"}], "+", 
+     RowBox[{
+      SubscriptBox["c", "1"], "A"}], "+", " ", 
+     RowBox[{
+      SubscriptBox["c", "2"], 
+      SuperscriptBox["A", "2"]}], "+", "\[Ellipsis]", "+", 
+     RowBox[{
+      SubscriptBox["c", 
+       RowBox[{"n", "-", "1"}]], 
+      SuperscriptBox["A", 
+       RowBox[{"n", "-", "1"}]]}]}]}], TraditionalForm]],ExpressionUUID->
+  "612198ec-55ec-46ee-8f52-d5013dbf27c6"],
+ ".\nThe question is what do we gain by writing/thinking of this as in terms \
+of matrix polynomials! "
+}], "Text",
+ CellChangeTimes->{{3.8470540488466187`*^9, 3.847054299041844*^9}, 
+   3.847054620646575*^9, {3.84705469788529*^9, 3.8470547053171043`*^9}, {
+   3.84705474014857*^9, 3.847054741548669*^9}, {3.84705479048367*^9, 
+   3.8470548010520067`*^9}, {3.847097256754077*^9, 3.8470972849056597`*^9}, {
+   3.847140756236305*^9, 3.847140780380496*^9}, {3.847141112793906*^9, 
+   3.847141123081209*^9}, {3.847141212815769*^9, 3.8471414441116858`*^9}, {
+   3.847141743880835*^9, 3.847141771661133*^9}, {3.847142998261689*^9, 
+   3.847143060799942*^9}, {3.857411528178659*^9, 3.857411641959597*^9}, {
+   3.857411680593688*^9, 
+   3.857411982357526*^9}},ExpressionUUID->"4551c775-3334-47fb-b388-\
+5b3c392c7d52"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -208,12 +607,11 @@ Cell["Whatever", "Text",
 },
 WindowToolbars->"EditBar",
 WindowSize->{1268, 965},
-WindowMargins->{{Automatic, -1770}, {Automatic, -4}},
+WindowMargins->{{1604, Automatic}, {-142, Automatic}},
 TaggingRules->Association[
- "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> 
-  False],
+ "PresenterSettings" -> Association["Dialogs" -> {}], "TryRealOnly" -> False],
 Magnification:>1.5 Inherited,
-FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (July 9, 2021)",
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
 StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Aqua.nb", 
   CharacterEncoding -> "UTF-8"],
 ExpressionUUID->"35c69ee6-1e00-48e3-b52a-dfccec1a206e"
@@ -230,21 +628,29 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 725, 13, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
-Cell[1308, 37, 960, 19, 119, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
+Cell[580, 22, 742, 12, 184, "Title",ExpressionUUID->"bb443c9e-1a1c-437e-b10c-400e63a30bb8"],
+Cell[1325, 36, 3179, 79, 320, "Text",ExpressionUUID->"19c34891-b4a5-4bb2-9167-f8ac0b4049d9"],
 Cell[CellGroupData[{
-Cell[2293, 60, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
-Cell[2766, 72, 2006, 53, 319, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
+Cell[4529, 119, 163, 3, 97, "Section",ExpressionUUID->"5ec5bd9f-ed34-4338-aa11-c081cd77b08d"],
+Cell[4695, 124, 5235, 154, 353, "Text",ExpressionUUID->"dc7721f6-9bd8-4368-a69a-355736e4bb27",
  InitializationCell->True],
-Cell[4775, 127, 147, 3, 51, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
-Cell[CellGroupData[{
-Cell[4947, 134, 944, 29, 171, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
-Cell[5894, 165, 449, 10, 52, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
-Cell[6346, 177, 449, 10, 52, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
+Cell[9933, 280, 3275, 84, 409, "Input",ExpressionUUID->"d7a5da77-3339-4ffe-9767-bca21bd5f6c8",
+ InitializationCell->True],
+Cell[13211, 366, 3180, 88, 219, "Text",ExpressionUUID->"4551c775-3334-47fb-b388-5b3c392c7d52"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6832, 192, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
-Cell[7180, 199, 249, 4, 51, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
+Cell[16428, 459, 470, 10, 158, "Section",ExpressionUUID->"89580b5d-13b3-45be-828b-4d89ec582bfd"],
+Cell[16901, 471, 2006, 53, 295, "Input",ExpressionUUID->"19e69048-c026-4b2d-b819-6d1b04dde99d",
+ InitializationCell->True],
+Cell[18910, 526, 147, 3, 50, "Text",ExpressionUUID->"70188ed1-cf00-44ca-8f3b-552f8196fa59"],
+Cell[CellGroupData[{
+Cell[19082, 533, 944, 29, 157, "Input",ExpressionUUID->"5cd9978a-fc9e-42ac-935c-4d1f110d5466"],
+Cell[20029, 564, 449, 10, 48, "Output",ExpressionUUID->"ff6f07c2-0311-4748-b0cb-3d183a5ecfc2"],
+Cell[20481, 576, 449, 10, 48, "Output",ExpressionUUID->"fe0aa69d-569d-48ee-b8ce-a32dccf0df54"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20967, 591, 345, 5, 72, "Subsection",ExpressionUUID->"ff1653a3-7b18-4c0a-9b25-21877115862f"],
+Cell[21315, 598, 249, 4, 50, "Text",ExpressionUUID->"e8a23721-b391-482e-8648-0e0fae894d57"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
